@@ -19,28 +19,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
 
-    <meta name="description" content="打卡第四天！熟悉了更多链表的操作，包括如何交换两个nodes又不使链表断掉，如何用数学的逻辑来简化问题，比如两个nodes之间的距离可以用来解决倒数n的问题；两个链表长度不一样，可以通过相加长度，交换遍历来找到交叉；快慢指针来确定是否链表有环。学到了很多技巧，需要常复习。">
+    <meta name="description" content="刷题第6天！需要入魂入脑的总结：当我们遇到了要快速判断一个元素是否出现集合里的时候，就要考虑哈希法。 这次刷题强化了我关于数组也可以用作哈希表的概念， 一般把元素值当成index使用，来判断元素是否存在（0 vs ！0）。如果题目限制数值的大小我们可以用数组，如果没有限制大小就用HashSet或者HashMap。要定义Key和Value到底是什么，重复值是否重要，是要查哪个是否出现过，那那个值就是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录训练营打卡 Day 4">
-<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2024/11/30/Day-4/index.html">
+<meta property="og:title" content="代码随想录训练营打卡 Day 6">
+<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2024/12/02/Day-6/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
-<meta property="og:description" content="打卡第四天！熟悉了更多链表的操作，包括如何交换两个nodes又不使链表断掉，如何用数学的逻辑来简化问题，比如两个nodes之间的距离可以用来解决倒数n的问题；两个链表长度不一样，可以通过相加长度，交换遍历来找到交叉；快慢指针来确定是否链表有环。学到了很多技巧，需要常复习。">
+<meta property="og:description" content="刷题第6天！需要入魂入脑的总结：当我们遇到了要快速判断一个元素是否出现集合里的时候，就要考虑哈希法。 这次刷题强化了我关于数组也可以用作哈希表的概念， 一般把元素值当成index使用，来判断元素是否存在（0 vs ！0）。如果题目限制数值的大小我们可以用数组，如果没有限制大小就用HashSet或者HashMap。要定义Key和Value到底是什么，重复值是否重要，是要查哪个是否出现过，那那个值就是">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-11-30T06:07:52.000Z">
-<meta property="article:modified_time" content="2024-11-30T08:40:26.115Z">
+<meta property="article:published_time" content="2024-12-02T06:07:44.000Z">
+<meta property="article:modified_time" content="2024-12-02T07:39:19.009Z">
 <meta property="article:author" content="Peggie">
-<meta property="article:tag" content="linked list">
-<meta property="article:tag" content="node">
+<meta property="article:tag" content="array">
+<meta property="article:tag" content="hashmap">
+<meta property="article:tag" content="set">
+<meta property="article:tag" content="digital manipulation">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2024/11/30/Day-4/">
+<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2024/12/02/Day-6/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/11/30/Day-4/","path":"2024/11/30/Day-4/","title":"代码随想录训练营打卡 Day 4"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/12/02/Day-6/","path":"2024/12/02/Day-6/","title":"代码随想录训练营打卡 Day 6"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>代码随想录训练营打卡 Day 4 | Daily Leetcode Practice</title>
+<title>代码随想录训练营打卡 Day 6 | Daily Leetcode Practice</title>
   
 
 
@@ -161,7 +163,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2024/11/30/Day-4/">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2024/12/02/Day-6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
@@ -174,12 +176,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="代码随想录训练营打卡 Day 4 | Daily Leetcode Practice">
+      <meta itemprop="name" content="代码随想录训练营打卡 Day 6 | Daily Leetcode Practice">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          代码随想录训练营打卡 Day 4
+          代码随想录训练营打卡 Day 6
         </h1>
 
         <div class="post-meta-container">
@@ -191,7 +193,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-11-30 00:07:52 / Modified: 02:40:26" itemprop="dateCreated datePublished" datetime="2024-11-30T00:07:52-06:00">2024-11-30</time>
+      <time title="Created: 2024-12-02 00:07:44 / Modified: 01:39:19" itemprop="dateCreated datePublished" datetime="2024-12-02T00:07:44-06:00">2024-12-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -199,7 +201,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/leetcodeproblems/categories/Medium/" itemprop="url" rel="index"><span itemprop="name">Medium</span></a>
+          <a href="/leetcodeproblems/categories/Easy/" itemprop="url" rel="index"><span itemprop="name">Easy</span></a>
         </span>
     </span>
 
@@ -212,75 +214,48 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>打卡第四天！熟悉了更多链表的操作，包括如何交换两个nodes又不使链表断掉，如何用数学的逻辑来简化问题，比如两个nodes之间的距离可以用来解决倒数n的问题；两个链表长度不一样，可以通过相加长度，交换遍历来找到交叉；快慢指针来确定是否链表有环。学到了很多技巧，需要常复习。</p>
+    <div class="post-body" itemprop="articleBody"><p>刷题第6天！需要入魂入脑的总结：<strong>当我们遇到了要快速判断一个元素是否出现集合里的时候，就要考虑哈希法。</strong> 这次刷题强化了我关于<strong>数组也可以用作哈希表</strong>的概念， 一般把元素值当成index使用，来判断元素是否存在（0 vs ！0）。如果题目限制数值的大小我们可以用数组，如果没有限制大小就用HashSet或者HashMap。要定义Key和Value到底是什么，重复值是否重要，是要查哪个是否出现过，那那个值就是Key。</p>
 <span id="more"></span>
-<ol start="24">
-<li>Swap Nodes in Pairs</li>
+<ol start="242">
+<li>Valid Anagram</li>
 </ol>
 <ul>
-<li>initialization: dummy, pre, </li>
-<li>swap two nodes: first, second, pre</li>
-<li>move to the next: pre &#x3D; first</li>
+<li>Brute force: sort and compare</li>
+<li>Optimized: 1) create an array of size 26 (ASCII letters); 2) map the letters to the index <code>(&#39;char&#39; - &#39;a&#39;)</code> and increment the count of chars in s, decrement the count of chars in t; 3) evaluate if there’s a non-zero value in the array</li>
 </ul>
-<ol start="19">
-<li>Remove Nth Node From End of List</li>
+<ol start="349">
+<li>Intersection of Two Arrays</li>
 </ol>
 <ul>
-<li>Intuitive sol: <ul>
-<li><ol>
-<li>traverse the whole list and find the length</li>
-</ol>
-</li>
-<li><ol start="2">
-<li>traverse again until index @ (length - n) and do the deletion</li>
-</ol>
-</li>
-<li>be careful of the index vs length</li>
+<li>Set<Integer></li>
+<li>int[] hash &#x3D; new int[size of the limit in the prompt]</li>
 </ul>
-</li>
-<li>Optimized: Use two pointers <code>first</code> and <code>second</code> and create a gap of <code>n</code> between two pointer. When first pointer is null, the second pointer points to the node before the node to be removed. <ul>
-<li>e.g. 2th node from the end &#x3D;&gt; we want <code>second</code> points to 3rd from the end, and <code>first</code> points to null &#x3D;&gt; <code>first</code> moves n+1 steps &#x3D;&gt; for (int i &#x3D; 0; i &lt;&#x3D; n; i++)</li>
-</ul>
-</li>
-</ul>
-<ol start="160">
-<li>Intersection of Two Linked Lists</li>
+<ol start="202">
+<li>Happy Number</li>
 </ol>
 <ul>
-<li>Intuitive sol: <ul>
-<li><ol>
-<li>find the length of listA and listB;</li>
-</ol>
-</li>
-<li><ol start="2">
-<li>calculate the difference;</li>
-</ol>
-</li>
-<li><ol start="3">
-<li>move the longer one to the position where shorter one starts;</li>
-</ol>
-</li>
-<li><ol start="4">
-<li>compare if any node is the same. &#x3D;&gt; we can do nodeA &#x3D;&#x3D; nodeB to assert.</li>
-</ol>
-</li>
+<li>digital manipulation:<ul>
+<li>Extract the last digit: temp &#x3D; n % 10</li>
+<li>Perform some operation on the digit (e.g., squaring it, summing it, etc.)</li>
+<li>Remove the last digit: n &#x3D; n &#x2F; 10</li>
 </ul>
 </li>
-<li>Optimized: if each pointer traverse A + B nodes in total, the intersection node will eventually align<ul>
-<li>while (p1 !&#x3D; p2) &#x3D;&gt; loop exit in 2 scenarios: 1) intersection found; 2) no intersection, pointerA and pointerB will evnetaull reach null, when both are null it stops</li>
-<li>path equalization: swap to another head when reach the end, the difference in length is neutralized.</li>
+<li>The key is to find the stopping criteria for the for loop<ul>
+<li>if the number already exists appears again, it will get into the loop</li>
+<li>use the set to check</li>
 </ul>
 </li>
 </ul>
-<ol start="142">
-<li>Linked List Cycle II</li>
+<ol>
+<li>Two Sums</li>
 </ol>
 <ul>
-<li><strong>KEY1</strong>: How to idenitfy the cycle in a linked list</li>
-<li>SOL1: <code>fast</code> and <code>slow</code> pointer, <code>fast</code> takes 2 steps, <code>slow</code> takes 1. If they meet, there is a cycle</li>
-<li><strong>KEY2</strong>: Once cycle is identified, how can I find where the cycle begins?</li>
-<li>SOL2: reset <code>fast</code> to the head, and they move together until the meet, that’s where the cycle starts</li>
-<li><strong>NOTES</strong>: how to get the <code>fast</code> and <code>slow</code> start moving &#x3D;&gt; while (fast !&#x3D; null &amp;&amp; fast.next !&#x3D; null)</li>
+<li>The tricky part is how to process the duplicated values and define what the Key and what the Value are</li>
+<li>(k, v) &#x3D;&gt; (nums[i], i) instead of (i, nums[i]) <ul>
+<li>easy to check if the remainder of the target - currNum exists</li>
+<li>we don’t have to worry about storing all the index of the duplicated numbers because there are only two numbers, the one stored in the hashmap is definitely not the current one because we only update the current one after the check of the previous ones</li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -291,22 +266,21 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/leetcodeproblems/tags/linked-list/" rel="tag"># linked list</a>
-              <a href="/leetcodeproblems/tags/node/" rel="tag"># node</a>
+              <a href="/leetcodeproblems/tags/array/" rel="tag"># array</a>
+              <a href="/leetcodeproblems/tags/hashmap/" rel="tag"># hashmap</a>
+              <a href="/leetcodeproblems/tags/set/" rel="tag"># set</a>
+              <a href="/leetcodeproblems/tags/digital-manipulation/" rel="tag"># digital manipulation</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/11/29/Day-3/" rel="prev" title="代码随想录训练营打卡 Day 3">
-                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 3
+                <a href="/leetcodeproblems/2024/12/01/Day-5/" rel="prev" title="代码随想录训练营打卡 Day 5">
+                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 5
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/12/01/Day-5/" rel="next" title="代码随想录训练营打卡 Day 5">
-                  代码随想录训练营打卡 Day 5 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
