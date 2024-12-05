@@ -19,26 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
 
-    <meta name="description" content="休息日给自己放了一天假！从感恩节的假期中调整过来，准备迎接今年的最后一个月。如果有明确的目标，有可行的执行方案，那就朝着目标全速前进吧！即使最终没有实现目标，那应该也离目标非常接近了。If you reach for the moon, even if you miss, you’ll land among the stars.">
+    <meta name="description" content="今天准备考试实在没有时间，只刷了一道题，后面的明天考试结束后再补上。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录训练营打卡 Day 5">
-<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2024/12/01/Day-5/index.html">
+<meta property="og:title" content="代码随想录训练营打卡 Day 9 | 151. Reverse Words in a String">
+<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2024/12/05/Day-9/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
-<meta property="og:description" content="休息日给自己放了一天假！从感恩节的假期中调整过来，准备迎接今年的最后一个月。如果有明确的目标，有可行的执行方案，那就朝着目标全速前进吧！即使最终没有实现目标，那应该也离目标非常接近了。If you reach for the moon, even if you miss, you’ll land among the stars.">
+<meta property="og:description" content="今天准备考试实在没有时间，只刷了一道题，后面的明天考试结束后再补上。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-12-02T01:08:22.000Z">
-<meta property="article:modified_time" content="2024-12-02T01:15:18.820Z">
+<meta property="article:published_time" content="2024-12-05T07:18:30.000Z">
+<meta property="article:modified_time" content="2024-12-05T07:26:05.455Z">
 <meta property="article:author" content="Peggie">
+<meta property="article:tag" content="String">
+<meta property="article:tag" content="pointers">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2024/12/01/Day-5/">
+<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2024/12/05/Day-9/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/12/01/Day-5/","path":"2024/12/01/Day-5/","title":"代码随想录训练营打卡 Day 5"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/12/05/Day-9/","path":"2024/12/05/Day-9/","title":"代码随想录训练营打卡 Day 9 | 151. Reverse Words in a String"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>代码随想录训练营打卡 Day 5 | Daily Leetcode Practice</title>
+<title>代码随想录训练营打卡 Day 9 | 151. Reverse Words in a String | Daily Leetcode Practice</title>
   
 
 
@@ -159,7 +161,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2024/12/01/Day-5/">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2024/12/05/Day-9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
@@ -172,12 +174,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="代码随想录训练营打卡 Day 5 | Daily Leetcode Practice">
+      <meta itemprop="name" content="代码随想录训练营打卡 Day 9 | 151. Reverse Words in a String | Daily Leetcode Practice">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          代码随想录训练营打卡 Day 5
+          代码随想录训练营打卡 Day 9 | 151. Reverse Words in a String
         </h1>
 
         <div class="post-meta-container">
@@ -189,7 +191,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-12-01 19:08:22 / Modified: 19:15:18" itemprop="dateCreated datePublished" datetime="2024-12-01T19:08:22-06:00">2024-12-01</time>
+      <time title="Created: 2024-12-05 01:18:30 / Modified: 01:26:05" itemprop="dateCreated datePublished" datetime="2024-12-05T01:18:30-06:00">2024-12-05</time>
     </span>
 
   
@@ -201,7 +203,18 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>休息日给自己放了一天假！从感恩节的假期中调整过来，准备迎接今年的最后一个月。如果有明确的目标，有可行的执行方案，那就朝着目标全速前进吧！即使最终没有实现目标，那应该也离目标非常接近了。If you reach for the moon, even if you miss, you’ll land among the stars. </p>
+    <div class="post-body" itemprop="articleBody"><p>今天准备考试实在没有时间，只刷了一道题，后面的明天考试结束后再补上。</p>
+<span id="more"></span>
+
+<ol start="151">
+<li>Reverse Words in a String</li>
+</ol>
+<ul>
+<li>自己写的第一次没有通过，debug后发现了two pointers的update条件要更改通过了</li>
+<li>two pointers的判断条件需要非常明确</li>
+<li>when using the slow pointer to skip the space, we don’t have to update the fast pointer yet, instead <code>continue</code>.</li>
+<li>Shortcut:         <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String[] words = s.trim().split(<span class="string">&quot;\\s+&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
 
     </div>
 
@@ -210,19 +223,20 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/leetcodeproblems/tags/String/" rel="tag"># String</a>
+              <a href="/leetcodeproblems/tags/pointers/" rel="tag"># pointers</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/11/30/Day-4/" rel="prev" title="代码随想录训练营打卡 Day 4 | 24. Swap Nodes in Pairs, 19. Remove Nth Node From End of List, 160. Intersection of Two Linked Lists, 142. Linked List Cycle II">
-                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 4 | 24. Swap Nodes in Pairs, 19. Remove Nth Node From End of List, 160. Intersection of Two Linked Lists, 142. Linked List Cycle II
+                <a href="/leetcodeproblems/2024/12/04/Day-8/" rel="prev" title="代码随想录训练营打卡 Day 8 | 344. Reverse String, 541. Reverse String II, ReplaceNumbers">
+                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 8 | 344. Reverse String, 541. Reverse String II, ReplaceNumbers
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/12/02/Day-6/" rel="next" title="代码随想录训练营打卡 Day 6 | 242. Valid Anagram, 349. Intersection of Two Arrays, 202. Happy Number, 1. Two Sums">
-                  代码随想录训练营打卡 Day 6 | 242. Valid Anagram, 349. Intersection of Two Arrays, 202. Happy Number, 1. Two Sums <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
