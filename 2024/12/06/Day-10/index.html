@@ -19,22 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Daily Leetcode Practice">
-<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/tags/hashmap/index.html">
+    <meta name="description" content="打卡第10天！用栈并不局限于用Stack，而是要用Stack的思维，也就是如何操作最后进去的元素，可以用Array，StringBuilder，Deque等可以接触到最尾元素的结构来操作。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代码随想录训练营打卡 Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String">
+<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2024/12/06/Day-10/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
+<meta property="og:description" content="打卡第10天！用栈并不局限于用Stack，而是要用Stack的思维，也就是如何操作最后进去的元素，可以用Array，StringBuilder，Deque等可以接触到最尾元素的结构来操作。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-12-06T16:21:40.000Z">
+<meta property="article:modified_time" content="2024-12-06T21:29:08.975Z">
 <meta property="article:author" content="Peggie">
+<meta property="article:tag" content="Stack">
+<meta property="article:tag" content="Queue">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/tags/hashmap/">
+<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2024/12/06/Day-10/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":"","permalink":"","path":"tags/hashmap/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/12/06/Day-10/","path":"2024/12/06/Day-10/","title":"代码随想录训练营打卡 Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Tag: hashmap | Daily Leetcode Practice</title>
+<title>代码随想录训练营打卡 Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String | Daily Leetcode Practice</title>
   
 
 
@@ -144,70 +150,149 @@
 
     </div>
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">hashmap
-          <small>Tag</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2024/12/06/Day-10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
+      <meta itemprop="name" content="Peggie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="代码随想录训练营打卡 Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String | Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          代码随想录训练营打卡 Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2024</span>
+
+      <time title="Created: 2024-12-06 10:21:40 / Modified: 15:29:08" itemprop="dateCreated datePublished" datetime="2024-12-06T10:21:40-06:00">2024-12-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/leetcodeproblems/categories/Easy/" itemprop="url" rel="index"><span itemprop="name">Easy</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>打卡第10天！用栈并不局限于用Stack，而是要用Stack的思维，也就是如何操作最后进去的元素，可以用Array，StringBuilder，Deque等可以接触到最尾元素的结构来操作。</p>
+<span id="more"></span>
+
+<ol start="232">
+<li>Implement Queue using Stacks</li>
+</ol>
+<ul>
+<li>two stacks<ul>
+<li>one for getting the input</li>
+<li>one for producing the output</li>
+<li>when we need to swap the order, pop everything to the output stack, once it’s done push them back to the input stack</li>
+</ul>
+</li>
+</ul>
+<ol start="225">
+<li>Implement Stack using Queues</li>
+</ol>
+<ul>
+<li>two queues<ul>
+<li>the way to reverse the Queue: for every push, polling all the elements from q1 first and store it in q2 temporarily, and then add the lastest element to q1 first, then polling everything back to q1</li>
+<li>q1[], q2[] &#x3D;&gt; push(1)<br>q1[1], q2[] &#x3D;&gt; push(2)<br>q1[], q2[1] -&gt;<br>q1[2], q2[1] -&gt;<br>q1[2, 1], q2[] &#x3D;&gt;push(3)<br>q1[], q2[2, 1]<br>q1[3], q2[2, 1]<br>q1[3, 2, 1], q2[]</li>
+<li>Queue, unlike Stack, will always keep the same order when you transfer one queue to another</li>
+<li>The way to keep is reverse is to empty the queue and always push the lastest to an empty queue, this way you can keep the lastest push at the begining</li>
+</ul>
+</li>
+</ul>
+<ol start="20">
+<li>Valid Parentheses</li>
+</ol>
+<ul>
+<li>push all the left parentheses</li>
+<li>pop the right parenthese when:<ul>
+<li>stack is not empty &amp;&amp; it matches the left parenthese</li>
+<li>else return false</li>
+</ul>
+</li>
+<li>return if stack is empty</li>
+</ul>
+<ol start="1047">
+<li>Remove All Adjacent Duplicates In String</li>
+</ol>
+<ul>
+<li>Intuition: use <code>stack</code> and <code>StringBuilder</code> &#x3D;&gt; very slow (50%)</li>
+<li>Optimized: <ul>
+<li>Only use <code>StringBuilder</code></li>
+<li>delete the last char of the sb using <code>sb.deleteCharAt(len - 1)</code></li>
+</ul>
+</li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2024-12-02T23:12:34-06:00"
-              content="2024-12-02">
-          12-02
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/leetcodeproblems/2024/12/02/Day-7/" itemprop="url">
-            <span itemprop="name">代码随想录训练营打卡 Day 7 | 454. 4Sum II, 383. Ransom Note, 15. 3Sum, 18. 4Sum</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/leetcodeproblems/tags/Stack/" rel="tag"># Stack</a>
+              <a href="/leetcodeproblems/tags/Queue/" rel="tag"># Queue</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/leetcodeproblems/2024/12/05/Day-9/" rel="prev" title="代码随想录训练营打卡 Day 9 | 151. Reverse Words in a String, 55.右旋转字符串, 28. strStr()">
+                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 9 | 151. Reverse Words in a String, 55.右旋转字符串, 28. strStr()
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2024-12-02T00:07:44-06:00"
-              content="2024-12-02">
-          12-02
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/leetcodeproblems/2024/12/02/Day-6/" itemprop="url">
-            <span itemprop="name">代码随想录训练营打卡 Day 6 | 242. Valid Anagram, 349. Intersection of Two Arrays, 202. Happy Number, 1. Two Sums</span>
-          </a>
-      </div>
 
-      
-    </header>
-  </article>
 
-    </div>
-  </div>
-  
-  
-  
+
 
 </div>
   </main>

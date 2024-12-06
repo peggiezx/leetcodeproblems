@@ -19,28 +19,26 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
 
-    <meta name="description" content="打卡第2天！要点：Sliding window, pointers, boundaries, prefix sum。矩阵最好用例子来区分row，col免得搞混。PreSum可以让遍历更有效，减少时间复杂度。">
+    <meta name="description" content="Evaluate Reverse Polish NotationMediumTopicsCompaniesYou are given an array of strings tokens that represents an arithmetic expression in a Reverse Polish Notation.  Evaluate the expression. Return a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录训练营打卡 Day 2 | 209. Minimum Size Subarray Sum, 59. Spiral Matrix II, MinCut of n*m matrix">
-<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2024/11/27/Day-2/index.html">
+<meta property="og:title" content="Day 11">
+<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2024/12/06/Day-11/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
-<meta property="og:description" content="打卡第2天！要点：Sliding window, pointers, boundaries, prefix sum。矩阵最好用例子来区分row，col免得搞混。PreSum可以让遍历更有效，减少时间复杂度。">
+<meta property="og:description" content="Evaluate Reverse Polish NotationMediumTopicsCompaniesYou are given an array of strings tokens that represents an arithmetic expression in a Reverse Polish Notation.  Evaluate the expression. Return a">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-11-27T19:00:52.000Z">
-<meta property="article:modified_time" content="2024-12-04T08:01:54.932Z">
+<meta property="article:published_time" content="2024-12-06T18:45:12.000Z">
+<meta property="article:modified_time" content="2024-12-06T21:19:50.744Z">
 <meta property="article:author" content="Peggie">
-<meta property="article:tag" content="two-pointer">
-<meta property="article:tag" content="array">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2024/11/27/Day-2/">
+<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2024/12/06/Day-11/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/11/27/Day-2/","path":"2024/11/27/Day-2/","title":"代码随想录训练营打卡 Day 2 | 209. Minimum Size Subarray Sum, 59. Spiral Matrix II, MinCut of n*m matrix"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/12/06/Day-11/","path":"2024/12/06/Day-11/","title":"Day 11"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>代码随想录训练营打卡 Day 2 | 209. Minimum Size Subarray Sum, 59. Spiral Matrix II, MinCut of n*m matrix | Daily Leetcode Practice</title>
+<title>Day 11 | Daily Leetcode Practice</title>
   
 
 
@@ -161,7 +159,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2024/11/27/Day-2/">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2024/12/06/Day-11/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
@@ -174,12 +172,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="代码随想录训练营打卡 Day 2 | 209. Minimum Size Subarray Sum, 59. Spiral Matrix II, MinCut of n*m matrix | Daily Leetcode Practice">
+      <meta itemprop="name" content="Day 11 | Daily Leetcode Practice">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          代码随想录训练营打卡 Day 2 | 209. Minimum Size Subarray Sum, 59. Spiral Matrix II, MinCut of n*m matrix
+          Day 11
         </h1>
 
         <div class="post-meta-container">
@@ -189,24 +187,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2024-11-27 13:00:52" itemprop="dateCreated datePublished" datetime="2024-11-27T13:00:52-06:00">2024-11-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-12-04 02:01:54" itemprop="dateModified" datetime="2024-12-04T02:01:54-06:00">2024-12-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/leetcodeproblems/categories/Medium/" itemprop="url" rel="index"><span itemprop="name">Medium</span></a>
-        </span>
+      <time title="Created: 2024-12-06 12:45:12 / Modified: 15:19:50" itemprop="dateCreated datePublished" datetime="2024-12-06T12:45:12-06:00">2024-12-06</time>
     </span>
 
   
@@ -218,65 +201,68 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>打卡第2天！要点：Sliding window, pointers, boundaries, prefix sum。矩阵最好用例子来区分row，col免得搞混。PreSum可以让遍历更有效，减少时间复杂度。</p>
-<span id="more"></span>
-
-<ol start="209">
-<li>Minimum Size Subarray Sum</li>
+    <div class="post-body" itemprop="articleBody"><ol start="150">
+<li>Evaluate Reverse Polish Notation<br>Medium<br>Topics<br>Companies<br>You are given an array of strings tokens that represents an arithmetic expression in a Reverse Polish Notation.</li>
 </ol>
-<ul>
-<li>Brute force: calculate every sum of subarray from each position, if sum &gt;&#x3D; target, keep track of the minimum and break the loop;<ul>
-<li>Time O(N^2): the compute of subarray is redundant. E.g. nums &#x3D; [2,3,1,4,5] target &#x3D; 5, when slow &#x3D; 0 &#x3D;&gt; 2, 2+3, 2+3+1, 2+3+1+4. 2+3+1+4+5, when slow &#x3D; 1, the last four sums are calculated again.</li>
-</ul>
-</li>
-<li>Sliding window:<ul>
-<li>expand the window with fast pointer &#x3D;&gt; add nums[fast] to the current sum</li>
-<li>shrink the window with slow pointer &#x3D;&gt; while (sum &gt;&#x3D; target), update (fast - slow + 1)</li>
-</ul>
-</li>
-</ul>
-<ol start="59">
-<li>Spiral Matrix II</li>
+<p>Evaluate the expression. Return an integer that represents the value of the expression.</p>
+<p>Note that:</p>
+<p>The valid operators are ‘+’, ‘-‘, ‘*’, and ‘&#x2F;‘.<br>Each operand may be an integer or another expression.<br>The division between two integers always truncates toward zero.<br>There will not be any division by zero.<br>The input represents a valid arithmetic expression in a reverse polish notation.<br>The answer and all the intermediate calculations can be represented in a 32-bit integer.</p>
+<p>Example 1:</p>
+<p>Input: tokens &#x3D; [“2”,”1”,”+”,”3”,”*”]<br>Output: 9<br>Explanation: ((2 + 1) * 3) &#x3D; 9<br>Example 2:</p>
+<p>Input: tokens &#x3D; [“4”,”13”,”5”,”&#x2F;“,”+”]<br>Output: 6<br>Explanation: (4 + (13 &#x2F; 5)) &#x3D; 6<br>Example 3:</p>
+<p>Input: tokens &#x3D; [“10”,”6”,”9”,”3”,”+”,”-11”,”<em>“,”&#x2F;“,”</em>“,”17”,”+”,”5”,”+”]<br>Output: 22<br>Explanation: ((10 * (6 &#x2F; ((9 + 3) * -11))) + 17) + 5<br>&#x3D; ((10 * (6 &#x2F; (12 * -11))) + 17) + 5<br>&#x3D; ((10 * (6 &#x2F; -132)) + 17) + 5<br>&#x3D; ((10 * 0) + 17) + 5<br>&#x3D; (0 + 17) + 5<br>&#x3D; 17 + 5<br>&#x3D; 22</p>
+<p>Constraints:</p>
+<p>1 &lt;&#x3D; tokens.length &lt;&#x3D; 104<br>tokens[i] is either an operator: “+”, “-“, “*”, or “&#x2F;“, or an integer in the range [-200, 200].</p>
+<ol start="239">
+<li>Sliding Window Maximum<br>You are given an array of integers nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.</li>
 </ol>
-<ul>
-<li>identify the path &#x3D;&gt; top (left -&gt; right) &#x3D;&gt; right (top -&gt; bottom) &#x3D;&gt; bottom (right -&gt; left) &#x3D;&gt; left (bottom -&gt; top)</li>
-<li>shrink the boundaries and repeat</li>
-<li>keep the variables clear of what they refer to:<ul>
-<li>row: top, bottom; col: left, right</li>
-<li>e.g. n &#x3D; 3, [0][0] -&gt; [top][left]<br>                              (top++)<br>        [0][2] -&gt; [top][right]<br>                              (right–)<br>        [2][2] -&gt; [bottom][right]<br>                              (bottom–)<br>        [2][0] -&gt; [bottom][left]<br>                              (left++)</li>
-<li>avoid overriding numbers</li>
-</ul>
-</li>
-</ul>
-<p>Sum of Subarray </p>
-<ul>
-<li>Brute force: interating through the subarray for every interval query. Time O(q * k), q is the number of queries, k is the average length of subarray</li>
-<li>Prefix Sum: <ul>
-<li>Sum[a to b] &#x3D; p[b] - p[a - 1] (if a &gt; 0)</li>
-<li>special handling when a &#x3D;&#x3D; 0, as no prefix sum before index 0</li>
-</ul>
-</li>
-<li>java.util.Scanner<ul>
-<li>Scanner scanner &#x3D; new Scanner(System.in)</li>
-<li>scanner.nextInt(), scanner.hasNextInt()</li>
-<li>scanner.close()</li>
-</ul>
-</li>
-</ul>
-<p>MinCut of n*m matrix</p>
-<ul>
-<li>Use intuitive algo: compare the horizontal cut and the vertical cut, find the min;</li>
-<li>Create the matrix and calculate the total sum</li>
-<li>Calculate the row sums, so row[i] &#x3D; the sum of each row</li>
-<li>Do the same for col</li>
-<li>Calculate the min for row and col respectively and compare<ul>
-<li>cut &#x3D;&gt; preSum of the row[i] preSum +&#x3D; row[i]</li>
-<li>remainSum &#x3D; totalSum - preSum;</li>
-<li>diff &#x3D; Math.abs(preSum, remainSum)</li>
-<li>min(diff, minDiff)</li>
-</ul>
-</li>
-</ul>
+<p>Return the max sliding window.</p>
+<p>Example 1:</p>
+<p>Input: nums &#x3D; [1,3,-1,-3,5,3,6,7], k &#x3D; 3<br>Output: [3,3,5,5,6,7]<br>Explanation:<br>Window position                Max</p>
+<hr>
+<p>[1  3  -1] -3  5  3  6  7       3<br> 1 [3  -1  -3] 5  3  6  7       3<br> 1  3 [-1  -3  5] 3  6  7       5<br> 1  3  -1 [-3  5  3] 6  7       5<br> 1  3  -1  -3 [5  3  6] 7       6<br> 1  3  -1  -3  5 [3  6  7]      7<br>Example 2:</p>
+<p>Input: nums &#x3D; [1], k &#x3D; 1<br>Output: [1]</p>
+<p>Constraints:</p>
+<p>1 &lt;&#x3D; nums.length &lt;&#x3D; 105<br>-104 &lt;&#x3D; nums[i] &lt;&#x3D; 104<br>1 &lt;&#x3D; k &lt;&#x3D; nums.length</p>
+<ol start="347">
+<li>Top K Frequent Elements</li>
+</ol>
+<p>Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.</p>
+<p>Example 1:</p>
+<p>Input: nums &#x3D; [1,1,1,2,2,3], k &#x3D; 2<br>Output: [1,2]<br>Example 2:</p>
+<p>Input: nums &#x3D; [1], k &#x3D; 1<br>Output: [1]</p>
+<p>Constraints:</p>
+<p>1 &lt;&#x3D; nums.length &lt;&#x3D; 105<br>-104 &lt;&#x3D; nums[i] &lt;&#x3D; 104<br>k is in the range [1, the number of unique elements in the array].<br>It is guaranteed that the answer is unique.</p>
+<p>Follow up: Your algorithm’s time complexity must be better than O(n log n), where n is the array’s size.</p>
+<ol start="20">
+<li>Valid Parentheses<br>Given a string s containing just the characters ‘(‘, ‘)’, ‘{‘, ‘}’, ‘[‘ and ‘]’, determine if the input string is valid.</li>
+</ol>
+<p>An input string is valid if:</p>
+<p>Open brackets must be closed by the same type of brackets.<br>Open brackets must be closed in the correct order.<br>Every close bracket has a corresponding open bracket of the same type.</p>
+<p>Example 1:</p>
+<p>Input: s &#x3D; “()”</p>
+<p>Output: true</p>
+<p>Example 2:</p>
+<p>Input: s &#x3D; “()[]{}”</p>
+<p>Output: true</p>
+<p>Example 3:</p>
+<p>Input: s &#x3D; “(]”</p>
+<p>Output: false</p>
+<p>Example 4:</p>
+<p>Input: s &#x3D; “([])”</p>
+<p>Output: true</p>
+<p>Constraints:</p>
+<p>1 &lt;&#x3D; s.length &lt;&#x3D; 104<br>s consists of parentheses only ‘()[]{}’.</p>
+<ol start="1047">
+<li>Remove All Adjacent Duplicates In String<br>You are given a string s consisting of lowercase English letters. A duplicate removal consists of choosing two adjacent and equal letters and removing them.</li>
+</ol>
+<p>We repeatedly make duplicate removals on s until we no longer can.</p>
+<p>Return the final string after all such duplicate removals have been made. It can be proven that the answer is unique.</p>
+<p>Example 1:</p>
+<p>Input: s &#x3D; “abbaca”<br>Output: “ca”<br>Explanation:<br>For example, in “abbaca” we could remove “bb” since the letters are adjacent and equal, and this is the only possible move.  The result of this move is that the string is “aaca”, of which only “aa” is possible, so the final string is “ca”.<br>Example 2:</p>
+<p>Input: s &#x3D; “azxxzy”<br>Output: “ay”</p>
+<p>Constraints:</p>
+<p>1 &lt;&#x3D; s.length &lt;&#x3D; 105<br>s consists of lowercase English letters.</p>
 
     </div>
 
@@ -285,25 +271,9 @@
     
 
     <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/leetcodeproblems/tags/two-pointer/" rel="tag"># two-pointer</a>
-              <a href="/leetcodeproblems/tags/array/" rel="tag"># array</a>
-          </div>
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/11/26/Day-1/" rel="prev" title="代码随想录训练营打卡 Day 1 ｜ 704-Binary Search, 27.Remove elements, 977.Square of sorted array">
-                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 1 ｜ 704-Binary Search, 27.Remove elements, 977.Square of sorted array
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/11/29/Day-3/" rel="next" title="代码随想录训练营打卡 Day 3 | 203. Remove Linked List Elements, 207. Reverse the Linked list, 707. Design Linked List">
-                  代码随想录训练营打卡 Day 3 | 203. Remove Linked List Elements, 207. Reverse the Linked list, 707. Design Linked List <i class="fa fa-angle-right"></i>
-                </a>
-            </div>
-          </div>
     </footer>
   </article>
 </div>
