@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
 
-    <meta name="description" content="Evaluate Reverse Polish NotationMediumTopicsCompaniesYou are given an array of strings tokens that represents an arithmetic expression in a Reverse Polish Notation.  Evaluate the expression. Return a">
+    <meta name="description" content="拖了好几天终于补上了，继续刷题！要向目标前进！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Day 11">
+<meta property="og:title" content="代码随想录训练营打卡 Day 11 | 150. Evaluate RPN,">
 <meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2024/12/06/Day-11/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
-<meta property="og:description" content="Evaluate Reverse Polish NotationMediumTopicsCompaniesYou are given an array of strings tokens that represents an arithmetic expression in a Reverse Polish Notation.  Evaluate the expression. Return a">
+<meta property="og:description" content="拖了好几天终于补上了，继续刷题！要向目标前进！">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-12-06T18:45:12.000Z">
-<meta property="article:modified_time" content="2024-12-06T21:19:50.744Z">
+<meta property="article:published_time" content="2024-12-06T03:45:12.000Z">
+<meta property="article:modified_time" content="2024-12-10T14:20:17.587Z">
 <meta property="article:author" content="Peggie">
 <meta name="twitter:card" content="summary">
 
@@ -35,10 +35,10 @@
 <link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2024/12/06/Day-11/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/12/06/Day-11/","path":"2024/12/06/Day-11/","title":"Day 11"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/12/06/Day-11/","path":"2024/12/06/Day-11/","title":"代码随想录训练营打卡 Day 11 | 150. Evaluate RPN,"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Day 11 | Daily Leetcode Practice</title>
+<title>代码随想录训练营打卡 Day 11 | 150. Evaluate RPN, | Daily Leetcode Practice</title>
   
 
 
@@ -122,7 +122,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/leetcodeproblems/archives/">
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -172,12 +172,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Day 11 | Daily Leetcode Practice">
+      <meta itemprop="name" content="代码随想录训练营打卡 Day 11 | 150. Evaluate RPN, | Daily Leetcode Practice">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Day 11
+          代码随想录训练营打卡 Day 11 | 150. Evaluate RPN,
         </h1>
 
         <div class="post-meta-container">
@@ -187,9 +187,24 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2024-12-06 12:45:12 / Modified: 15:19:50" itemprop="dateCreated datePublished" datetime="2024-12-06T12:45:12-06:00">2024-12-06</time>
+      <time title="Created: 2024-12-06 12:45:12" itemprop="dateCreated datePublished" datetime="2024-12-06T12:45:12+09:00">2024-12-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-12-10 23:20:17" itemprop="dateModified" datetime="2024-12-10T23:20:17+09:00">2024-12-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/leetcodeproblems/categories/Medium/" itemprop="url" rel="index"><span itemprop="name">Medium</span></a>
+        </span>
     </span>
 
   
@@ -201,68 +216,47 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><ol start="150">
-<li>Evaluate Reverse Polish Notation<br>Medium<br>Topics<br>Companies<br>You are given an array of strings tokens that represents an arithmetic expression in a Reverse Polish Notation.</li>
+    <div class="post-body" itemprop="articleBody"><p>拖了好几天终于补上了，继续刷题！要向目标前进！</p>
+<span id="more"></span>
+
+<ol start="150">
+<li>Evaluate Reverse Polish Notation</li>
 </ol>
-<p>Evaluate the expression. Return an integer that represents the value of the expression.</p>
-<p>Note that:</p>
-<p>The valid operators are ‘+’, ‘-‘, ‘*’, and ‘&#x2F;‘.<br>Each operand may be an integer or another expression.<br>The division between two integers always truncates toward zero.<br>There will not be any division by zero.<br>The input represents a valid arithmetic expression in a reverse polish notation.<br>The answer and all the intermediate calculations can be represented in a 32-bit integer.</p>
-<p>Example 1:</p>
-<p>Input: tokens &#x3D; [“2”,”1”,”+”,”3”,”*”]<br>Output: 9<br>Explanation: ((2 + 1) * 3) &#x3D; 9<br>Example 2:</p>
-<p>Input: tokens &#x3D; [“4”,”13”,”5”,”&#x2F;“,”+”]<br>Output: 6<br>Explanation: (4 + (13 &#x2F; 5)) &#x3D; 6<br>Example 3:</p>
-<p>Input: tokens &#x3D; [“10”,”6”,”9”,”3”,”+”,”-11”,”<em>“,”&#x2F;“,”</em>“,”17”,”+”,”5”,”+”]<br>Output: 22<br>Explanation: ((10 * (6 &#x2F; ((9 + 3) * -11))) + 17) + 5<br>&#x3D; ((10 * (6 &#x2F; (12 * -11))) + 17) + 5<br>&#x3D; ((10 * (6 &#x2F; -132)) + 17) + 5<br>&#x3D; ((10 * 0) + 17) + 5<br>&#x3D; (0 + 17) + 5<br>&#x3D; 17 + 5<br>&#x3D; 22</p>
-<p>Constraints:</p>
-<p>1 &lt;&#x3D; tokens.length &lt;&#x3D; 104<br>tokens[i] is either an operator: “+”, “-“, “*”, or “&#x2F;“, or an integer in the range [-200, 200].</p>
+<ul>
+<li>use stack<ul>
+<li>use  <code>Deque</code> to initialize stack instead of <code>Stack</code></li>
+</ul>
+</li>
+<li>Convert string to numbers<ul>
+<li>Integer.valueOf(s)</li>
+</ul>
+</li>
+<li>Push numbers to stack</li>
+<li>Pop two numbers when it’s operator</li>
+</ul>
 <ol start="239">
-<li>Sliding Window Maximum<br>You are given an array of integers nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.</li>
+<li>Sliding Window Maximum</li>
 </ol>
-<p>Return the max sliding window.</p>
-<p>Example 1:</p>
-<p>Input: nums &#x3D; [1,3,-1,-3,5,3,6,7], k &#x3D; 3<br>Output: [3,3,5,5,6,7]<br>Explanation:<br>Window position                Max</p>
-<hr>
-<p>[1  3  -1] -3  5  3  6  7       3<br> 1 [3  -1  -3] 5  3  6  7       3<br> 1  3 [-1  -3  5] 3  6  7       5<br> 1  3  -1 [-3  5  3] 6  7       5<br> 1  3  -1  -3 [5  3  6] 7       6<br> 1  3  -1  -3  5 [3  6  7]      7<br>Example 2:</p>
-<p>Input: nums &#x3D; [1], k &#x3D; 1<br>Output: [1]</p>
-<p>Constraints:</p>
-<p>1 &lt;&#x3D; nums.length &lt;&#x3D; 105<br>-104 &lt;&#x3D; nums[i] &lt;&#x3D; 104<br>1 &lt;&#x3D; k &lt;&#x3D; nums.length</p>
+<ul>
+<li><p>Solution without Deque</p>
+<ul>
+<li>find the max of chunk of k from the left; each left[i] is the max from the start of the chunk (i % k &#x3D;&#x3D; 0) to the end of the chunk at i.&#x3D;&#x3D;&gt; the max of the chunk is at the end of the chunk &#x3D;&gt; left(i + k - 1)</li>
+<li>find the max of chunk of k from the right (n - 1); each right[i] is the max from the end of the chun ((i + 1) % k &#x3D;&#x3D; 0) to the start of the chunk. &#x3D;&#x3D;&gt; the max of chunk is at the begining of the chunk. &#x3D;&gt; right(i)</li>
+<li>res[i] &#x3D; Math.max(right[i], left[i + k - 1]);</li>
+</ul>
+</li>
+<li><p>Solution with Depque</p>
+<ul>
+<li>use the deque to store the index</li>
+<li>sliding the window by: remove the index if it’s out of the range of i - k + 1 (end of queue)</li>
+<li>always keep the largest index at the front of the queue</li>
+<li>store the max in the res[] when i &gt;&#x3D; k - 1</li>
+</ul>
+</li>
+</ul>
 <ol start="347">
 <li>Top K Frequent Elements</li>
 </ol>
-<p>Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.</p>
-<p>Example 1:</p>
-<p>Input: nums &#x3D; [1,1,1,2,2,3], k &#x3D; 2<br>Output: [1,2]<br>Example 2:</p>
-<p>Input: nums &#x3D; [1], k &#x3D; 1<br>Output: [1]</p>
-<p>Constraints:</p>
-<p>1 &lt;&#x3D; nums.length &lt;&#x3D; 105<br>-104 &lt;&#x3D; nums[i] &lt;&#x3D; 104<br>k is in the range [1, the number of unique elements in the array].<br>It is guaranteed that the answer is unique.</p>
-<p>Follow up: Your algorithm’s time complexity must be better than O(n log n), where n is the array’s size.</p>
-<ol start="20">
-<li>Valid Parentheses<br>Given a string s containing just the characters ‘(‘, ‘)’, ‘{‘, ‘}’, ‘[‘ and ‘]’, determine if the input string is valid.</li>
-</ol>
-<p>An input string is valid if:</p>
-<p>Open brackets must be closed by the same type of brackets.<br>Open brackets must be closed in the correct order.<br>Every close bracket has a corresponding open bracket of the same type.</p>
-<p>Example 1:</p>
-<p>Input: s &#x3D; “()”</p>
-<p>Output: true</p>
-<p>Example 2:</p>
-<p>Input: s &#x3D; “()[]{}”</p>
-<p>Output: true</p>
-<p>Example 3:</p>
-<p>Input: s &#x3D; “(]”</p>
-<p>Output: false</p>
-<p>Example 4:</p>
-<p>Input: s &#x3D; “([])”</p>
-<p>Output: true</p>
-<p>Constraints:</p>
-<p>1 &lt;&#x3D; s.length &lt;&#x3D; 104<br>s consists of parentheses only ‘()[]{}’.</p>
-<ol start="1047">
-<li>Remove All Adjacent Duplicates In String<br>You are given a string s consisting of lowercase English letters. A duplicate removal consists of choosing two adjacent and equal letters and removing them.</li>
-</ol>
-<p>We repeatedly make duplicate removals on s until we no longer can.</p>
-<p>Return the final string after all such duplicate removals have been made. It can be proven that the answer is unique.</p>
-<p>Example 1:</p>
-<p>Input: s &#x3D; “abbaca”<br>Output: “ca”<br>Explanation:<br>For example, in “abbaca” we could remove “bb” since the letters are adjacent and equal, and this is the only possible move.  The result of this move is that the string is “aaca”, of which only “aa” is possible, so the final string is “ca”.<br>Example 2:</p>
-<p>Input: s &#x3D; “azxxzy”<br>Output: “ay”</p>
-<p>Constraints:</p>
-<p>1 &lt;&#x3D; s.length &lt;&#x3D; 105<br>s consists of lowercase English letters.</p>
 
     </div>
 
@@ -274,6 +268,18 @@
 
         
 
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/leetcodeproblems/2024/12/05/Day-9/" rel="prev" title="代码随想录训练营打卡 Day 9 | 151. Reverse Words in a String, 55.右旋转字符串, 28. strStr()">
+                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 9 | 151. Reverse Words in a String, 55.右旋转字符串, 28. strStr()
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/leetcodeproblems/2024/12/07/Day-10/" rel="next" title="代码随想录训练营打卡 Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String">
+                  代码随想录训练营打卡 Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
