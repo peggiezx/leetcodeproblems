@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
 
-    <meta name="description" content="Invert Binary Tree   Recursion   Symmetric Tree   Iterative approach">
+    <meta name="description" content="巩固了用递归和迭代两种方式处理binary tree。要复习每种算法容易跌落的陷阱，比如minDepth的思路和maxDepth的思路不一样，尤其在于处理叶节点的逻辑： MaxDepth是寻找根节点到任何叶节点的长度，比较最长的，可以两边一直走到底找到所有叶节点；minDepth是找叶节点，如果一个子节点为空那长度就取决于另一个非空节点的长度，到了 第一个最短的叶节点就可以停了。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录训练营打 Day 14">
+<meta property="og:title" content="代码随想录训练营打 Day 14 ｜ Inversion, Depth">
 <meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2024/12/13/Day-14/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
-<meta property="og:description" content="Invert Binary Tree   Recursion   Symmetric Tree   Iterative approach">
+<meta property="og:description" content="巩固了用递归和迭代两种方式处理binary tree。要复习每种算法容易跌落的陷阱，比如minDepth的思路和maxDepth的思路不一样，尤其在于处理叶节点的逻辑： MaxDepth是寻找根节点到任何叶节点的长度，比较最长的，可以两边一直走到底找到所有叶节点；minDepth是找叶节点，如果一个子节点为空那长度就取决于另一个非空节点的长度，到了 第一个最短的叶节点就可以停了。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-12-13T01:08:06.000Z">
-<meta property="article:modified_time" content="2024-12-13T01:47:03.205Z">
+<meta property="article:modified_time" content="2024-12-13T17:56:05.821Z">
 <meta property="article:author" content="Peggie">
 <meta property="article:tag" content="Binary Tree">
 <meta name="twitter:card" content="summary">
@@ -36,10 +36,10 @@
 <link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2024/12/13/Day-14/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/12/13/Day-14/","path":"2024/12/13/Day-14/","title":"代码随想录训练营打 Day 14"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/12/13/Day-14/","path":"2024/12/13/Day-14/","title":"代码随想录训练营打 Day 14 ｜ Inversion, Depth"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>代码随想录训练营打 Day 14 | Daily Leetcode Practice</title>
+<title>代码随想录训练营打 Day 14 ｜ Inversion, Depth | Daily Leetcode Practice</title>
   
 
 
@@ -173,12 +173,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="代码随想录训练营打 Day 14 | Daily Leetcode Practice">
+      <meta itemprop="name" content="代码随想录训练营打 Day 14 ｜ Inversion, Depth | Daily Leetcode Practice">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          代码随想录训练营打 Day 14
+          代码随想录训练营打 Day 14 ｜ Inversion, Depth
         </h1>
 
         <div class="post-meta-container">
@@ -188,9 +188,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2024-12-13 10:08:06 / Modified: 10:47:03" itemprop="dateCreated datePublished" datetime="2024-12-13T10:08:06+09:00">2024-12-13</time>
+      <time title="Created: 2024-12-13 10:08:06" itemprop="dateCreated datePublished" datetime="2024-12-13T10:08:06+09:00">2024-12-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-12-14 02:56:05" itemprop="dateModified" datetime="2024-12-14T02:56:05+09:00">2024-12-14</time>
     </span>
 
   
@@ -202,7 +208,10 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><ol start="226">
+    <div class="post-body" itemprop="articleBody"><p>巩固了用递归和迭代两种方式处理binary tree。要复习每种算法容易跌落的陷阱，比如minDepth的思路和maxDepth的思路不一样，尤其在于处理叶节点的逻辑： MaxDepth是寻找根节点到任何叶节点的长度，比较最长的，可以两边一直走到底找到所有叶节点；minDepth是找叶节点，如果一个子节点为空那长度就取决于另一个非空节点的长度，到了 第一个最短的叶节点就可以停了。</p>
+<span id="more"></span>
+
+<ol start="226">
 <li>Invert Binary Tree</li>
 </ol>
 <ul>
@@ -213,6 +222,29 @@
 </ol>
 <ul>
 <li>Iterative approach</li>
+</ul>
+<ol start="104">
+<li>Maximum Depth of Binary Tree</li>
+</ol>
+<ul>
+<li>Recursion<ul>
+<li>keep going down to the left tree and get a left depth</li>
+<li>keep going down to the right tree and get a right depth</li>
+<li>compare the max of the two trees + 1</li>
+</ul>
+</li>
+<li>Iteration</li>
+</ul>
+<ol start="111">
+<li>Minimum Depth of Binary Tree</li>
+</ol>
+<ul>
+<li>Recursion<ul>
+<li>if one of the child node is null, then the min depth depends on the depths of the other node</li>
+<li>if both are not null, compare and get the min</li>
+</ul>
+</li>
+<li>Iteration</li>
 </ul>
 
     </div>
