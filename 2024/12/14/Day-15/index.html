@@ -19,28 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
 
-    <meta name="description" content="打卡第2天！要点：Sliding window, pointers, boundaries, prefix sum。矩阵最好用例子来区分row，col免得搞混。PreSum可以让遍历更有效，减少时间复杂度。">
+    <meta name="description" content="休假之后再次捡起刷题！这次一定可以的！Binary Tree走起～">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录训练营打卡 Day 2 | 209. Minimum Size Subarray Sum, 59. Spiral Matrix II, MinCut of n*m matrix">
-<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2024/11/28/Day-2/index.html">
+<meta property="og:title" content="代码随想录训练营打卡 Day 15 ｜">
+<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2024/12/14/Day-15/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
-<meta property="og:description" content="打卡第2天！要点：Sliding window, pointers, boundaries, prefix sum。矩阵最好用例子来区分row，col免得搞混。PreSum可以让遍历更有效，减少时间复杂度。">
+<meta property="og:description" content="休假之后再次捡起刷题！这次一定可以的！Binary Tree走起～">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-11-27T19:00:52.000Z">
-<meta property="article:modified_time" content="2024-12-04T08:01:54.932Z">
+<meta property="article:published_time" content="2024-12-14T08:56:34.000Z">
+<meta property="article:modified_time" content="2025-01-19T15:49:18.526Z">
 <meta property="article:author" content="Peggie">
-<meta property="article:tag" content="two-pointer">
-<meta property="article:tag" content="array">
+<meta property="article:tag" content="Binary Tree Traversal">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2024/11/28/Day-2/">
+<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2024/12/14/Day-15/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/11/28/Day-2/","path":"2024/11/28/Day-2/","title":"代码随想录训练营打卡 Day 2 | 209. Minimum Size Subarray Sum, 59. Spiral Matrix II, MinCut of n*m matrix"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/12/14/Day-15/","path":"2024/12/14/Day-15/","title":"代码随想录训练营打卡 Day 15 ｜"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>代码随想录训练营打卡 Day 2 | 209. Minimum Size Subarray Sum, 59. Spiral Matrix II, MinCut of n*m matrix | Daily Leetcode Practice</title>
+<title>代码随想录训练营打卡 Day 15 ｜ | Daily Leetcode Practice</title>
   
 
 
@@ -124,7 +123,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/leetcodeproblems/archives/">
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -161,7 +160,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2024/11/28/Day-2/">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2024/12/14/Day-15/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
@@ -174,12 +173,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="代码随想录训练营打卡 Day 2 | 209. Minimum Size Subarray Sum, 59. Spiral Matrix II, MinCut of n*m matrix | Daily Leetcode Practice">
+      <meta itemprop="name" content="代码随想录训练营打卡 Day 15 ｜ | Daily Leetcode Practice">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          代码随想录训练营打卡 Day 2 | 209. Minimum Size Subarray Sum, 59. Spiral Matrix II, MinCut of n*m matrix
+          代码随想录训练营打卡 Day 15 ｜
         </h1>
 
         <div class="post-meta-container">
@@ -190,14 +189,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2024-11-28 04:00:52" itemprop="dateCreated datePublished" datetime="2024-11-28T04:00:52+09:00">2024-11-28</time>
+      <time title="Created: 2024-12-14 02:56:34" itemprop="dateCreated datePublished" datetime="2024-12-14T02:56:34-06:00">2024-12-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-12-04 17:01:54" itemprop="dateModified" datetime="2024-12-04T17:01:54+09:00">2024-12-04</time>
+      <time title="Modified: 2025-01-19 09:49:18" itemprop="dateModified" datetime="2025-01-19T09:49:18-06:00">2025-01-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -218,64 +217,55 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>打卡第2天！要点：Sliding window, pointers, boundaries, prefix sum。矩阵最好用例子来区分row，col免得搞混。PreSum可以让遍历更有效，减少时间复杂度。</p>
+    <div class="post-body" itemprop="articleBody"><p>休假之后再次捡起刷题！这次一定可以的！Binary Tree走起～</p>
 <span id="more"></span>
 
-<ol start="209">
-<li>Minimum Size Subarray Sum</li>
+<ol start="110">
+<li>Balanced Binary Tree</li>
 </ol>
 <ul>
-<li>Brute force: calculate every sum of subarray from each position, if sum &gt;&#x3D; target, keep track of the minimum and break the loop;<ul>
-<li>Time O(N^2): the compute of subarray is redundant. E.g. nums &#x3D; [2,3,1,4,5] target &#x3D; 5, when slow &#x3D; 0 &#x3D;&gt; 2, 2+3, 2+3+1, 2+3+1+4. 2+3+1+4+5, when slow &#x3D; 1, the last four sums are calculated again.</li>
+<li>What is a balanced tree? <ul>
+<li>For every node, the difference in height between its left and right subtrees is at most 1.</li>
 </ul>
 </li>
-<li>Sliding window:<ul>
-<li>expand the window with fast pointer &#x3D;&gt; add nums[fast] to the current sum</li>
-<li>shrink the window with slow pointer &#x3D;&gt; while (sum &gt;&#x3D; target), update (fast - slow + 1)</li>
+<li>Height vs Depth<ul>
+<li>Height: The height of a binary tree is the distance from the deepest leaf to the root, measured in the number of edges. <code>Math.max(getHeight(root.left), getHeight(root.right)) + 1</code></li>
+<li>Depth: The depth of a node is the distance from the root to that node, measured in the number of edges.</li>
 </ul>
 </li>
 </ul>
-<ol start="59">
-<li>Spiral Matrix II</li>
+<ol start="257">
+<li>Binary Tree Paths</li>
 </ol>
 <ul>
-<li>identify the path &#x3D;&gt; top (left -&gt; right) &#x3D;&gt; right (top -&gt; bottom) &#x3D;&gt; bottom (right -&gt; left) &#x3D;&gt; left (bottom -&gt; top)</li>
-<li>shrink the boundaries and repeat</li>
-<li>keep the variables clear of what they refer to:<ul>
-<li>row: top, bottom; col: left, right</li>
-<li>e.g. n &#x3D; 3, [0][0] -&gt; [top][left]<br>                              (top++)<br>        [0][2] -&gt; [top][right]<br>                              (right–)<br>        [2][2] -&gt; [bottom][right]<br>                              (bottom–)<br>        [2][0] -&gt; [bottom][left]<br>                              (left++)</li>
-<li>avoid overriding numbers</li>
+<li>Hint: Use DFS with backtracking to explore all paths from the root to the leaf nodes.</li>
+<li>Use a <code>StringBuilder</code> to build the path incrementally as you traverse the tree.</li>
+<li>Pass the <code>StringBuilder</code> to each recursive call of the DFS function.<br>Traversal (DFS):</li>
+<li>Add the current node’s value to the StringBuilder at each step.</li>
+<li>If the node is a leaf node (i.e., root.left &#x3D;&#x3D; null &amp;&amp; root.right &#x3D;&#x3D; null), it means you’ve reached the end of a path. Add the path (contents of StringBuilder) to the result list res.</li>
 </ul>
-</li>
-</ul>
-<p>Sum of Subarray </p>
+<p>Backtracking:</p>
 <ul>
-<li>Brute force: interating through the subarray for every interval query. Time O(q * k), q is the number of queries, k is the average length of subarray</li>
-<li>Prefix Sum: <ul>
-<li>Sum[a to b] &#x3D; p[b] - p[a - 1] (if a &gt; 0)</li>
-<li>special handling when a &#x3D;&#x3D; 0, as no prefix sum before index 0</li>
-</ul>
+<li><p>After exploring a path from the current node, remove the node’s value from the StringBuilder to backtrack and allow the DFS to explore other branches.</p>
 </li>
-<li>java.util.Scanner<ul>
-<li>Scanner scanner &#x3D; new Scanner(System.in)</li>
-<li>scanner.nextInt(), scanner.hasNextInt()</li>
-<li>scanner.close()</li>
-</ul>
+<li><p>Backtracking ensures that you don’t carry over the current node’s value when moving up the tree.<br>Repeat until all paths are found:</p>
+</li>
+<li><p>Continue recursively exploring both the left and right subtrees until all root-to-leaf paths are discovered.</p>
 </li>
 </ul>
-<p>MinCut of n*m matrix</p>
+<ol start="404">
+<li>Sum of Left Leaves</li>
+</ol>
 <ul>
-<li>Use intuitive algo: compare the horizontal cut and the vertical cut, find the min;</li>
-<li>Create the matrix and calculate the total sum</li>
-<li>Calculate the row sums, so row[i] &#x3D; the sum of each row</li>
-<li>Do the same for col</li>
-<li>Calculate the min for row and col respectively and compare<ul>
-<li>cut &#x3D;&gt; preSum of the row[i] preSum +&#x3D; row[i]</li>
-<li>remainSum &#x3D; totalSum - preSum;</li>
-<li>diff &#x3D; Math.abs(preSum, remainSum)</li>
-<li>min(diff, minDiff)</li>
+<li>left leaves: it has to be leaf (no left and right child) and it’s to the left of a node</li>
+<li>then update the res of sum recursively for each left and right node</li>
 </ul>
-</li>
+<ol start="222">
+<li>Count Complete Tree Nodes</li>
+</ol>
+<ul>
+<li>if node &#x3D;&#x3D; null then return 0</li>
+<li>recursively count the left subtree and the right subtree for each node</li>
 </ul>
 
     </div>
@@ -286,21 +276,20 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/leetcodeproblems/tags/two-pointer/" rel="tag"># two-pointer</a>
-              <a href="/leetcodeproblems/tags/array/" rel="tag"># array</a>
+              <a href="/leetcodeproblems/tags/Binary-Tree-Traversal/" rel="tag"># Binary Tree Traversal</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/11/27/Day-1/" rel="prev" title="代码随想录训练营打卡 Day 1 ｜ 704-Binary Search, 27.Remove elements, 977.Square of sorted array">
-                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 1 ｜ 704-Binary Search, 27.Remove elements, 977.Square of sorted array
+                <a href="/leetcodeproblems/2024/12/13/Day-14/" rel="prev" title="代码随想录训练营打卡 Day 14 ｜ Inversion, Depth">
+                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 14 ｜ Inversion, Depth
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/11/29/Day-3/" rel="next" title="代码随想录训练营打卡 Day 3 | 203. Remove Linked List Elements, 207. Reverse the Linked list, 707. Design Linked List">
-                  代码随想录训练营打卡 Day 3 | 203. Remove Linked List Elements, 207. Reverse the Linked list, 707. Design Linked List <i class="fa fa-angle-right"></i>
+                <a href="/leetcodeproblems/2025/01/19/Day-16/" rel="next" title="Day-16">
+                  Day-16 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -321,7 +310,7 @@
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2024</span>
+    <span itemprop="copyrightYear">2025</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
