@@ -19,24 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
 
-    <meta property="og:type" content="article">
-<meta property="og:title" content="Day-16">
+    <meta name="description" content="二叉树的重建从naive approach到optimized version，只要头脑清晰就可以把boundary的指数做对，慢慢来！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代码随想录训练营打卡 Day 15 ｜513, 112, 113, 105, 106">
 <meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/01/19/Day-16/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
+<meta property="og:description" content="二叉树的重建从naive approach到optimized version，只要头脑清晰就可以把boundary的指数做对，慢慢来！">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-01-19T15:42:57.000Z">
-<meta property="article:modified_time" content="2025-01-19T15:42:57.459Z">
+<meta property="article:modified_time" content="2025-01-27T07:16:13.056Z">
 <meta property="article:author" content="Peggie">
+<meta property="article:tag" content="Binary Tree Traversal">
 <meta name="twitter:card" content="summary">
 
 
 <link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2025/01/19/Day-16/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/01/19/Day-16/","path":"2025/01/19/Day-16/","title":"Day-16"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/01/19/Day-16/","path":"2025/01/19/Day-16/","title":"代码随想录训练营打卡 Day 15 ｜513, 112, 113, 105, 106"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Day-16 | Daily Leetcode Practice</title>
+<title>代码随想录训练营打卡 Day 15 ｜513, 112, 113, 105, 106 | Daily Leetcode Practice</title>
   
 
 
@@ -170,12 +173,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Day-16 | Daily Leetcode Practice">
+      <meta itemprop="name" content="代码随想录训练营打卡 Day 15 ｜513, 112, 113, 105, 106 | Daily Leetcode Practice">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Day-16
+          代码随想录训练营打卡 Day 15 ｜513, 112, 113, 105, 106
         </h1>
 
         <div class="post-meta-container">
@@ -188,6 +191,22 @@
 
       <time title="Created: 2025-01-19 09:42:57" itemprop="dateCreated datePublished" datetime="2025-01-19T09:42:57-06:00">2025-01-19</time>
     </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-01-27 01:16:13" itemprop="dateModified" datetime="2025-01-27T01:16:13-06:00">2025-01-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/leetcodeproblems/categories/Medium/" itemprop="url" rel="index"><span itemprop="name">Medium</span></a>
+        </span>
+    </span>
 
   
 </div>
@@ -198,7 +217,94 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody"><p>二叉树的重建从naive approach到optimized version，只要头脑清晰就可以把boundary的指数做对，慢慢来！</p>
+<span id="more"></span>
+
+<ol start="513">
+<li>Find Bottom Left Tree Value</li>
+</ol>
+<ul>
+<li>use bfs, scan level by level</li>
+<li>SMART PART: scan it from right to left, to make sure the last node is the leftmost node</li>
+</ul>
+<ol start="112">
+<li>Path Sum (判断是否存在和为targetSum的path)</li>
+</ol>
+<ul>
+<li>用做减法的方法让targetSum - root.val</li>
+<li>终止条件：<ul>
+<li>root &#x3D;&#x3D; null</li>
+<li>判断是否存在：如果是leaf node 并且targetSum&#x3D;&#x3D;root.val</li>
+</ul>
+</li>
+<li>运算逻辑：<ul>
+<li>target -&#x3D; target - root.val</li>
+<li>用新的target检测左子树和右子树</li>
+</ul>
+</li>
+</ul>
+<ol start="113">
+<li>Path Sum II（记录所有和为targetSum的path）</li>
+</ol>
+<ul>
+<li><p>需要backtrack辅助method</p>
+</li>
+<li><p>终止条件：</p>
+<ul>
+<li>root&#x3D;&#x3D;null</li>
+</ul>
+</li>
+<li><p>运算逻辑：</p>
+<ul>
+<li>当leaf node时，判断是否和相等，<ul>
+<li>如果相等加入结果中</li>
+</ul>
+</li>
+<li>当不是leaf或者结果不相等<ul>
+<li>判断左子树是否存在</li>
+<li>判断右子树是否存在</li>
+</ul>
+</li>
+<li>remove last node</li>
+</ul>
+</li>
+<li><p>If you place the backtracking step inside the else block, you risk removing the current node from the path too soon and would mess up the recursive exploration. So, the backtracking step should always be outside the conditional (i.e., after you’ve explored both left and right children), ensuring that the exploration of all paths is done correctly.</p>
+</li>
+</ul>
+<ol start="106">
+<li>Construct Tree from inorder and postorder traversal</li>
+</ol>
+<ul>
+<li><p>基本逻辑：postorder的最后一个元素是用来分隔inorder左右子树的根节点，用此根节点找到inorder的分隔点，再根据inorder的左右子树分隔点，来分隔postorder的左右子树</p>
+<ul>
+<li>int rootval &#x3D; postorder[postorder.length - 1];</li>
+<li>int delimiterIdx &#x3D;&gt; inorder[delimiterIdx] &#x3D;&#x3D; rootval</li>
+<li>int[] leftinorder &#x3D; Arrays.copyOfRange(inorder, 0, delimiterIdx)右括号exclusive</li>
+<li>int[] rightorder &#x3D; Arrays.copyOfRange(inorder, delimiterIdx + 1, inorder.length);</li>
+<li>int leftSize &#x3D; leftInorder.length();</li>
+<li>int[] leftpostorder &#x3D; Arrays.copyOfRange(postorder, 0, leftSize);</li>
+<li>int[] rightpostorder &#x3D; Arrays.copyOfRange(postorder, leftSize + 1, postorder.length - 1);</li>
+<li>recursively find the left and right node to the root</li>
+</ul>
+</li>
+<li><p>Time complexity:</p>
+<ul>
+<li>O(n) for search the delimiterIdx</li>
+<li>Since you split inorder into two parts recursively, this results in a total cost proportional to the sum of all array sizes over the recursion: <code>O(n) + O(n-1) + O(n-2) + ... + O(1) = O(n²).</code></li>
+<li>Overall O(n^2)</li>
+</ul>
+</li>
+<li><p>Space:</p>
+<ul>
+<li>Call Stack: The recursion depth is proportional to the height of the tree. In the worst case (a completely unbalanced tree), the height is O(n). In the best case (a balanced tree), the height is O(log n).</li>
+<li>New Arrays: At each recursive step, new arrays are created for leftInorder, rightInorder, and resizedPostOrder. This creates a space complexity of O(n²) because of the cumulative sizes of all the subarrays created.</li>
+</ul>
+</li>
+<li><p>Optimization<br>  To improve time and space complexity, avoid creating new subarrays. Instead, use indices to represent the current ranges of the inorder and postorder arrays. This eliminates the need to copy arrays repeatedly.</p>
+</li>
+</ul>
+<p>105 is very similar with the preorder being the array to locate the root from the begining</p>
+
     </div>
 
     
@@ -206,6 +312,9 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/leetcodeproblems/tags/Binary-Tree-Traversal/" rel="tag"># Binary Tree Traversal</a>
+          </div>
 
         
 
