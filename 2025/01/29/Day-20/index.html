@@ -19,26 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
 
-    <meta name="description" content="休息日给自己放了一天假！从感恩节的假期中调整过来，准备迎接今年的最后一个月。如果有明确的目标，有可行的执行方案，那就朝着目标全速前进吧！即使最终没有实现目标，那应该也离目标非常接近了。If you reach for the moon, even if you miss, you’ll land among the stars.">
+    <meta name="description" content="今天通过LCA for BST对LCA有了更清晰的理解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录训练营打卡 Day 5">
-<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2024/12/01/Day-5/index.html">
+<meta property="og:title" content="代码随想录训练营打卡 Day 20">
+<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/01/29/Day-20/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
-<meta property="og:description" content="休息日给自己放了一天假！从感恩节的假期中调整过来，准备迎接今年的最后一个月。如果有明确的目标，有可行的执行方案，那就朝着目标全速前进吧！即使最终没有实现目标，那应该也离目标非常接近了。If you reach for the moon, even if you miss, you’ll land among the stars.">
+<meta property="og:description" content="今天通过LCA for BST对LCA有了更清晰的理解">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-12-02T01:08:22.000Z">
-<meta property="article:modified_time" content="2024-12-06T16:39:42.378Z">
+<meta property="article:published_time" content="2025-01-29T08:29:10.000Z">
+<meta property="article:modified_time" content="2025-01-29T09:58:22.285Z">
 <meta property="article:author" content="Peggie">
+<meta property="article:tag" content="LCA">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2024/12/01/Day-5/">
+<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2025/01/29/Day-20/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/12/01/Day-5/","path":"2024/12/01/Day-5/","title":"代码随想录训练营打卡 Day 5"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/01/29/Day-20/","path":"2025/01/29/Day-20/","title":"代码随想录训练营打卡 Day 20"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>代码随想录训练营打卡 Day 5 | Daily Leetcode Practice</title>
+<title>代码随想录训练营打卡 Day 20 | Daily Leetcode Practice</title>
   
 
 
@@ -159,7 +160,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2024/12/01/Day-5/">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/01/29/Day-20/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
@@ -172,12 +173,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="代码随想录训练营打卡 Day 5 | Daily Leetcode Practice">
+      <meta itemprop="name" content="代码随想录训练营打卡 Day 20 | Daily Leetcode Practice">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          代码随想录训练营打卡 Day 5
+          代码随想录训练营打卡 Day 20
         </h1>
 
         <div class="post-meta-container">
@@ -187,15 +188,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2024-12-01 19:08:22" itemprop="dateCreated datePublished" datetime="2024-12-01T19:08:22-06:00">2024-12-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-12-06 10:39:42" itemprop="dateModified" datetime="2024-12-06T10:39:42-06:00">2024-12-06</time>
+      <time title="Created: 2025-01-29 02:29:10 / Modified: 03:58:22" itemprop="dateCreated datePublished" datetime="2025-01-29T02:29:10-06:00">2025-01-29</time>
     </span>
 
   
@@ -207,7 +202,29 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>休息日给自己放了一天假！从感恩节的假期中调整过来，准备迎接今年的最后一个月。如果有明确的目标，有可行的执行方案，那就朝着目标全速前进吧！即使最终没有实现目标，那应该也离目标非常接近了。If you reach for the moon, even if you miss, you’ll land among the stars. </p>
+    <div class="post-body" itemprop="articleBody"><p>今天通过LCA for BST对LCA有了更清晰的理解</p>
+  <span id="more"></span> 
+
+<ol start="235">
+<li>LCA for BST<br>LCA的基本思路是，如果p和q在root的左右不同子树，那么LCA就是root<br>如果p和q在同一子树，那么我们搜索root的左子树或者右子树，找到他们分叉的时候，return root。<br>终止条件是：如果root &#x3D;&#x3D; null，那么说明已经到了叶节点，没有找到返回null<br>如果root &#x3D;&#x3D; p或者 root &#x3D;&#x3D; q说明找到了其中一个节点，返回该节点</li>
+</ol>
+<p>如果单纯只是Binary Tree，无法通过节点判断p和q的相对位置，那我们可以使用recursion，根据postorder traversal的顺序，先搜索左子树，再搜索右子树，对当前root进行判断</p>
+<p>但如果是BST，我们可以利用它有序的特性，快速判断p，q是否在同侧，减少搜索范围<br>通过比较p和q和root值之间的大小关系<br>如果他们同在左侧，那么可以更新root &#x3D; root.left；右侧同理<br>如果他们不在同侧，说明root即为LCA</p>
+<ol start="701">
+<li><p>Insert Node into BST<br>Iterative<br>如果val比root.val更小，那么cur node向左搜索，直到cur node的左节点成为null，在此更新左节点为new TreeNode(val)<br>右侧同样<br>edge case： 如果root为null，那么直接更新为TreeNode（val）</p>
+</li>
+<li><p>Delete Node from BST<br>迭代法<br>Step1:找到该节点<br>如果没有找到return root<br>Step2:找到之后做判断</p>
+</li>
+</ol>
+<ul>
+<li>if 该节点没有子节点，直接删除，注意判断pre是否为null</li>
+<li>if 该节点有一个子节点，用该子节点替换当前节点，如果是pre的左子就替代左，如果是右就替代右</li>
+<li>if 该节点有两个节点，那么找到当前节点右子树的最左节点（右子树中最小节点）<ul>
+<li>将要删除节点的左子树连接到最左节点的左孩子</li>
+<li>返回删除节点的右子树作为新的根</li>
+</ul>
+</li>
+</ul>
 
     </div>
 
@@ -216,19 +233,19 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/leetcodeproblems/tags/LCA/" rel="tag"># LCA</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/11/30/Day-4/" rel="prev" title="代码随想录训练营打卡 Day 4 | 24. Swap Nodes in Pairs, 19. Remove Nth Node From End of List, 160. Intersection of Two Linked Lists, 142. Linked List Cycle II">
-                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 4 | 24. Swap Nodes in Pairs, 19. Remove Nth Node From End of List, 160. Intersection of Two Linked Lists, 142. Linked List Cycle II
+                <a href="/leetcodeproblems/2025/01/29/Day-17/" rel="prev" title="代码随想录训练营打卡 Day 17 | 654. Maximum Binary Tree">
+                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 17 | 654. Maximum Binary Tree
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/12/02/Day-6/" rel="next" title="代码随想录训练营打卡 Day 6 | 242. Valid Anagram, 349. Intersection of Two Arrays, 202. Happy Number, 1. Two Sums">
-                  代码随想录训练营打卡 Day 6 | 242. Valid Anagram, 349. Intersection of Two Arrays, 202. Happy Number, 1. Two Sums <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
