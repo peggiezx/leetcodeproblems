@@ -19,28 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
 
-    <meta name="description" content="打卡第2天！要点：Sliding window, pointers, boundaries, prefix sum。矩阵最好用例子来区分row，col免得搞混。PreSum可以让遍历更有效，减少时间复杂度。">
+    <meta name="description" content="如果想要保留左右节点的值，让其在while循环时不会指向null，那就用while（cur.left！&#x3D; null）或者（cur.right！&#x3D;null）删除一个节点最简单的操作是将母节点指向新的节点，找准哪个是新节点是关键">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录训练营打卡 Day 2 | 209. Minimum Size Subarray Sum, 59. Spiral Matrix II, MinCut of n*m matrix">
-<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2024/11/27/Day-2/index.html">
+<meta property="og:title" content="代码随想录训练营打卡 Day 21">
+<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/01/31/Day-21/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
-<meta property="og:description" content="打卡第2天！要点：Sliding window, pointers, boundaries, prefix sum。矩阵最好用例子来区分row，col免得搞混。PreSum可以让遍历更有效，减少时间复杂度。">
+<meta property="og:description" content="如果想要保留左右节点的值，让其在while循环时不会指向null，那就用while（cur.left！&#x3D; null）或者（cur.right！&#x3D;null）删除一个节点最简单的操作是将母节点指向新的节点，找准哪个是新节点是关键">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-11-27T19:00:52.000Z">
-<meta property="article:modified_time" content="2024-12-04T08:01:54.932Z">
+<meta property="article:published_time" content="2025-01-31T20:24:14.000Z">
+<meta property="article:modified_time" content="2025-01-31T20:59:43.898Z">
 <meta property="article:author" content="Peggie">
-<meta property="article:tag" content="two-pointer">
-<meta property="article:tag" content="array">
+<meta property="article:tag" content="BST">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2024/11/27/Day-2/">
+<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2025/01/31/Day-21/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/11/27/Day-2/","path":"2024/11/27/Day-2/","title":"代码随想录训练营打卡 Day 2 | 209. Minimum Size Subarray Sum, 59. Spiral Matrix II, MinCut of n*m matrix"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/01/31/Day-21/","path":"2025/01/31/Day-21/","title":"代码随想录训练营打卡 Day 21"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>代码随想录训练营打卡 Day 2 | 209. Minimum Size Subarray Sum, 59. Spiral Matrix II, MinCut of n*m matrix | Daily Leetcode Practice</title>
+<title>代码随想录训练营打卡 Day 21 | Daily Leetcode Practice</title>
   
 
 
@@ -161,7 +160,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2024/11/27/Day-2/">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/01/31/Day-21/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
@@ -174,12 +173,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="代码随想录训练营打卡 Day 2 | 209. Minimum Size Subarray Sum, 59. Spiral Matrix II, MinCut of n*m matrix | Daily Leetcode Practice">
+      <meta itemprop="name" content="代码随想录训练营打卡 Day 21 | Daily Leetcode Practice">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          代码随想录训练营打卡 Day 2 | 209. Minimum Size Subarray Sum, 59. Spiral Matrix II, MinCut of n*m matrix
+          代码随想录训练营打卡 Day 21
         </h1>
 
         <div class="post-meta-container">
@@ -189,24 +188,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2024-11-27 13:00:52" itemprop="dateCreated datePublished" datetime="2024-11-27T13:00:52-06:00">2024-11-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-12-04 02:01:54" itemprop="dateModified" datetime="2024-12-04T02:01:54-06:00">2024-12-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/leetcodeproblems/categories/Medium/" itemprop="url" rel="index"><span itemprop="name">Medium</span></a>
-        </span>
+      <time title="Created: 2025-01-31 14:24:14 / Modified: 14:59:43" itemprop="dateCreated datePublished" datetime="2025-01-31T14:24:14-06:00">2025-01-31</time>
     </span>
 
   
@@ -218,63 +202,46 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>打卡第2天！要点：Sliding window, pointers, boundaries, prefix sum。矩阵最好用例子来区分row，col免得搞混。PreSum可以让遍历更有效，减少时间复杂度。</p>
+    <div class="post-body" itemprop="articleBody"><p>如果想要保留左右节点的值，让其在while循环时不会指向null，那就用while（cur.left！&#x3D; null）或者（cur.right！&#x3D;null）<br>删除一个节点最简单的操作是将母节点指向新的节点，找准哪个是新节点是关键</p>
 <span id="more"></span>
 
-<ol start="209">
-<li>Minimum Size Subarray Sum</li>
+<ol start="669">
+<li>Trim a BST<br>修建BST的难点在于，找到在low和high范围内的root之后，root的左右子树里面也会出现在range之外的节点，比如左子树可能有比low更小的节点，右子树可能有比high更大的节点，如何把这些节点修建掉</li>
+</ol>
+<p>修建的方法：</p>
+<ul>
+<li>对左子树：需要确保所有节点都大于或等于 low。如果某个节点的值小于 low，应该跳过该节点及其左子树，只保留其右子树中符合范围的部分。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(cur != <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">while</span>(cur.left != <span class="literal">null</span> &amp;&amp; cur.left.val &lt; low) &#123;</span><br><span class="line">        cur.left = cur.left.right;</span><br><span class="line">    &#125;</span><br><span class="line">    cur = cur.left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>对右子树：需要确保所有节点都小于或等于 high。如果某个节点的值大于 high，应该跳过该节点及其右子树，只保留其左子树中符合范围的部分。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (cur != <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">while</span> (cur.right != <span class="literal">null</span> &amp;&amp; cur.right.val &gt; high) &#123;</span><br><span class="line">        cur.right = cur.right.left;</span><br><span class="line">    &#125;</span><br><span class="line">    cur = cur.right</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>Recursion</p>
+<ol>
+<li>修剪根节点：</li>
 </ol>
 <ul>
-<li>Brute force: calculate every sum of subarray from each position, if sum &gt;&#x3D; target, keep track of the minimum and break the loop;<ul>
-<li>Time O(N^2): the compute of subarray is redundant. E.g. nums &#x3D; [2,3,1,4,5] target &#x3D; 5, when slow &#x3D; 0 &#x3D;&gt; 2, 2+3, 2+3+1, 2+3+1+4. 2+3+1+4+5, when slow &#x3D; 1, the last four sums are calculated again.</li>
+<li>如果当前节点的值小于 low，那么整棵左子树都不可能在范围内，因此直接修剪为右子树的修剪结果。</li>
+<li>如果当前节点的值大于 high，那么整棵右子树都不可能在范围内，因此直接修剪为左子树的修剪结果。</li>
 </ul>
-</li>
-<li>Sliding window:<ul>
-<li>expand the window with fast pointer &#x3D;&gt; add nums[fast] to the current sum</li>
-<li>shrink the window with slow pointer &#x3D;&gt; while (sum &gt;&#x3D; target), update (fast - slow + 1)</li>
-</ul>
-</li>
-</ul>
-<ol start="59">
-<li>Spiral Matrix II</li>
+<ol start="2">
+<li>递归修剪左右子树：</li>
 </ol>
 <ul>
-<li>identify the path &#x3D;&gt; top (left -&gt; right) &#x3D;&gt; right (top -&gt; bottom) &#x3D;&gt; bottom (right -&gt; left) &#x3D;&gt; left (bottom -&gt; top)</li>
-<li>shrink the boundaries and repeat</li>
-<li>keep the variables clear of what they refer to:<ul>
-<li>row: top, bottom; col: left, right</li>
-<li>e.g. n &#x3D; 3, [0][0] -&gt; [top][left]<br>                              (top++)<br>        [0][2] -&gt; [top][right]<br>                              (right–)<br>        [2][2] -&gt; [bottom][right]<br>                              (bottom–)<br>        [2][0] -&gt; [bottom][left]<br>                              (left++)</li>
-<li>avoid overriding numbers</li>
+<li>如果当前节点值在 [low, high] 范围内，则递归修剪其左子树和右子树，并更新左右指针。<br>返回修剪结果：</li>
 </ul>
+<p>3.对于每个节点，返回修剪后的子树（或者直接返回符合范围的子树）。</p>
+<ol start="108">
+<li><p>Convert Sorted Array to Binary Search Tree<br>这道题用递归比较简单，要注意左右区间的定义，如果是start &#x3D; 0， end&#x3D; nums.length - 1，那就是左右都取index值，也就是左闭右闭，那么base条件就转化成“什么时候成为空集？”那当然是start &gt; end不包含start&#x3D;end，因为等于的情况还会有非空值<br>那么递归的操作也就直接取end &#x3D; mid - 1， start &#x3D; mid + 1</p>
 </li>
-</ul>
-<p>Sum of Subarray </p>
+<li><p>Convert BST to Greater Tree<br>递归解法总结<br>利用 BST 的中序遍历性质：</p>
+</li>
+</ol>
 <ul>
-<li>Brute force: interating through the subarray for every interval query. Time O(q * k), q is the number of queries, k is the average length of subarray</li>
-<li>Prefix Sum: <ul>
-<li>Sum[a to b] &#x3D; p[b] - p[a - 1] (if a &gt; 0)</li>
-<li>special handling when a &#x3D;&#x3D; 0, as no prefix sum before index 0</li>
-</ul>
+<li><p>二叉搜索树的中序遍历会按 从小到大 的顺序访问节点。<br>  如果按 右-根-左 的顺序遍历，访问顺序将是 从大到小。</p>
 </li>
-<li>java.util.Scanner<ul>
-<li>Scanner scanner &#x3D; new Scanner(System.in)</li>
-<li>scanner.nextInt(), scanner.hasNextInt()</li>
-<li>scanner.close()</li>
-</ul>
+<li><p>维护一个累加器变量（例如 sum）：<br>  用来记录当前遍历过程中所有比当前节点大的节点值之和。<br>  每访问一个节点时，将累加器的值加到节点上，并更新累加器为当前节点的新值。</p>
 </li>
-</ul>
-<p>MinCut of n*m matrix</p>
-<ul>
-<li>Use intuitive algo: compare the horizontal cut and the vertical cut, find the min;</li>
-<li>Create the matrix and calculate the total sum</li>
-<li>Calculate the row sums, so row[i] &#x3D; the sum of each row</li>
-<li>Do the same for col</li>
-<li>Calculate the min for row and col respectively and compare<ul>
-<li>cut &#x3D;&gt; preSum of the row[i] preSum +&#x3D; row[i]</li>
-<li>remainSum &#x3D; totalSum - preSum;</li>
-<li>diff &#x3D; Math.abs(preSum, remainSum)</li>
-<li>min(diff, minDiff)</li>
-</ul>
+<li><p>递归步骤：<br>  按右-根-左的顺序递归遍历树：<br>  递归访问右子树。<br>  更新当前节点的值：node.val +&#x3D; sum，并更新 sum。<br>  递归访问左子树。<br>  返回根节点：</p>
+</li>
+<li><p>遍历完成后，树已被修改，返回根节点即可</p>
 </li>
 </ul>
 
@@ -286,22 +253,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/leetcodeproblems/tags/two-pointer/" rel="tag"># two-pointer</a>
-              <a href="/leetcodeproblems/tags/array/" rel="tag"># array</a>
+              <a href="/leetcodeproblems/tags/BST/" rel="tag"># BST</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/11/26/Day-1/" rel="prev" title="代码随想录训练营打卡 Day 1 ｜ 704-Binary Search, 27.Remove elements, 977.Square of sorted array">
-                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 1 ｜ 704-Binary Search, 27.Remove elements, 977.Square of sorted array
+                <a href="/leetcodeproblems/2025/01/29/Day-20/" rel="prev" title="代码随想录训练营打卡 Day 20 ｜ 235(LCA for BST), 701(insertion),450 (deletion)">
+                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 20 ｜ 235(LCA for BST), 701(insertion),450 (deletion)
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/11/29/Day-3/" rel="next" title="代码随想录训练营打卡 Day 3 | 203. Remove Linked List Elements, 207. Reverse the Linked list, 707. Design Linked List">
-                  代码随想录训练营打卡 Day 3 | 203. Remove Linked List Elements, 207. Reverse the Linked list, 707. Design Linked List <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
