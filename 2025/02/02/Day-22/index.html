@@ -19,28 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
 
-    <meta name="description" content="打卡第10天！用栈并不局限于用Stack，而是要用Stack的思维，也就是如何操作最后进去的元素，可以用Array，StringBuilder，Deque等可以接触到最尾元素的结构来操作。">
+    <meta name="description" content="回溯第一天！把模版理解好很有用，剪枝的分析需要记住!回溯的本质是遍历，只是用递归的方式让遍历可代码化 1234567891011voic backtracking(参数) &#123;if(满足条件) &#123;    保存当前解;    return;&#125;for (选择：当前可能有的所有选择) &#123;    做出选择    backtracking(新的参数);    回溯操作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录训练营打卡 Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String">
-<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2024/12/06/Day-10/index.html">
+<meta property="og:title" content="代码随想录训练营打卡 Day 22 ｜ 77.combination, 216, 17">
+<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/02/02/Day-22/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
-<meta property="og:description" content="打卡第10天！用栈并不局限于用Stack，而是要用Stack的思维，也就是如何操作最后进去的元素，可以用Array，StringBuilder，Deque等可以接触到最尾元素的结构来操作。">
+<meta property="og:description" content="回溯第一天！把模版理解好很有用，剪枝的分析需要记住!回溯的本质是遍历，只是用递归的方式让遍历可代码化 1234567891011voic backtracking(参数) &#123;if(满足条件) &#123;    保存当前解;    return;&#125;for (选择：当前可能有的所有选择) &#123;    做出选择    backtracking(新的参数);    回溯操作">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-12-06T16:21:40.000Z">
-<meta property="article:modified_time" content="2024-12-06T21:29:08.975Z">
+<meta property="article:published_time" content="2025-02-02T12:12:54.000Z">
+<meta property="article:modified_time" content="2025-02-03T00:05:56.485Z">
 <meta property="article:author" content="Peggie">
-<meta property="article:tag" content="Stack">
-<meta property="article:tag" content="Queue">
+<meta property="article:tag" content="backtracking">
+<meta property="article:tag" content="pruning">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2024/12/06/Day-10/">
+<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2025/02/02/Day-22/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/12/06/Day-10/","path":"2024/12/06/Day-10/","title":"代码随想录训练营打卡 Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/02/02/Day-22/","path":"2025/02/02/Day-22/","title":"代码随想录训练营打卡 Day 22 ｜ 77.combination, 216, 17"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>代码随想录训练营打卡 Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String | Daily Leetcode Practice</title>
+<title>代码随想录训练营打卡 Day 22 ｜ 77.combination, 216, 17 | Daily Leetcode Practice</title>
   
 
 
@@ -161,7 +161,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2024/12/06/Day-10/">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/02/02/Day-22/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
@@ -174,12 +174,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="代码随想录训练营打卡 Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String | Daily Leetcode Practice">
+      <meta itemprop="name" content="代码随想录训练营打卡 Day 22 ｜ 77.combination, 216, 17 | Daily Leetcode Practice">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          代码随想录训练营打卡 Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String
+          代码随想录训练营打卡 Day 22 ｜ 77.combination, 216, 17
         </h1>
 
         <div class="post-meta-container">
@@ -191,16 +191,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-12-06 10:21:40 / Modified: 15:29:08" itemprop="dateCreated datePublished" datetime="2024-12-06T10:21:40-06:00">2024-12-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/leetcodeproblems/categories/Easy/" itemprop="url" rel="index"><span itemprop="name">Easy</span></a>
-        </span>
+      <time title="Created: 2025-02-02 06:12:54 / Modified: 18:05:56" itemprop="dateCreated datePublished" datetime="2025-02-02T06:12:54-06:00">2025-02-02</time>
     </span>
 
   
@@ -212,55 +203,23 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>打卡第10天！用栈并不局限于用Stack，而是要用Stack的思维，也就是如何操作最后进去的元素，可以用Array，StringBuilder，Deque等可以接触到最尾元素的结构来操作。</p>
+    <div class="post-body" itemprop="articleBody"><p>回溯第一天！把模版理解好很有用，剪枝的分析需要记住!<br>回溯的本质是遍历，只是用递归的方式让遍历可代码化</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">voic <span class="title function_">backtracking</span><span class="params">(参数)</span> &#123;</span><br><span class="line"><span class="keyword">if</span>(满足条件) &#123;</span><br><span class="line">    保存当前解;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (选择：当前可能有的所有选择) &#123;</span><br><span class="line">    做出选择</span><br><span class="line">    backtracking(新的参数);</span><br><span class="line">    回溯操作 <span class="comment">//撤销上一层的选择</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <span id="more"></span>
-
-<ol start="232">
-<li>Implement Queue using Stacks</li>
+<ol start="77">
+<li>Combination<br>剪枝：<br>&#x2F;&#x2F; 如果当i从start开始递归时，最多有（end - i + 1）个数字可选<br>&#x2F;&#x2F; 只有当剩余数字&gt;&#x3D;还需要数字数量时，递归才有意义<br>&#x2F;&#x2F; (end - i + 1) &gt;&#x3D; (k - combo.size())<br>&#x2F;&#x2F; i &lt;&#x3D; end - (k - combo.size()) + 1</li>
 </ol>
-<ul>
-<li>two stacks<ul>
-<li>one for getting the input</li>
-<li>one for producing the output</li>
-<li>when we need to swap the order, pop everything to the output stack, once it’s done push them back to the input stack</li>
-</ul>
-</li>
-</ul>
-<ol start="225">
-<li>Implement Stack using Queues</li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> start; i &lt;=  end - (k - combo.size()) + <span class="number">1</span>; i++) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="216">
+<li>Combo Sum III<br>广度：i&#x3D;1-9数字<br>深度：i + 1<br>剪枝：<br>剪枝 1：当前和超过目标<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (sum + i &gt; n) <span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+如果 sum + i &gt; n，再加入数字 i 会超过目标 n，无需继续递归，直接结束循环。</li>
 </ol>
-<ul>
-<li>two queues<ul>
-<li>the way to reverse the Queue: for every push, polling all the elements from q1 first and store it in q2 temporarily, and then add the lastest element to q1 first, then polling everything back to q1</li>
-<li>q1[], q2[] &#x3D;&gt; push(1)<br>q1[1], q2[] &#x3D;&gt; push(2)<br>q1[], q2[1] -&gt;<br>q1[2], q2[1] -&gt;<br>q1[2, 1], q2[] &#x3D;&gt;push(3)<br>q1[], q2[2, 1]<br>q1[3], q2[2, 1]<br>q1[3, 2, 1], q2[]</li>
-<li>Queue, unlike Stack, will always keep the same order when you transfer one queue to another</li>
-<li>The way to keep is reverse is to empty the queue and always push the lastest to an empty queue, this way you can keep the lastest push at the begining</li>
-</ul>
-</li>
-</ul>
-<ol start="20">
-<li>Valid Parentheses</li>
+<p>剪枝 2：剩余数字不足以凑满 k</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (comboSum.size() + (<span class="number">9</span> - i + <span class="number">1</span>) &lt; k) <span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+<p>如果当前已选数字数量 comboSum.size() 和剩余数字数量 (9 - i + 1) 之和不足以达到 k，没有必要再尝试后续的数字。</p>
+<ol start="17">
+<li>Letter Combo of a Phone #<br>总结：for循环来控制树的广度（用来遍历数字对应String的每个字符）<br>backtrack的参数来控制树的深度（phone#中有几个字符）<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">      <span class="string">&quot;&quot;</span></span><br><span class="line">    / | \</span><br><span class="line">  a   b   <span class="title function_">c</span>  <span class="params">(<span class="number">2</span> -&gt; <span class="string">&quot;abc&quot;</span>)</span> (广度)</span><br><span class="line"> /|\  /|\  /|\                  ｜深度为digits.length（）</span><br><span class="line">d e f d e f d e <span class="title function_">f</span> <span class="params">(<span class="number">3</span> -&gt; <span class="string">&quot;def&quot;</span>)</span></span><br></pre></td></tr></table></figure></li>
 </ol>
-<ul>
-<li>push all the left parentheses</li>
-<li>pop the right parenthese when:<ul>
-<li>stack is not empty &amp;&amp; it matches the left parenthese</li>
-<li>else return false</li>
-</ul>
-</li>
-<li>return if stack is empty</li>
-</ul>
-<ol start="1047">
-<li>Remove All Adjacent Duplicates In String</li>
-</ol>
-<ul>
-<li>Intuition: use <code>stack</code> and <code>StringBuilder</code> &#x3D;&gt; very slow (50%)</li>
-<li>Optimized: <ul>
-<li>Only use <code>StringBuilder</code></li>
-<li>delete the last char of the sb using <code>sb.deleteCharAt(len - 1)</code></li>
-</ul>
-</li>
-</ul>
 
     </div>
 
@@ -270,22 +229,19 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/leetcodeproblems/tags/Stack/" rel="tag"># Stack</a>
-              <a href="/leetcodeproblems/tags/Queue/" rel="tag"># Queue</a>
+              <a href="/leetcodeproblems/tags/backtracking/" rel="tag"># backtracking</a>
+              <a href="/leetcodeproblems/tags/pruning/" rel="tag"># pruning</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/12/05/Day-9/" rel="prev" title="代码随想录训练营打卡 Day 9 | 151. Reverse Words in a String, 55.右旋转字符串, 28. strStr()">
-                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 9 | 151. Reverse Words in a String, 55.右旋转字符串, 28. strStr()
+                <a href="/leetcodeproblems/2025/01/31/Day-21/" rel="prev" title="代码随想录训练营打卡 Day 21 ｜ 669，108，538">
+                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 21 ｜ 669，108，538
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/12/08/Day-11/" rel="next" title="代码随想录训练营打卡 Day 11 | 150. Evaluate RPN， 239. Sliding Window Maximum， 347. Top K Frequent Elements">
-                  代码随想录训练营打卡 Day 11 | 150. Evaluate RPN， 239. Sliding Window Maximum， 347. Top K Frequent Elements <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
