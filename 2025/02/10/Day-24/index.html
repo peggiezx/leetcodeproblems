@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
 
-    <meta name="description" content="今天复习了：1）怎样分隔和遍历String；2）怎样跳过重复元素学习了：遍历子集需要记录所有子集的终止条件写法  Restore IP address  跟131. partition很像，用string partition的思路去分隔input s。 12345for (int i &#x3D; start; i &lt; s.lenght(); i++) &#123;    String cur &#x3D;">
+    <meta name="description" content="今天复习了：1）怎样分隔和遍历String；2）怎样跳过重复元素学习了：遍历子集需要记录所有子集的终止条件写法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录训练营打卡 Day 24 | 93. Restore IP address">
+<meta property="og:title" content="代码随想录训练营打卡 Day 24 | 93. Restore IP address, 78.Subset, 90. SubsetII">
 <meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/02/10/Day-24/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
-<meta property="og:description" content="今天复习了：1）怎样分隔和遍历String；2）怎样跳过重复元素学习了：遍历子集需要记录所有子集的终止条件写法  Restore IP address  跟131. partition很像，用string partition的思路去分隔input s。 12345for (int i &#x3D; start; i &lt; s.lenght(); i++) &#123;    String cur &#x3D;">
+<meta property="og:description" content="今天复习了：1）怎样分隔和遍历String；2）怎样跳过重复元素学习了：遍历子集需要记录所有子集的终止条件写法">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-02-10T14:13:50.000Z">
-<meta property="article:modified_time" content="2025-02-10T16:28:04.059Z">
+<meta property="article:modified_time" content="2025-02-10T16:30:47.220Z">
 <meta property="article:author" content="Peggie">
 <meta property="article:tag" content="backtracking">
 <meta property="article:tag" content="combination">
@@ -38,10 +38,10 @@
 <link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2025/02/10/Day-24/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/02/10/Day-24/","path":"2025/02/10/Day-24/","title":"代码随想录训练营打卡 Day 24 | 93. Restore IP address"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/02/10/Day-24/","path":"2025/02/10/Day-24/","title":"代码随想录训练营打卡 Day 24 | 93. Restore IP address, 78.Subset, 90. SubsetII"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>代码随想录训练营打卡 Day 24 | 93. Restore IP address | Daily Leetcode Practice</title>
+<title>代码随想录训练营打卡 Day 24 | 93. Restore IP address, 78.Subset, 90. SubsetII | Daily Leetcode Practice</title>
   
 
 
@@ -175,12 +175,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="代码随想录训练营打卡 Day 24 | 93. Restore IP address | Daily Leetcode Practice">
+      <meta itemprop="name" content="代码随想录训练营打卡 Day 24 | 93. Restore IP address, 78.Subset, 90. SubsetII | Daily Leetcode Practice">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          代码随想录训练营打卡 Day 24 | 93. Restore IP address
+          代码随想录训练营打卡 Day 24 | 93. Restore IP address, 78.Subset, 90. SubsetII
         </h1>
 
         <div class="post-meta-container">
@@ -192,7 +192,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2025-02-10 08:13:50 / Modified: 10:28:04" itemprop="dateCreated datePublished" datetime="2025-02-10T08:13:50-06:00">2025-02-10</time>
+      <time title="Created: 2025-02-10 08:13:50 / Modified: 10:30:47" itemprop="dateCreated datePublished" datetime="2025-02-10T08:13:50-06:00">2025-02-10</time>
     </span>
 
   
@@ -204,15 +204,12 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><span id="more"></span>
-<p>今天复习了：1）怎样分隔和遍历String；2）怎样跳过重复元素<br>学习了：遍历子集需要记录所有子集的终止条件写法</p>
+    <div class="post-body" itemprop="articleBody"><p>今天复习了：1）怎样分隔和遍历String；2）怎样跳过重复元素<br>学习了：遍历子集需要记录所有子集的终止条件写法</p>
+<span id="more"></span>
+
 <ol start="93">
-<li>Restore IP address</li>
-</ol>
-<p>跟131. partition很像，用string partition的思路去分隔input s。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> start; i &lt; s.lenght(); i++) &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">cur</span> <span class="operator">=</span> s.substring(start, i + <span class="number">1</span>);</span><br><span class="line">    ...</span><br><span class="line">    backtracking(s, i + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>需要注意的是：</p>
-<ol>
+<li>Restore IP address<br>跟131. partition很像，用string partition的思路去分隔input s。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> start; i &lt; s.lenght(); i++) &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">cur</span> <span class="operator">=</span> s.substring(start, i + <span class="number">1</span>);</span><br><span class="line">    ...</span><br><span class="line">    backtracking(s, i + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+需要注意的是：</li>
 <li>从SubString转换为Num的时候，要确认substr的长度在1到3之间</li>
 <li>如果字串长度大于1，必须要确保它不以‘0’开头<br>剪枝优化：<br>如果当前子串长度超过 3 或者转换后的数值大于 255，则直接停止当前循环，避免不必要的递归调用。<br>当剩余字符数量与剩余段数不匹配时，也可以提前剪枝。</li>
 </ol>
