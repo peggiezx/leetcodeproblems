@@ -118,7 +118,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/leetcodeproblems/archives/">
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -128,7 +128,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -145,6 +145,185 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/02/10/Day-24/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
+      <meta itemprop="name" content="Peggie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/leetcodeproblems/2025/02/10/Day-24/" class="post-title-link" itemprop="url">代码随想录训练营打卡 Day 24 | 93. Restore IP address</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-02-10 08:13:50 / Modified: 10:28:04" itemprop="dateCreated datePublished" datetime="2025-02-10T08:13:50-06:00">2025-02-10</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <span id="more"></span>
+<p>今天复习了：1）怎样分隔和遍历String；2）怎样跳过重复元素<br>学习了：遍历子集需要记录所有子集的终止条件写法</p>
+<ol start="93">
+<li>Restore IP address</li>
+</ol>
+<p>跟131. partition很像，用string partition的思路去分隔input s。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> start; i &lt; s.lenght(); i++) &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">cur</span> <span class="operator">=</span> s.substring(start, i + <span class="number">1</span>);</span><br><span class="line">    ...</span><br><span class="line">    backtracking(s, i + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要注意的是：</p>
+<ol>
+<li>从SubString转换为Num的时候，要确认substr的长度在1到3之间</li>
+<li>如果字串长度大于1，必须要确保它不以‘0’开头<br>剪枝优化：<br>如果当前子串长度超过 3 或者转换后的数值大于 255，则直接停止当前循环，避免不必要的递归调用。<br>当剩余字符数量与剩余段数不匹配时，也可以提前剪枝。</li>
+</ol>
+<p>提醒自己：<br>StringBuilder的回溯</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">lenBefore</span> <span class="operator">=</span> sb.length();</span><br><span class="line">...</span><br><span class="line">backtracking(s, i + <span class="number">1</span>);</span><br><span class="line">sb.setLength(lenBefore);</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<ol start="78">
+<li><p>Subset<br>遍历整棵树的时候把所有节点都记录下来，在判定终止条件之前就要完成。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">res.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(subset));</span><br><span class="line"><span class="keyword">if</span> (start &gt;= nums.length) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Subset的回溯</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">subset.add（）;</span><br><span class="line">...</span><br><span class="line">backtracking(s, i + <span class="number">1</span>);</span><br><span class="line">subset.removeLast（）；</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Subset II</p>
+</li>
+</ol>
+<p>在递归循环中加入以下逻辑：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (i &gt; startIdx &amp;&amp; candidates[i] == candidates[i - <span class="number">1</span>]) <span class="keyword">continue</span>;</span><br></pre></td></tr></table></figure>
+<p>i &gt; startIdx：确保这是同一层递归中的重复元素。<br>candidates[i] &#x3D;&#x3D; candidates[i - 1]：当前元素和前一个元素相同。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/02/02/Day-23/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
+      <meta itemprop="name" content="Peggie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/leetcodeproblems/2025/02/02/Day-23/" class="post-title-link" itemprop="url">代码随想录训练营打卡 Day 23 | 39. Combo Sum (unlimited use), 40 combo sum, 131.</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-02-02 18:35:52" itemprop="dateCreated datePublished" datetime="2025-02-02T18:35:52-06:00">2025-02-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-02-07 15:35:30" itemprop="dateModified" datetime="2025-02-07T15:35:30-06:00">2025-02-07</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>继续套用模版解决backtracking的问题，只要明确哪个变量控制广度，哪个变量控制深度，都不难，加油！</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/leetcodeproblems/2025/02/02/Day-23/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -182,9 +361,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2025-02-02 06:12:54 / Modified: 18:05:56" itemprop="dateCreated datePublished" datetime="2025-02-02T06:12:54-06:00">2025-02-02</time>
+      <time title="Created: 2025-02-02 06:12:54" itemprop="dateCreated datePublished" datetime="2025-02-02T06:12:54-06:00">2025-02-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-02-07 15:35:30" itemprop="dateModified" datetime="2025-02-07T15:35:30-06:00">2025-02-07</time>
     </span>
 
   
@@ -346,9 +531,24 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2025-01-29 02:29:10 / Modified: 04:04:03" itemprop="dateCreated datePublished" datetime="2025-01-29T02:29:10-06:00">2025-01-29</time>
+      <time title="Created: 2025-01-29 02:29:10" itemprop="dateCreated datePublished" datetime="2025-01-29T02:29:10-06:00">2025-01-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-02-07 15:35:30" itemprop="dateModified" datetime="2025-02-07T15:35:30-06:00">2025-02-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/leetcodeproblems/categories/Medium/" itemprop="url" rel="index"><span itemprop="name">Medium</span></a>
+        </span>
     </span>
 
   
@@ -472,7 +672,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/01/29/Day-17/">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/01/27/Day-17/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
@@ -490,7 +690,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/leetcodeproblems/2025/01/29/Day-17/" class="post-title-link" itemprop="url">代码随想录训练营打卡 Day 17 | 654. Maximum Binary Tree</a>
+          <a href="/leetcodeproblems/2025/01/27/Day-17/" class="post-title-link" itemprop="url">代码随想录训练营打卡 Day 17 | 654. Maximum Binary Tree</a>
         </h2>
 
         <div class="post-meta-container">
@@ -500,9 +700,24 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2025-01-29 00:35:23 / Modified: 02:11:08" itemprop="dateCreated datePublished" datetime="2025-01-29T00:35:23-06:00">2025-01-29</time>
+      <time title="Created: 2025-01-27 01:29:52" itemprop="dateCreated datePublished" datetime="2025-01-27T01:29:52-06:00">2025-01-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-02-07 15:35:30" itemprop="dateModified" datetime="2025-02-07T15:35:30-06:00">2025-02-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/leetcodeproblems/categories/Medium/" itemprop="url" rel="index"><span itemprop="name">Medium</span></a>
+        </span>
     </span>
 
   
@@ -518,7 +733,7 @@
           <p>In recursion, always return the results of recursive calls when you need them. This ensures the solution propagates back through the call stack to the original caller.</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/leetcodeproblems/2025/01/29/Day-17/#more" rel="contents">
+              <a class="btn" href="/leetcodeproblems/2025/01/27/Day-17/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -808,192 +1023,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2024/12/09/Day-12/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
-      <meta itemprop="name" content="Peggie">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Daily Leetcode Practice">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Daily Leetcode Practice">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/leetcodeproblems/2024/12/09/Day-12/" class="post-title-link" itemprop="url">代码随想录训练营打卡 Day 13 | Binary Tree Traversal (Preorder, Inorder, Postorder, Levelorder)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-12-09 11:19:12" itemprop="dateCreated datePublished" datetime="2024-12-09T11:19:12-06:00">2024-12-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-12-13 11:55:33" itemprop="dateModified" datetime="2024-12-13T11:55:33-06:00">2024-12-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/leetcodeproblems/categories/Easy/" itemprop="url" rel="index"><span itemprop="name">Easy</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>狂刷10道层序遍历，很好加深了我对层序遍历的应用和理解。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/leetcodeproblems/2024/12/09/Day-12/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2024/12/08/Day-11/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
-      <meta itemprop="name" content="Peggie">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Daily Leetcode Practice">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Daily Leetcode Practice">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/leetcodeproblems/2024/12/08/Day-11/" class="post-title-link" itemprop="url">代码随想录训练营打卡 Day 11 | 150. Evaluate RPN， 239. Sliding Window Maximum， 347. Top K Frequent Elements</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-12-08 12:45:12" itemprop="dateCreated datePublished" datetime="2024-12-08T12:45:12-06:00">2024-12-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-01-19 09:49:16" itemprop="dateModified" datetime="2025-01-19T09:49:16-06:00">2025-01-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/leetcodeproblems/categories/Medium/" itemprop="url" rel="index"><span itemprop="name">Medium</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>拖了好几天终于补上了，继续刷题！要向目标前进！</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/leetcodeproblems/2024/12/08/Day-11/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/leetcodeproblems/page/2/">2</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/leetcodeproblems/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/leetcodeproblems/page/2/">2</a><a class="page-number" href="/leetcodeproblems/page/3/">3</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/leetcodeproblems/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
