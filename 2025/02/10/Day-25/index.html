@@ -19,30 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
 
-    <meta name="description" content="要看清题问的是什么，不要被无关紧要的信息误导思路，关于数组的题是要返回index还是值还是就判断是否存在。今天太困了，第四题还没有吃透剪枝的操作，明天继续。">
+    <meta name="description" content="排列的回溯，不需要startIdx，每次符合条件的排列都需要用到所有元素，用used[i]来记录哪个元素使用过，并在当层循环中跳过">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录训练营打卡 Day 7 | 454. 4Sum II, 383. Ransom Note, 15. 3Sum, 18. 4Sum">
-<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2024/12/02/Day-7/index.html">
+<meta property="og:title" content="代码随想录训练营打卡 Day 25 | 491, 46. Permutation, 47, Permutation II">
+<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/02/10/Day-25/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
-<meta property="og:description" content="要看清题问的是什么，不要被无关紧要的信息误导思路，关于数组的题是要返回index还是值还是就判断是否存在。今天太困了，第四题还没有吃透剪枝的操作，明天继续。">
+<meta property="og:description" content="排列的回溯，不需要startIdx，每次符合条件的排列都需要用到所有元素，用used[i]来记录哪个元素使用过，并在当层循环中跳过">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-12-03T05:12:34.000Z">
-<meta property="article:modified_time" content="2024-12-04T08:05:30.204Z">
+<meta property="article:published_time" content="2025-02-11T03:58:31.000Z">
+<meta property="article:modified_time" content="2025-02-13T04:46:38.384Z">
 <meta property="article:author" content="Peggie">
-<meta property="article:tag" content="array">
-<meta property="article:tag" content="hashmap">
-<meta property="article:tag" content="set">
-<meta property="article:tag" content="digital manipulation">
+<meta property="article:tag" content="backtracking">
+<meta property="article:tag" content="string partition">
+<meta property="article:tag" content="permutation">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2024/12/02/Day-7/">
+<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2025/02/10/Day-25/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/12/02/Day-7/","path":"2024/12/02/Day-7/","title":"代码随想录训练营打卡 Day 7 | 454. 4Sum II, 383. Ransom Note, 15. 3Sum, 18. 4Sum"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/02/10/Day-25/","path":"2025/02/10/Day-25/","title":"代码随想录训练营打卡 Day 25 | 491, 46. Permutation, 47, Permutation II"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>代码随想录训练营打卡 Day 7 | 454. 4Sum II, 383. Ransom Note, 15. 3Sum, 18. 4Sum | Daily Leetcode Practice</title>
+<title>代码随想录训练营打卡 Day 25 | 491, 46. Permutation, 47, Permutation II | Daily Leetcode Practice</title>
   
 
 
@@ -163,7 +162,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2024/12/02/Day-7/">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/02/10/Day-25/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
@@ -176,12 +175,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="代码随想录训练营打卡 Day 7 | 454. 4Sum II, 383. Ransom Note, 15. 3Sum, 18. 4Sum | Daily Leetcode Practice">
+      <meta itemprop="name" content="代码随想录训练营打卡 Day 25 | 491, 46. Permutation, 47, Permutation II | Daily Leetcode Practice">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          代码随想录训练营打卡 Day 7 | 454. 4Sum II, 383. Ransom Note, 15. 3Sum, 18. 4Sum
+          代码随想录训练营打卡 Day 25 | 491, 46. Permutation, 47, Permutation II
         </h1>
 
         <div class="post-meta-container">
@@ -192,23 +191,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2024-12-02 23:12:34" itemprop="dateCreated datePublished" datetime="2024-12-02T23:12:34-06:00">2024-12-02</time>
+      <time title="Created: 2025-02-10 21:58:31" itemprop="dateCreated datePublished" datetime="2025-02-10T21:58:31-06:00">2025-02-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-12-04 02:05:30" itemprop="dateModified" datetime="2024-12-04T02:05:30-06:00">2024-12-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/leetcodeproblems/categories/Medium/" itemprop="url" rel="index"><span itemprop="name">Medium</span></a>
-        </span>
+      <time title="Modified: 2025-02-12 22:46:38" itemprop="dateModified" datetime="2025-02-12T22:46:38-06:00">2025-02-12</time>
     </span>
 
   
@@ -220,43 +210,36 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>要看清题问的是什么，不要被无关紧要的信息误导思路，关于数组的题是要返回index还是值还是就判断是否存在。今天太困了，第四题还没有吃透剪枝的操作，明天继续。</p>
+    <div class="post-body" itemprop="articleBody"><p>排列的回溯，不需要startIdx，每次符合条件的排列都需要用到所有元素，用used[i]来记录哪个元素使用过，并在当层循环中跳过</p>
 <span id="more"></span>
 
-<ol start="454">
-<li>4Sum II<br>This problem focuses on finding the total number of tuples (a, b, c, d) such that the sum of elements from four integer arrays <code>nums1</code>, <code>nums2</code>, <code>nums3</code>, and <code>nums4</code> equals zero. Unlike other variants of the “4Sum” problem, it <strong>doesn’t</strong> require returning the indices of the elements.</li>
-</ol>
-<p>The approach simplifies the problem into two 2Sum computations:</p>
-<ul>
-<li>Compute all possible sums of pairs from <code>nums1</code> and <code>nums2</code>, and store the frequency of each sum in a hash table.</li>
-<li>For each possible sum of pairs from <code>nums3</code> and <code>nums4</code>, check if the negation of that sum exists in the hash table. If it does, the frequency from the hash table contributes to the count of valid tuples.</li>
-</ul>
-<ol start="383">
-<li>Ransom Note</li>
+<ol start="491">
+<li>Non-decreasing subsequences<br>递增判断：</li>
 </ol>
 <ul>
-<li>fixed-size and simple key sets (e.g. letters <code>a</code> to <code>z</code>) &#x3D;&gt; Use array instead of hashmap</li>
-<li>access speed (constant time O(1))</li>
-<li>memory efficiency (coniguous memory w overhead of storing keys or managing hash codes) </li>
-<li>no collision management</li>
+<li>判断当前数字是否符合递增要求，应该和当前构造的 subseq 的最后一个数字比较，而不是和原数组中相邻的数字比较。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!subseq.isEmpty() &amp;&amp; nums[i] &lt; subseq.get(subseq.size() - <span class="number">1</span>)) <span class="keyword">continue</span>;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<ol start="15">
-<li>3Sum<br>The problem focus on the numbers in the array not the index.</li>
-</ol>
+<p>原来的判断条件写的是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (i &gt; start &amp;&amp; nums[i] &lt; nums[i - <span class="number">1</span>] || set.contains(nums[i])) <span class="keyword">continue</span>;</span><br></pre></td></tr></table></figure>
+<p>这里的问题在于：</p>
 <ul>
-<li>Sort the array</li>
-<li>fix one number </li>
-<li>two sum w. two pointers</li>
-<li>skip duplicates: skip a, b, c respectively</li>
-<li>res.add(Arrays.asList(num[i], nums[left], nums[right]))</li>
+<li>比较对象不对：<br>条件中使用的是 nums[i] &lt; nums[i - 1]，这实际上比较的是原数组中相邻两个位置的数字，而不是当前构造的子序列（subseq）中的最后一个数字。例如，在递归过程中，当前子序列最后一个数字可能不是 nums[i-1]。</li>
+<li>进入递归i和start比较不对：<br>例如：start&#x3D;2<br>现在 subseq &#x3D; [4, 4]，循环从 i &#x3D; 2 开始。<br>i &#x3D; 2 时，nums[2] 为 3。<br>此时 i &#x3D;&#x3D; start，因此条件 i &gt; start 不成立，导致不会进行 nums[2] &lt; nums[1] 的比较；<br>于是即使 3 小于当前 subseq 中最后一个数字 4，也没有被过滤，直接加入 subseq。<br>最终 subseq 变成 [4, 4, 3]，而这明显不是递增（或者非降）的序列，因为 3 小于 4。</li>
 </ul>
-<ol start="18">
-<li>4Sum</li>
+<ol start="46">
+<li>Permutation<br>全排列问题要求使用给定集合中所有元素进行排列，不同的顺序构成不同的排列。关键在于如何在每一次递归中遍历所有元素，并保证每个排列都包含所有元素且不重复。</li>
 </ol>
-<ul>
-<li>same logic as 3Sum</li>
-<li>pruning a, b, c, d</li>
-</ul>
+<p>基本思路：</p>
+<p>递归与回溯：<br>我们使用递归的方式来构造排列。每一层递归对应排列中的一个位置。当当前排列的长度等于数组的长度时，说明构造出一个完整的排列，将其加入结果集中。</p>
+<p>选择与约束：<br>在每一层递归中，需要遍历整个数组，选取一个尚未被使用的元素来扩展当前排列。为防止同一元素被重复使用，我们引入一个 boolean 数组（或其他标记方法）来记录每个元素是否已经被加入当前排列。如果一个元素已被使用，则在当前层循环中跳过它。</p>
+<p>回溯操作：<br>在每次递归返回后，撤销上一步的选择（即移除最后添加的元素），同时将该元素在标记数组中重新标记为未使用。这样可以保证其他递归分支可以选择该元素，从而遍历所有可能的排列。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">After adding <span class="number">1</span>, path: [<span class="number">1</span>]</span><br><span class="line">After adding <span class="number">2</span>, path: [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">After adding <span class="number">3</span>, path: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">After removing <span class="number">3</span>, path: [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">After removing <span class="number">2</span>, path: [<span class="number">1</span>]</span><br><span class="line">After adding <span class="number">3</span>, path: [<span class="number">1</span>, <span class="number">3</span>]</span><br><span class="line">After adding <span class="number">2</span>, path: [<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>]</span><br><span class="line">After removing <span class="number">2</span>, path: [<span class="number">1</span>, <span class="number">3</span>]</span><br><span class="line">After removing <span class="number">3</span>, path: [<span class="number">1</span>]</span><br><span class="line">After removing <span class="number">1</span>, path: []</span><br></pre></td></tr></table></figure>
+
+<ol start="47">
+<li>Permutation II<br>在遍历过程中，如果当前元素 nums[i] 与前一个元素 nums[i-1] 相同，并且前一个元素还没有被使用（即 !used[i-1]），则跳过当前元素。条件通常写为：</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; nums[i] == nums[i-<span class="number">1</span>] &amp;&amp; !used[i-<span class="number">1</span>]) <span class="keyword">continue</span>;</span><br></pre></td></tr></table></figure>
+<p>这样保证了在同一递归层中，对于重复的数字，只会选择第一个出现的那个，从而避免了重复排列的产生。这个去重是从树层上操作，不同层可以允许重复的元素。</p>
 
     </div>
 
@@ -266,24 +249,20 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/leetcodeproblems/tags/array/" rel="tag"># array</a>
-              <a href="/leetcodeproblems/tags/hashmap/" rel="tag"># hashmap</a>
-              <a href="/leetcodeproblems/tags/set/" rel="tag"># set</a>
-              <a href="/leetcodeproblems/tags/digital-manipulation/" rel="tag"># digital manipulation</a>
+              <a href="/leetcodeproblems/tags/backtracking/" rel="tag"># backtracking</a>
+              <a href="/leetcodeproblems/tags/string-partition/" rel="tag"># string partition</a>
+              <a href="/leetcodeproblems/tags/permutation/" rel="tag"># permutation</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/12/02/Day-6/" rel="prev" title="代码随想录训练营打卡 Day 6 | 242. Valid Anagram, 349. Intersection of Two Arrays, 202. Happy Number, 1. Two Sums">
-                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 6 | 242. Valid Anagram, 349. Intersection of Two Arrays, 202. Happy Number, 1. Two Sums
+                <a href="/leetcodeproblems/2025/02/10/Day-24/" rel="prev" title="代码随想录训练营打卡 Day 24 | 93. Restore IP address, 78.Subset, 90. SubsetII">
+                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 24 | 93. Restore IP address, 78.Subset, 90. SubsetII
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/12/04/Day-8/" rel="next" title="代码随想录训练营打卡 Day 8 | 344. Reverse String, 541. Reverse String II, ReplaceNumbers">
-                  代码随想录训练营打卡 Day 8 | 344. Reverse String, 541. Reverse String II, ReplaceNumbers <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
