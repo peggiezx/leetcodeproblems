@@ -19,30 +19,22 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
 
-    <meta name="description" content="利用Binary Search Tree有序的特点，缩小搜索的范围">
-<meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录训练营打卡 Day 18 ｜530, 501, 236 LCA">
-<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/01/29/Day-18/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Daily Leetcode Practice">
+<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/tags/Easy/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
-<meta property="og:description" content="利用Binary Search Tree有序的特点，缩小搜索的范围">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-01-29T07:29:52.000Z">
-<meta property="article:modified_time" content="2025-01-29T10:04:29.640Z">
 <meta property="article:author" content="Peggie">
-<meta property="article:tag" content="BST">
-<meta property="article:tag" content="LCA">
-<meta property="article:tag" content="Binary Search Tree">
-<meta property="article:tag" content="InOrder">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2025/01/29/Day-18/">
+<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/tags/Easy/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/01/29/Day-18/","path":"2025/01/29/Day-18/","title":"代码随想录训练营打卡 Day 18 ｜530, 501, 236 LCA"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":"","permalink":"","path":"tags/Easy/index.html","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>代码随想录训练营打卡 Day 18 ｜530, 501, 236 LCA | Daily Leetcode Practice</title>
+<title>Tag: Easy | Daily Leetcode Practice</title>
   
 
 
@@ -152,120 +144,50 @@
 
     </div>
 
-    <div class="main-inner post posts-expand">
+    <div class="main-inner tag posts-collapse">
 
 
   
-
-
-<div class="post-block">
   
   
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/01/29/Day-18/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
-      <meta itemprop="name" content="Peggie">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Daily Leetcode Practice">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="代码随想录训练营打卡 Day 18 ｜530, 501, 236 LCA | Daily Leetcode Practice">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          代码随想录训练营打卡 Day 18 ｜530, 501, 236 LCA
+  <div class="post-block">
+    <div class="post-content">
+      <div class="collection-title">
+        <h1 class="collection-header">Easy
+          <small>Tag</small>
         </h1>
+      </div>
 
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
       
-
-      <time title="Created: 2025-01-29 01:29:52 / Modified: 04:04:29" itemprop="dateCreated datePublished" datetime="2025-01-29T01:29:52-06:00">2025-01-29</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody"><p>利用Binary Search Tree有序的特点，缩小搜索的范围</p>
-<span id="more"></span>
-<ol start="530">
-<li>Minimum Absolute Difference in BST<br>Naive approach:<br>因为BST是有序的，如果用inorder traversal那便会得到一个有序的数组，只需要计算相邻两个数的差值，找到最小即可<br>time complexity O(n)(traversal) + O(n)(computation) &#x3D; O(n)<br>space O(n) skewed, O(logN) balanced tree + O(n) traversal list to store node values</li>
-</ol>
-<p>Optimized approach:<br>We don’t need to store all the node values in the inorder traversal, we just need to keep track of the previous node –&gt; pre<br>WARNING: Java doesn’t update the primitive values in recursion calls, so we have to use class-level variables to ensure that these updates are globally accessible and correctly maintained across the recursion.</p>
-<p>Inorder traversal plus keep track of the previous TreeNode pre</p>
-<ul>
-<li>Recursion: a global TreeNode pre</li>
-<li>Iteration: inorder traversal <ul>
-<li>push the cur node to the left most node</li>
-<li>pop the current one</li>
-<li>traverse the right of the current node</li>
-</ul>
-</li>
-</ul>
-<ol start="501">
-<li>Modes of the BST<br>Naive approach:<br>Traverse all the nodes in order and count the frequency of the same number</li>
-</ol>
-<p>Optimized:<br>Use the pre node to track the previous node<br>if pre &#x3D;&#x3D; cur, freq ++; else freq &#x3D; 1;<br>compare the max_freq vs freq, if freq &gt; max_freq update the max_freq and clear the modes -&gt; add the number to the modes array<br>if max_freq &#x3D;&#x3D; freq, add the number to the modes array</p>
-<ol start="236">
-<li>LCA</li>
-</ol>
-<p>Use postorder traversal,<br>left：search p, q in the left subtree, left &#x3D; LCA(root.left, p, q)<br>right：search p, q in the right subtree, right &#x3D; LCA(root.right, p, q)<br>root：if left !&#x3D; null &amp;&amp; right !&#x3D; null -&gt; LCA is current node</p>
-
+    <div class="collection-year">
+      <span class="collection-header">2025</span>
     </div>
 
-    
-    
-    
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <div class="post-meta-container">
+        <time itemprop="dateCreated"
+              datetime="2025-02-13T23:43:47-06:00"
+              content="2025-02-13">
+          02-13
+        </time>
+      </div>
 
-    <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/leetcodeproblems/tags/BST/" rel="tag"># BST</a>
-              <a href="/leetcodeproblems/tags/LCA/" rel="tag"># LCA</a>
-              <a href="/leetcodeproblems/tags/Binary-Search-Tree/" rel="tag"># Binary Search Tree</a>
-              <a href="/leetcodeproblems/tags/InOrder/" rel="tag"># InOrder</a>
-          </div>
+      <div class="post-title">
+          <a class="post-title-link" href="/leetcodeproblems/2025/02/13/Day-27/" itemprop="url">
+            <span itemprop="name">代码随想录训练营打卡 Day-27 ｜ 贪心算法</span>
+          </a>
+      </div>
 
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/leetcodeproblems/2025/01/27/Day-17/" rel="prev" title="代码随想录训练营打卡 Day 17 | 654. Maximum Binary Tree">
-                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 17 | 654. Maximum Binary Tree
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/leetcodeproblems/2025/01/29/Day-20/" rel="next" title="代码随想录训练营打卡 Day 20 ｜ 235(LCA for BST), 701(insertion),450 (deletion)">
-                  代码随想录训练营打卡 Day 20 ｜ 235(LCA for BST), 701(insertion),450 (deletion) <i class="fa fa-angle-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
+      
+    </header>
   </article>
-</div>
 
-
-
-
-
+    </div>
+  </div>
+  
+  
+  
 
 </div>
   </main>
