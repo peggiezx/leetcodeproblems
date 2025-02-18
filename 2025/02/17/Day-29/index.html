@@ -19,27 +19,26 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
 
-    <meta name="description" content="狂刷10道层序遍历，很好加深了我对层序遍历的应用和理解。">
+    <meta name="description" content="贪心策略第三天，稍微有一点感觉了，但是还有那种不记得解题思路就根本无法下手的感觉">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录训练营打卡 Day 13 | Binary Tree Traversal (Preorder, Inorder, Postorder, Levelorder)">
-<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2024/12/09/Day-12/index.html">
+<meta property="og:title" content="代码随想录训练营打卡 | Day-29">
+<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/02/17/Day-29/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
-<meta property="og:description" content="狂刷10道层序遍历，很好加深了我对层序遍历的应用和理解。">
+<meta property="og:description" content="贪心策略第三天，稍微有一点感觉了，但是还有那种不记得解题思路就根本无法下手的感觉">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-12-09T17:19:12.000Z">
-<meta property="article:modified_time" content="2024-12-13T17:55:33.721Z">
+<meta property="article:published_time" content="2025-02-18T04:47:11.000Z">
+<meta property="article:modified_time" content="2025-02-18T06:19:04.448Z">
 <meta property="article:author" content="Peggie">
-<meta property="article:tag" content="Binary Tree Traversal">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2024/12/09/Day-12/">
+<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2025/02/17/Day-29/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/12/09/Day-12/","path":"2024/12/09/Day-12/","title":"代码随想录训练营打卡 Day 13 | Binary Tree Traversal (Preorder, Inorder, Postorder, Levelorder)"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/02/17/Day-29/","path":"2025/02/17/Day-29/","title":"代码随想录训练营打卡 | Day-29"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>代码随想录训练营打卡 Day 13 | Binary Tree Traversal (Preorder, Inorder, Postorder, Levelorder) | Daily Leetcode Practice</title>
+<title>代码随想录训练营打卡 | Day-29 | Daily Leetcode Practice</title>
   
 
 
@@ -160,7 +159,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2024/12/09/Day-12/">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/02/17/Day-29/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
@@ -173,12 +172,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="代码随想录训练营打卡 Day 13 | Binary Tree Traversal (Preorder, Inorder, Postorder, Levelorder) | Daily Leetcode Practice">
+      <meta itemprop="name" content="代码随想录训练营打卡 | Day-29 | Daily Leetcode Practice">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          代码随想录训练营打卡 Day 13 | Binary Tree Traversal (Preorder, Inorder, Postorder, Levelorder)
+          代码随想录训练营打卡 | Day-29
         </h1>
 
         <div class="post-meta-container">
@@ -189,23 +188,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2024-12-09 11:19:12" itemprop="dateCreated datePublished" datetime="2024-12-09T11:19:12-06:00">2024-12-09</time>
+      <time title="Created: 2025-02-17 22:47:11" itemprop="dateCreated datePublished" datetime="2025-02-17T22:47:11-06:00">2025-02-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-12-13 11:55:33" itemprop="dateModified" datetime="2024-12-13T11:55:33-06:00">2024-12-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/leetcodeproblems/categories/Easy/" itemprop="url" rel="index"><span itemprop="name">Easy</span></a>
-        </span>
+      <time title="Modified: 2025-02-18 00:19:04" itemprop="dateModified" datetime="2025-02-18T00:19:04-06:00">2025-02-18</time>
     </span>
 
   
@@ -217,30 +207,22 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>狂刷10道层序遍历，很好加深了我对层序遍历的应用和理解。</p>
+    <div class="post-body" itemprop="articleBody"><p>贪心策略第三天，稍微有一点感觉了，但是还有那种不记得解题思路就根本无法下手的感觉</p>
 <span id="more"></span>
-<ol start="144">
-<li><p>Binary Tree Preorder Traversal - Recursion</p>
+<ol start="134">
+<li><p>Gas Station<br>情况一：如果所有gas[i] - cost[i]的和为负数，则直接返回-1；<br>tank油量就是位置i gas[i] - cost[i]的剩余量叠加<br>情况二：如果在i发现tank小于0时，说明从当前起点到i的路程不够，那么说明从i出发不可能行，于是更新起点为i+1，同时重置tank油量为0，从新的起点开始计算tank油量<br>设定一个变量 tank 表示从当前候选起点出发时，行驶到当前位置时剩余的油量。<br>初始化三个变量：start &#x3D; 0（候选起点）、tank &#x3D; 0（当前累计剩余油量）、total &#x3D; 0（全程累计剩余油量，用于判断是否存在可行解）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">canCompleteCircuit</span><span class="params">(<span class="type">int</span>[] gas, <span class="type">int</span>[] cost)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">tank</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">total</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; gas.length; i++) &#123;</span><br><span class="line">            <span class="comment">//当前位置剩余油量</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">diff</span> <span class="operator">=</span> gas[i] - cost[i];</span><br><span class="line">            <span class="comment">// 从i位置起累积剩余油量</span></span><br><span class="line">            tank += diff;</span><br><span class="line">            <span class="comment">// 全程剩余油量</span></span><br><span class="line">            total += diff;</span><br><span class="line">            <span class="keyword">if</span> (tank &lt; <span class="number">0</span>) &#123;</span><br><span class="line">                start = i + <span class="number">1</span>;</span><br><span class="line">                tank = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (total &gt;= <span class="number">0</span>) <span class="keyword">return</span> start;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Binary Tree Inorder Traversal - Recursion</p>
+<li><p>Candy（双向贪心）<br>初始化：<br>给每个孩子至少发 1 个糖果，构造一个数组 candies，初始值全部为 1。</p>
 </li>
-<li><p>Binary Tree Postorder Traversal - Recursion</p>
+</ol>
+<p>从左向右遍历：</p>
+<p>对于从第二个孩子开始（i 从 1 开始），如果当前孩子的评分大于左边孩子，则令<br>candies[i] &#x3D; candies[i - 1] + 1<br>这样可以保证左侧邻居的条件满足。<br>从右向左遍历：</p>
+<p>对于从倒数第二个孩子开始（i 从 n-2 开始），如果当前孩子的评分大于右边孩子，则需要保证：<br>candies[i] &#x3D; max(candies[i], candies[i + 1] + 1)<br>这里取最大值是为了保证同时满足左侧和右侧的要求。<br>求和：<br>最后将数组中的所有糖果数相加，即为所需的最小总数。</p>
+<ol start="860">
+<li><p>Lemonade<br>当收到 10 美元时，你检查是否有至少一个 5 美元，如果有则给找零，并更新 fives 和 tens 的数量。<br>当收到 20 美元时，你优先使用一张 10 美元和一张 5 美元来找零（这样可以节省 5 美元找零，因为 10+5 比 5+5+5 更省 5 美元资源），否则退而求其次使用三张 5 美元。</p>
 </li>
-<li><p>Binary Tree Level Order Traversal - Queue</p>
-</li>
-<li><p>Binary Tree Level Order Traversal II - reverse the result</p>
-</li>
-<li><p>Binary Tree Right Side View - only put the last one at each level (i &#x3D; size - 1)</p>
-</li>
-<li><p>Average of Levels in Binary Tree</p>
-</li>
-<li><p>N-ary Tree Level Order Traversal</p>
-</li>
-<li><p>Find Largest Value in Each Tree Row<br>116, 117. Populating Next Right Pointers in Each Node </p>
-</li>
-<li><p>Maximum Depth of Binary Tree</p>
-</li>
-<li><p>Minimum Depth of Binary Tree</p>
+<li><p>Queue Reconstruction by Height<br>排序策略<br>按身高降序排序<br>先将所有人按照身高从高到低排序。如果两个人的身高相同，则按照 k 值从小到大排序。<br>原因：<br>身高较高的人对后面矮个子人的位置没有影响；<br>这样排序后，插入时再按照 k 值插入，就能保证前面有恰好 k 个人比当前人高或等高。</p>
 </li>
 </ol>
 
@@ -251,22 +233,16 @@
     
 
     <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/leetcodeproblems/tags/Binary-Tree-Traversal/" rel="tag"># Binary Tree Traversal</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/12/08/Day-11/" rel="prev" title="代码随想录训练营打卡 Day 11 | 150. Evaluate RPN， 239. Sliding Window Maximum， 347. Top K Frequent Elements">
-                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 11 | 150. Evaluate RPN， 239. Sliding Window Maximum， 347. Top K Frequent Elements
+                <a href="/leetcodeproblems/2025/02/17/Day-28/" rel="prev" title="代码随想录训练营打卡 Day-28 ｜ 贪心算法第二天">
+                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day-28 ｜ 贪心算法第二天
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/12/13/Day-14/" rel="next" title="代码随想录训练营打卡 Day 14 ｜ Inversion, Depth">
-                  代码随想录训练营打卡 Day 14 ｜ Inversion, Depth <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
