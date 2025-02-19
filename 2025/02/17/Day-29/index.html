@@ -21,13 +21,13 @@
 
     <meta name="description" content="贪心策略第三天，稍微有一点感觉了，但是还有那种不记得解题思路就根本无法下手的感觉">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录训练营打卡 | Day-29">
+<meta property="og:title" content="代码随想录训练营打卡 | Day-29 贪心算法第三天">
 <meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/02/17/Day-29/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
 <meta property="og:description" content="贪心策略第三天，稍微有一点感觉了，但是还有那种不记得解题思路就根本无法下手的感觉">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-02-18T04:47:11.000Z">
-<meta property="article:modified_time" content="2025-02-18T06:19:04.448Z">
+<meta property="article:modified_time" content="2025-02-19T06:02:18.058Z">
 <meta property="article:author" content="Peggie">
 <meta name="twitter:card" content="summary">
 
@@ -35,10 +35,10 @@
 <link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2025/02/17/Day-29/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/02/17/Day-29/","path":"2025/02/17/Day-29/","title":"代码随想录训练营打卡 | Day-29"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/02/17/Day-29/","path":"2025/02/17/Day-29/","title":"代码随想录训练营打卡 | Day-29 贪心算法第三天"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>代码随想录训练营打卡 | Day-29 | Daily Leetcode Practice</title>
+<title>代码随想录训练营打卡 | Day-29 贪心算法第三天 | Daily Leetcode Practice</title>
   
 
 
@@ -122,7 +122,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/leetcodeproblems/archives/">
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -172,12 +172,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="代码随想录训练营打卡 | Day-29 | Daily Leetcode Practice">
+      <meta itemprop="name" content="代码随想录训练营打卡 | Day-29 贪心算法第三天 | Daily Leetcode Practice">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          代码随想录训练营打卡 | Day-29
+          代码随想录训练营打卡 | Day-29 贪心算法第三天
         </h1>
 
         <div class="post-meta-container">
@@ -195,7 +195,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-02-18 00:19:04" itemprop="dateModified" datetime="2025-02-18T00:19:04-06:00">2025-02-18</time>
+      <time title="Modified: 2025-02-19 00:02:18" itemprop="dateModified" datetime="2025-02-19T00:02:18-06:00">2025-02-19</time>
     </span>
 
   
@@ -222,8 +222,12 @@
 <ol start="860">
 <li><p>Lemonade<br>当收到 10 美元时，你检查是否有至少一个 5 美元，如果有则给找零，并更新 fives 和 tens 的数量。<br>当收到 20 美元时，你优先使用一张 10 美元和一张 5 美元来找零（这样可以节省 5 美元找零，因为 10+5 比 5+5+5 更省 5 美元资源），否则退而求其次使用三张 5 美元。</p>
 </li>
-<li><p>Queue Reconstruction by Height<br>排序策略<br>按身高降序排序<br>先将所有人按照身高从高到低排序。如果两个人的身高相同，则按照 k 值从小到大排序。<br>原因：<br>身高较高的人对后面矮个子人的位置没有影响；<br>这样排序后，插入时再按照 k 值插入，就能保证前面有恰好 k 个人比当前人高或等高。</p>
-</li>
+<li><p>Queue Reconstruction by Height<br>排序策略<br>按身高降序排序<br>先将所有人按照身高从高到低排序。如果两个人的身高相同，则按照 k 值从小到大排序。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Arrays.sort(people, (a, b) -&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (a[<span class="number">0</span>] == b[<span class="number">0</span>]) <span class="keyword">return</span> a[<span class="number">1</span>] - b[<span class="number">1</span>]; <span class="comment">//如果身高一样，用人数ascending排</span></span><br><span class="line">    <span class="keyword">return</span> b[<span class="number">0</span>] - a[<span class="number">0</span>] <span class="comment">//descending</span></span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>原因：<br>身高较高的人对后面矮个子人的位置没有影响；<br>这样排序后，插入时再按照 k 值插入，就能保证前面有恰好 k 个人比当前人高或等高。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">LinkedList&lt;<span class="type">int</span>[]&gt; que = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span>[] person : people) &#123;</span><br><span class="line">    que.add(person[<span class="number">1</span>], person);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果转换为要求类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">que.toArray(<span class="keyword">new</span> <span class="title class_">int</span>[people.length][]);</span><br></pre></td></tr></table></figure></li>
 </ol>
 
     </div>
@@ -243,6 +247,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/leetcodeproblems/2025/02/18/Day-30/" rel="next" title="代码随想录训练营打卡 | Day-30 贪心算法数组重叠问题">
+                  代码随想录训练营打卡 | Day-30 贪心算法数组重叠问题 <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>
