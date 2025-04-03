@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/leetcodeproblems/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/leetcodeproblems/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/leetcodeproblems/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/leetcodeproblems/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/leetcodeproblems/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
+
+    <meta name="description" content="Change Coins可以重复选择同一个硬币，那么如果不选择该硬币dp[i][j] &#x3D; dp[i - 1][j]如果选择该硬币dp[i][j] +&#x3D; dp[i][j - coins[i - 1]]注意这里不是dp[i][j] +&#x3D; dp[i - 1][j - coins[i - 1]]因为我们可以重复取统一硬币，因此在同一层反复更新amount &#x3D; 5，coins&#x3D;【1，2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代码随想录训练营打卡 Day-37 | 动态规划背包问题05">
+<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/03/31/Day-37/index.html">
+<meta property="og:site_name" content="Daily Leetcode Practice">
+<meta property="og:description" content="Change Coins可以重复选择同一个硬币，那么如果不选择该硬币dp[i][j] &#x3D; dp[i - 1][j]如果选择该硬币dp[i][j] +&#x3D; dp[i][j - coins[i - 1]]注意这里不是dp[i][j] +&#x3D; dp[i - 1][j - coins[i - 1]]因为我们可以重复取统一硬币，因此在同一层反复更新amount &#x3D; 5，coins&#x3D;【1，2">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-04-01T04:50:14.000Z">
+<meta property="article:modified_time" content="2025-04-01T07:39:16.082Z">
+<meta property="article:author" content="Peggie">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2025/03/31/Day-37/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/03/31/Day-37/","path":"2025/03/31/Day-37/","title":"代码随想录训练营打卡 Day-37 | 动态规划背包问题05"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>代码随想录训练营打卡 Day-37 | 动态规划背包问题05 | Daily Leetcode Practice</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/leetcodeproblems/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/leetcodeproblems/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Daily Leetcode Practice</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/leetcodeproblems/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/leetcodeproblems/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/leetcodeproblems/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Peggie</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/leetcodeproblems/archives/">
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/leetcodeproblems/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/03/31/Day-37/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
+      <meta itemprop="name" content="Peggie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="代码随想录训练营打卡 Day-37 | 动态规划背包问题05 | Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          代码随想录训练营打卡 Day-37 | 动态规划背包问题05
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-03-31 23:50:14" itemprop="dateCreated datePublished" datetime="2025-03-31T23:50:14-05:00">2025-03-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-04-01 02:39:16" itemprop="dateModified" datetime="2025-04-01T02:39:16-05:00">2025-04-01</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><ol start="518">
+<li>Change Coins<br>可以重复选择同一个硬币，那么如果不选择该硬币<br><code>dp[i][j] = dp[i - 1][j]</code><br>如果选择该硬币<br><code>dp[i][j] += dp[i][j - coins[i - 1]]</code><br>注意这里不是<code>dp[i][j] += dp[i - 1][j - coins[i - 1]]</code>因为我们可以重复取统一硬币，因此在同一层反复更新<br>amount &#x3D; 5，coins&#x3D;【1，2，5】<br>初始化如果amount&#x3D;0，那么无论硬币值多少都可以选择不选因此选法为1<br>j    0  1  2  3  4  5</li>
+</ol>
+<p>coin &#x3D; 0，dp&#x3D;[1, 0, 0, 0, 0, 0]<br>coin &#x3D; 1, dp&#x3D;[1, 1, 1, 1, 1, 1]<br>coin &#x3D; 2, dp&#x3D;[1, 1, 2, 2, 3, 3]<br>coin &#x3D; 5, dp&#x3D;[1, 1, 2, 2, 3, 4]</p>
+<ol start="377">
+<li>Combinationa Sum IV<br>一、外层遍历“硬币”，内层遍历“金额” —— 得到组合数<br>为什么这样就“不考虑顺序”了？<br>因为先固定硬币再遍历金额，意味着：</li>
+</ol>
+<p>当你在处理 coin&#x3D;1 时，你把能用 1 凑到的所有方式先记录下来；</p>
+<p>然后再处理 coin&#x3D;2，相当于只是在现有基础上“添加可能使用 2”这种情况。</p>
+<p>这样某种组合中“1 和 2”的出现顺序并没有被单独枚举，重复的顺序会被合并成同一条路径。</p>
+<p>二、外层遍历“金额”，内层遍历“硬币” —— 得到排列数<br>为什么这样就“考虑顺序”了？<br>因为对于每个目标金额 t，你会“立即”去看所有可能放进 t 的硬币，这就相当于“先决定当前总额，再添加任意顺序的硬币”。</p>
+<p>某个 t 可能通过先放 1 再放 2，也可以先放 2 再放 1。不同顺序会在不同时刻更新 dp，不会合并成同一个组合。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/leetcodeproblems/2025/02/24/Day-36/" rel="prev" title="代码随想录训练营打卡 Day-36 | 动态规划背包问题04">
+                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day-36 | 动态规划背包问题04
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/leetcodeproblems/2025/04/02/Day-38/" rel="next" title="代码随想录训练营打卡 | Day-38 动态规划背包问题06">
+                  代码随想录训练营打卡 | Day-38 动态规划背包问题06 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Peggie</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/leetcodeproblems/js/comments.js"></script><script src="/leetcodeproblems/js/utils.js"></script><script src="/leetcodeproblems/js/motion.js"></script><script src="/leetcodeproblems/js/sidebar.js"></script><script src="/leetcodeproblems/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

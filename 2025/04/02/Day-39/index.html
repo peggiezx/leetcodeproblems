@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/leetcodeproblems/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/leetcodeproblems/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/leetcodeproblems/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/leetcodeproblems/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/leetcodeproblems/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
+
+    <meta name="description" content="House Robber：dp[i] 只依赖 dp[i-1] 和 dp[i-2]（同一维度） → 一重循环。每次要找到不抢改房子的状态和抢该房子的状态，可能需要分开求解再比较，而不是在一个状态转移公式中完成">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代码随想录训练营打卡 | Day-39 动态规划背包问题07">
+<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/04/02/Day-39/index.html">
+<meta property="og:site_name" content="Daily Leetcode Practice">
+<meta property="og:description" content="House Robber：dp[i] 只依赖 dp[i-1] 和 dp[i-2]（同一维度） → 一重循环。每次要找到不抢改房子的状态和抢该房子的状态，可能需要分开求解再比较，而不是在一个状态转移公式中完成">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-04-02T21:01:30.000Z">
+<meta property="article:modified_time" content="2025-04-03T05:40:53.108Z">
+<meta property="article:author" content="Peggie">
+<meta property="article:tag" content="house robber">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2025/04/02/Day-39/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/04/02/Day-39/","path":"2025/04/02/Day-39/","title":"代码随想录训练营打卡 | Day-39 动态规划背包问题07"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>代码随想录训练营打卡 | Day-39 动态规划背包问题07 | Daily Leetcode Practice</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/leetcodeproblems/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/leetcodeproblems/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Daily Leetcode Practice</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/leetcodeproblems/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/leetcodeproblems/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/leetcodeproblems/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Peggie</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/leetcodeproblems/archives/">
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/leetcodeproblems/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/04/02/Day-39/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
+      <meta itemprop="name" content="Peggie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="代码随想录训练营打卡 | Day-39 动态规划背包问题07 | Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          代码随想录训练营打卡 | Day-39 动态规划背包问题07
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-04-02 16:01:30" itemprop="dateCreated datePublished" datetime="2025-04-02T16:01:30-05:00">2025-04-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-04-03 00:40:53" itemprop="dateModified" datetime="2025-04-03T00:40:53-05:00">2025-04-03</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>House Robber：dp[i] 只依赖 dp[i-1] 和 dp[i-2]（同一维度） → 一重循环。每次要找到不抢改房子的状态和抢该房子的状态，可能需要分开求解再比较，而不是在一个状态转移公式中完成</p>
+<span id="more"></span>
+
+<ol start="198">
+<li><p>House Robber I</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">怎样判断只需 One Pass 还是 Nested Loops？</span><br><span class="line">数一数“状态所需的维度”</span><br><span class="line"></span><br><span class="line">如果一个 DP 只有 i 这一维，比如房屋索引（House Robber）、斐波那契数列、爬楼梯等等，通常只用一重循环就能完成。</span><br><span class="line"></span><br><span class="line">如果一个 DP 有两个主要变量要同时迭代（如物品 i + 容量 w），则通常双重循环。</span><br><span class="line"></span><br><span class="line">对第 i 间房子，要么偷要么不偷，“偷”就跳过 i-1；“不偷”就只拿 dp[i-1]；所以只要一次从左到右递推就能完成。</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[i] = max(dp[i - <span class="number">1</span>], dp[i - <span class="number">2</span>] + nums[i - <span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>House Robber II</p>
+</li>
+</ol>
+<p>因为房子是环形排列，你不能同时偷第 0 号房子和最后一号房子。</p>
+<p>于是把这个环状问题拆成两个 线性 的 House Robber 问题：</p>
+<p>不偷最后一号房子（下标 nums.length - 1），只在区间 [0, …, n-2] 里做 House Robber I；</p>
+<p>不偷第 0 号房子，只在区间 [1, …, n-1] 里做 House Robber I。</p>
+<p>对这两种情况分别求出最大可偷金额，然后返回二者的最大值即可。</p>
+<p>用两个helper function</p>
+<ul>
+<li>一个根据start和end处理新的subarray</li>
+<li>根据新的subarray来使用198的解法算出最大值，最后进行比较</li>
+</ul>
+<ol start="377">
+<li>House Robber III</li>
+</ol>
+<p>对于二叉树的 House Robber III，把每个节点拆成“抢该节点”和“不抢该节点”两种状态：<br>每个节点的状态用一个数组表示</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] status = <span class="keyword">new</span> <span class="title class_">int</span>[] &#123;<span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line"><span class="comment">// status[0] 表示不抢改房子的金额值</span></span><br><span class="line"><span class="comment">// status[1] 表示抢改房子的金额值</span></span><br></pre></td></tr></table></figure>
+<p>遍历的顺序采用post order traversal，这样就可以很便利地把子节点和母节点分开 -&gt; 先遍历子节点算出子节点的status，再返回母节点算出母节点的status</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//抢劫该房子: 该房子的金额+不抢左右两房子的金额</span></span><br><span class="line"><span class="type">int</span> <span class="variable">rob</span> <span class="operator">=</span> node.val + left[<span class="number">0</span>] + right[<span class="number">0</span>] </span><br><span class="line"><span class="comment">//不抢改房子：可以选择是否抢左子节点或右子节点的房子，取相对较大的值</span></span><br><span class="line"><span class="type">int</span> <span class="variable">notRob</span> <span class="operator">=</span> max(left[<span class="number">0</span>], left[<span class="number">1</span>]) + max(right[<span class="number">0</span>], right[<span class="number">1</span>])</span><br><span class="line"><span class="comment">//把抢和不抢记录为该节点的状态</span></span><br><span class="line">node.status = <span class="keyword">new</span> <span class="title class_">int</span>[]&#123;notRob, rob&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/leetcodeproblems/tags/house-robber/" rel="tag"># house robber</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/leetcodeproblems/2025/04/02/Day-38/" rel="prev" title="代码随想录训练营打卡 | Day-38 动态规划背包问题06">
+                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 | Day-38 动态规划背包问题06
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Peggie</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/leetcodeproblems/js/comments.js"></script><script src="/leetcodeproblems/js/utils.js"></script><script src="/leetcodeproblems/js/motion.js"></script><script src="/leetcodeproblems/js/sidebar.js"></script><script src="/leetcodeproblems/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
