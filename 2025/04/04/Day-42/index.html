@@ -19,28 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
 
-    <meta name="description" content="打开第三天！链表的基础复习，首先要明白链表的底层结构，特别是初始一个node时，明确是指向已有node还是创建一个新的node。另外是终止条件，避免NullPointerException。还有注意pointer的移动，是否需要保留现有值，哪个先移动，哪个后移动。">
+    <meta name="description" content="首先确定状态 -&gt; 买，卖，冷冻，再分析该状态下的动态转移 -&gt; 买有几种情况，卖有几种情况各种情况下的细节 -&gt; 是否有交易费，是否需要冷冻">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录训练营打卡 Day 3 | 203. Remove Linked List Elements, 207. Reverse the Linked list, 707. Design Linked List">
-<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2024/11/29/Day-3/index.html">
+<meta property="og:title" content="代码随想录训练营打卡 | Day 42 动态规划背包问题09">
+<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/04/04/Day-42/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
-<meta property="og:description" content="打开第三天！链表的基础复习，首先要明白链表的底层结构，特别是初始一个node时，明确是指向已有node还是创建一个新的node。另外是终止条件，避免NullPointerException。还有注意pointer的移动，是否需要保留现有值，哪个先移动，哪个后移动。">
+<meta property="og:description" content="首先确定状态 -&gt; 买，卖，冷冻，再分析该状态下的动态转移 -&gt; 买有几种情况，卖有几种情况各种情况下的细节 -&gt; 是否有交易费，是否需要冷冻">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-11-29T06:51:49.000Z">
-<meta property="article:modified_time" content="2024-12-04T08:02:45.576Z">
+<meta property="article:published_time" content="2025-04-05T04:17:56.000Z">
+<meta property="article:modified_time" content="2025-04-05T07:55:14.949Z">
 <meta property="article:author" content="Peggie">
-<meta property="article:tag" content="linked list">
-<meta property="article:tag" content="node">
+<meta property="article:tag" content="Buying Stocks">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2024/11/29/Day-3/">
+<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2025/04/04/Day-42/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/11/29/Day-3/","path":"2024/11/29/Day-3/","title":"代码随想录训练营打卡 Day 3 | 203. Remove Linked List Elements, 207. Reverse the Linked list, 707. Design Linked List"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/04/04/Day-42/","path":"2025/04/04/Day-42/","title":"代码随想录训练营打卡 | Day 42 动态规划背包问题09"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>代码随想录训练营打卡 Day 3 | 203. Remove Linked List Elements, 207. Reverse the Linked list, 707. Design Linked List | Daily Leetcode Practice</title>
+<title>代码随想录训练营打卡 | Day 42 动态规划背包问题09 | Daily Leetcode Practice</title>
   
 
 
@@ -161,7 +160,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2024/11/29/Day-3/">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/04/04/Day-42/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
@@ -174,12 +173,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="代码随想录训练营打卡 Day 3 | 203. Remove Linked List Elements, 207. Reverse the Linked list, 707. Design Linked List | Daily Leetcode Practice">
+      <meta itemprop="name" content="代码随想录训练营打卡 | Day 42 动态规划背包问题09 | Daily Leetcode Practice">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          代码随想录训练营打卡 Day 3 | 203. Remove Linked List Elements, 207. Reverse the Linked list, 707. Design Linked List
+          代码随想录训练营打卡 | Day 42 动态规划背包问题09
         </h1>
 
         <div class="post-meta-container">
@@ -190,23 +189,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2024-11-29 00:51:49" itemprop="dateCreated datePublished" datetime="2024-11-29T00:51:49-06:00">2024-11-29</time>
+      <time title="Created: 2025-04-04 23:17:56" itemprop="dateCreated datePublished" datetime="2025-04-04T23:17:56-05:00">2025-04-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-12-04 02:02:45" itemprop="dateModified" datetime="2024-12-04T02:02:45-06:00">2024-12-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/leetcodeproblems/categories/Easy/" itemprop="url" rel="index"><span itemprop="name">Easy</span></a>
-        </span>
+      <time title="Modified: 2025-04-05 02:55:14" itemprop="dateModified" datetime="2025-04-05T02:55:14-05:00">2025-04-05</time>
     </span>
 
   
@@ -218,45 +208,24 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>打开第三天！链表的基础复习，首先要明白链表的底层结构，特别是初始一个node时，明确是指向已有node还是创建一个新的node。另外是终止条件，避免NullPointerException。还有注意pointer的移动，是否需要保留现有值，哪个先移动，哪个后移动。</p>
+    <div class="post-body" itemprop="articleBody"><p>首先确定状态 -&gt; 买，卖，冷冻，<br>再分析该状态下的动态转移 -&gt; 买有几种情况，卖有几种情况<br>各种情况下的细节 -&gt; 是否有交易费，是否需要冷冻</p>
 <span id="more"></span>
 
-<p>Linked list constructor</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ListNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    ListNode next;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ListNode</span><span class="params">()</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ListNode</span><span class="params">(<span class="type">int</span> val)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.val = val;</span><br><span class="line">        <span class="built_in">this</span>.next = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ListNode</span><span class="params">(<span class="type">int</span> val, ListNode next)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.val = val;</span><br><span class="line">        <span class="built_in">this</span>.next = next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="203">
-<li>Remove Linked List Elements</li>
+<ol start="188">
+<li>至多k次交易利益最大<br>k：在最多允许k次交易的前提下<br>0: 不持有股票 -&gt; 前一天不持有股票 今天不操作 vs 前一天持有股票 今天卖掉的收益（不持股）<br>1: 持有股票 -&gt; 前一天持有股票 今天不操作 vs 前一天不持有股票 今天买入（持股）<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Sell: same transaction count</span></span><br><span class="line">dp[i][j][<span class="number">0</span>] = Math.max(dp[i - <span class="number">1</span>][j][<span class="number">0</span>], dp[i - <span class="number">1</span>][j][<span class="number">1</span>] + prices[i]);</span><br><span class="line"><span class="comment">// Buy: consumes one transaction</span></span><br><span class="line">dp[i][j][<span class="number">1</span>] = Math.max(dp[i - <span class="number">1</span>][j][<span class="number">1</span>], dp[i - <span class="number">1</span>][j - <span class="number">1</span>][<span class="number">0</span>] - prices[i]);</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>edge cases：<br>n &#x3D; prices.length<br>if k &gt; n &#x2F;2 那么意味着在n范围内可以无数次交易<br>那么跟122思路一样，贪心算法就够了</p>
+<ol start="309">
+<li>设置交易冷冻期利益最大<br>三种状态：<br>0 不操作： 可操作不操作，不可操作（冷冻）<br>操作：</li>
 </ol>
 <ul>
-<li>understand the underlying structure of linked list<ul>
-<li>when creating a new ListNode, e.g. <code>dummy</code> node, we are creating a new space</li>
-<li>but if we simply assign a value to a ListNode, it creates a reference to the existing nodes, e.g. <code>cur</code> or <code>pre</code>, <code>cur</code> is a reference that points to where <code>head</code> points to; <code>pre</code> is a references that points to where <code>dummy</code> points to.</li>
-<li>removing the nodes by <code>cur</code> and <code>pre</code> changes the nodes that <code>head</code> points to, so the <code>dummy</code> node updated too</li>
+<li>1 只买入，前一天买入今天不操作，前一天未买入今天买入</li>
+<li>2 只卖出，前一天买入今天卖出<br>dp[i][0]:（可操作不操作）dp[i-1][0] &lt;&#x3D;&gt;（不可操作）dp[i-1][2]今天为冷冻不操作<br>dp[i][1]: dp[i - 1][1]  &lt;&#x3D;&gt; dp[i - 1][0] - prices[i]<br>dp[i][2]: dp[i - 1][1] + prices[i]</li>
 </ul>
-</li>
-<li>when to update <code>pre</code> and when to update <code>cur</code><ul>
-<li><code>pre</code> used for skipping and always points to the new <code>cur</code></li>
-<li><code>cur</code> used to check the <code>val</code></li>
-<li>NO update together: when cur.val &#x3D;&#x3D; val, because the next <code>cur</code> is updated and <code>pre</code> already points to the new <code>cur</code></li>
-<li>YES update together: when cur.val !&#x3D; val, because <code>cur</code> moves forward, <code>pre</code> needs to move forward</li>
-</ul>
-</li>
-</ul>
-<ol start="207">
-<li>Reverse the Linked list</li>
+<ol start="714">
+<li>买卖有交易费<br>初始化<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dp[<span class="number">0</span>][<span class="number">0</span>] = -prices[<span class="number">0</span>];<span class="comment">//买入</span></span><br><span class="line">dp[<span class="number">0</span>][<span class="number">1</span>] = <span class="number">0</span>; <span class="comment">//卖出</span></span><br></pre></td></tr></table></figure>
+状态转移<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">    dp[i][<span class="number">0</span>] = Math.max(dp[i - <span class="number">1</span>][<span class="number">0</span>], dp[i - <span class="number">1</span>][<span class="number">1</span>] - prices[i]);</span><br><span class="line">    dp[i][<span class="number">1</span>] = Math.max(dp[i - <span class="number">1</span>][<span class="number">1</span>], dp[i - <span class="number">1</span>][<span class="number">0</span>] + prices[i] - fee);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
-<ul>
-<li>Intuitive: use a stack to store the value from the original list, and create a new list with the reversed values</li>
-<li>Optimized: <code>pre</code> and <code>cur</code></li>
-</ul>
-<ol start="707">
-<li>Design Linked List</li>
-</ol>
-<ul>
-<li>initialization: size, dummyHead</li>
-<li><code>cur</code> and <code>pre</code> values</li>
-<li>use for loop instead of while to keep the code less error prone</li>
-</ul>
 
     </div>
 
@@ -266,22 +235,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/leetcodeproblems/tags/linked-list/" rel="tag"># linked list</a>
-              <a href="/leetcodeproblems/tags/node/" rel="tag"># node</a>
+              <a href="/leetcodeproblems/tags/Buying-Stocks/" rel="tag"># Buying Stocks</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/11/27/Day-2/" rel="prev" title="代码随想录训练营打卡 Day 2 | 209. Minimum Size Subarray Sum, 59. Spiral Matrix II, MinCut of n*m matrix">
-                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 2 | 209. Minimum Size Subarray Sum, 59. Spiral Matrix II, MinCut of n*m matrix
+                <a href="/leetcodeproblems/2025/04/04/Day-41/" rel="prev" title="代码随想录训练营打卡 | Day 41 动态规划背包问题08">
+                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 | Day 41 动态规划背包问题08
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/11/30/Day-4/" rel="next" title="代码随想录训练营打卡 Day 4 | 24. Swap Nodes in Pairs, 19. Remove Nth Node From End of List, 160. Intersection of Two Linked Lists, 142. Linked List Cycle II">
-                  代码随想录训练营打卡 Day 4 | 24. Swap Nodes in Pairs, 19. Remove Nth Node From End of List, 160. Intersection of Two Linked Lists, 142. Linked List Cycle II <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
