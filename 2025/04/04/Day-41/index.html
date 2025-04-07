@@ -21,13 +21,13 @@
 
     <meta name="description" content="股票交易 这些题目的核心差异，就是对交易次数、冷却期、手续费等约束的不同。但它们都有一个共同点：你每天只能 买 &#x2F; 卖 &#x2F; 休息，且最终的收益最大化。如前所述，“股票 DP”最常见的模板公式（不考虑冷却、手续费的基本版）是： dp[i][k][0]&#x3D;max(dp[i−1][k][0],dp[i−1][k][1]+prices[i])dp[i][k][1]&#x3D;m">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录训练营打卡 | Day 41 动态规划背包问题08">
+<meta property="og:title" content="代码随想录训练营打卡 Day 41 | 动态规划背包问题08">
 <meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/04/04/Day-41/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
 <meta property="og:description" content="股票交易 这些题目的核心差异，就是对交易次数、冷却期、手续费等约束的不同。但它们都有一个共同点：你每天只能 买 &#x2F; 卖 &#x2F; 休息，且最终的收益最大化。如前所述，“股票 DP”最常见的模板公式（不考虑冷却、手续费的基本版）是： dp[i][k][0]&#x3D;max(dp[i−1][k][0],dp[i−1][k][1]+prices[i])dp[i][k][1]&#x3D;m">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-04-04T05:50:14.000Z">
-<meta property="article:modified_time" content="2025-04-04T07:01:02.337Z">
+<meta property="article:modified_time" content="2025-04-07T07:31:02.989Z">
 <meta property="article:author" content="Peggie">
 <meta property="article:tag" content="Buying Stocks">
 <meta name="twitter:card" content="summary">
@@ -36,10 +36,10 @@
 <link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2025/04/04/Day-41/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/04/04/Day-41/","path":"2025/04/04/Day-41/","title":"代码随想录训练营打卡 | Day 41 动态规划背包问题08"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/04/04/Day-41/","path":"2025/04/04/Day-41/","title":"代码随想录训练营打卡 Day 41 | 动态规划背包问题08"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>代码随想录训练营打卡 | Day 41 动态规划背包问题08 | Daily Leetcode Practice</title>
+<title>代码随想录训练营打卡 Day 41 | 动态规划背包问题08 | Daily Leetcode Practice</title>
   
 
 
@@ -123,7 +123,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/leetcodeproblems/archives/">
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -133,7 +133,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -173,12 +173,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="代码随想录训练营打卡 | Day 41 动态规划背包问题08 | Daily Leetcode Practice">
+      <meta itemprop="name" content="代码随想录训练营打卡 Day 41 | 动态规划背包问题08 | Daily Leetcode Practice">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          代码随想录训练营打卡 | Day 41 动态规划背包问题08
+          代码随想录训练营打卡 Day 41 | 动态规划背包问题08
         </h1>
 
         <div class="post-meta-container">
@@ -188,9 +188,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2025-04-04 00:50:14 / Modified: 02:01:02" itemprop="dateCreated datePublished" datetime="2025-04-04T00:50:14-05:00">2025-04-04</time>
+      <time title="Created: 2025-04-04 00:50:14" itemprop="dateCreated datePublished" datetime="2025-04-04T00:50:14-05:00">2025-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-04-07 02:31:02" itemprop="dateModified" datetime="2025-04-07T02:31:02-05:00">2025-04-07</time>
     </span>
 
   
@@ -243,13 +249,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2025/04/02/Day-39/" rel="prev" title="代码随想录训练营打卡 | Day-39 动态规划背包问题07">
-                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 | Day-39 动态规划背包问题07
+                <a href="/leetcodeproblems/2025/04/02/Day-39/" rel="prev" title="代码随想录训练营打卡 Day-39 | 动态规划背包问题07">
+                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day-39 | 动态规划背包问题07
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2025/04/04/Day-42/" rel="next" title="代码随想录训练营打卡 | Day 42 动态规划背包问题09">
-                  代码随想录训练营打卡 | Day 42 动态规划背包问题09 <i class="fa fa-angle-right"></i>
+                <a href="/leetcodeproblems/2025/04/04/Day-42/" rel="next" title="代码随想录训练营打卡 Day 42 | 动态规划背包问题09">
+                  代码随想录训练营打卡 Day 42 | 动态规划背包问题09 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
