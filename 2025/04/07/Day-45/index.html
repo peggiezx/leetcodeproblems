@@ -19,22 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Daily Leetcode Practice">
-<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/tags/Easy/index.html">
+    <meta name="description" content="经过昨天的训练，今天的题感觉好理解很多～">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代码随想录训练营打卡 Day-45 | 动态规划背包问题12">
+<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/04/07/Day-45/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
+<meta property="og:description" content="经过昨天的训练，今天的题感觉好理解很多～">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-04-08T04:03:20.000Z">
+<meta property="article:modified_time" content="2025-04-08T05:37:53.041Z">
 <meta property="article:author" content="Peggie">
+<meta property="article:tag" content="LCS">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/tags/Easy/">
+<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2025/04/07/Day-45/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":"","permalink":"","path":"tags/Easy/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/04/07/Day-45/","path":"2025/04/07/Day-45/","title":"代码随想录训练营打卡 Day-45 | 动态规划背包问题12"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Tag: Easy | Daily Leetcode Practice</title>
+<title>代码随想录训练营打卡 Day-45 | 动态规划背包问题12 | Daily Leetcode Practice</title>
   
 
 
@@ -93,7 +98,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -106,6 +111,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%9F392%E5%AF%B9%E6%AF%94%EF%BC%9A-392-%E5%8F%AA%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E8%83%BD%E5%90%A6%E5%BD%A2%E6%88%90%EF%BC%8C%E8%80%8C-115-%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E8%83%BD%E5%BD%A2%E6%88%90%E5%A4%9A%E5%B0%91%E7%A7%8D"><span class="nav-number">1.</span> <span class="nav-text">跟392对比：#392 只需要知道能否形成，而 #115 需要知道能形成多少种</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -144,70 +150,119 @@
 
     </div>
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">Easy
-          <small>Tag</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/04/07/Day-45/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
+      <meta itemprop="name" content="Peggie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="代码随想录训练营打卡 Day-45 | 动态规划背包问题12 | Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          代码随想录训练营打卡 Day-45 | 动态规划背包问题12
         </h1>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2025</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-04-07 23:03:20" itemprop="dateCreated datePublished" datetime="2025-04-07T23:03:20-05:00">2025-04-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-04-08 00:37:53" itemprop="dateModified" datetime="2025-04-08T00:37:53-05:00">2025-04-08</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>经过昨天的训练，今天的题感觉好理解很多～</p>
+<span id="more"></span>
+<ol start="115">
+<li>不同子序列的个数</li>
+</ol>
+<h2 id="跟392对比：-392-只需要知道能否形成，而-115-需要知道能形成多少种"><a href="#跟392对比：-392-只需要知道能否形成，而-115-需要知道能形成多少种" class="headerlink" title="跟392对比：#392 只需要知道能否形成，而 #115 需要知道能形成多少种"></a>跟392对比：#392 只需要知道能否形成，而 #115 需要知道能形成多少种</h2><p> dp[i][j] 的定义：在 s 的前 i 个字符中生成 t 的前 j 个字符方案数</p>
+<ul>
+<li>如果 s[i - 1] &#x3D;&#x3D; t[j - 1]，那么在位置 i,j 时可以从如下两部分得到方案数：<ul>
+<li>不使用 s[i - 1] 字符的方案数，即 dp[i-1][j]</li>
+<li>使用 s[i - 1] 字符的方案数，即 dp[i-1][j-1]</li>
+<li>因此 dp[i][j] &#x3D; dp[i-1][j] + dp[i-1][j-1]</li>
+</ul>
+</li>
+<li>若 s[i - 1] !&#x3D; t[j - 1]，则只能从 dp[i-1][j] 继承过去(跳过 s[i - 1] 继续看前面的字符能否组成 t[j])<br>因此 dp[i][j] &#x3D; dp[i-1][j]</li>
+</ul>
+<p>583.只有删除操作<br>dp[i][j] 表示让 word1[0..i-1] 和 word2[0..j-1] 变相同所需的「最少删除操作次数」</p>
+<ul>
+<li>如果字符相同，那么就不需要删除</li>
+<li>如果字符不同，删除+1，基于需要更少操作的那个string</li>
+</ul>
+<ol start="72">
+<li>Edit Distance<br>跟583比较多了replace的操作<br>replace其实就是将问题变成dp[i - 1][j - 1]前面两个字符相等之后再进行的操作<br>增加和删除的道理是一样的<br>（第一次自己做就通过了！）</li>
+</ol>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2025-02-17T01:48:56-06:00"
-              content="2025-02-17">
-          02-17
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/leetcodeproblems/2025/02/17/Day-28/" itemprop="url">
-            <span itemprop="name">代码随想录训练营打卡 Day-28 ｜ 贪心算法第二天</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/leetcodeproblems/tags/LCS/" rel="tag"># LCS</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/leetcodeproblems/2025/04/06/Day-44/" rel="prev" title="代码随想录训练营打卡 Day 44 | 动态规划背包问题11">
+                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 44 | 动态规划背包问题11
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2025-02-13T23:43:47-06:00"
-              content="2025-02-13">
-          02-13
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/leetcodeproblems/2025/02/13/Day-27/" itemprop="url">
-            <span itemprop="name">代码随想录训练营打卡 Day-27 ｜ 贪心算法</span>
-          </a>
-      </div>
 
-      
-    </header>
-  </article>
 
-    </div>
-  </div>
-  
-  
-  
+
 
 </div>
   </main>
