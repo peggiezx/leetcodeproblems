@@ -118,7 +118,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/leetcodeproblems/archives/">
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">42</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -128,7 +128,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-count">40</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -145,6 +145,186 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/04/11/Day-48/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
+      <meta itemprop="name" content="Peggie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/leetcodeproblems/2025/04/11/Day-48/" class="post-title-link" itemprop="url">代码随想录训练营打卡 Day-48 | 单调栈</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-04-11 01:46:57 / Modified: 03:15:00" itemprop="dateCreated datePublished" datetime="2025-04-11T01:46:57-05:00">2025-04-11</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>什么是单调栈</p>
+<p>A monotonic stack is a stack-based data structure that maintains its elements in either increasing or decreasing order as you iterate through an array. It’s commonly used to solve problems like “finding the next greater or smaller element.”</p>
+<p>There are two typical patterns:</p>
+<ul>
+<li>Monotonic Increasing Stack (top is the smallest): When a larger value comes in, you can pop smaller values, and immediately determine the distance.</li>
+<li>Monotonic Decreasing Stack (top is the largest): When a smaller value appears, you pop all the larger ones off the stack and use the smaller one as the new top, making it easy to compute the position difference.</li>
+</ul>
+<p>Store the <strong>index</strong> instead of the values</p>
+<!---more--->
+
+<ol start="739">
+<li>Daily Temperatures</li>
+</ol>
+<p>寻找右边第一个比自己大的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i --) &#123;</span><br><span class="line">    <span class="keyword">while</span> (!stack.isEmpty() &amp;&amp; nums[stack.peek()] &lt;= nums[i]) &#123;</span><br><span class="line">        stack.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    res[i] = stack.isEmpty() ? <span class="number">0</span> : stack.peek() - i;</span><br><span class="line">    stack.push(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="496">
+<li><p>Next Greater Element I<br>用hashmap来储存nums2和每个数字的next greater element<br>再用单独的遍历找到nums1中对应的数字</p>
+</li>
+<li><p>环形数组<br>直接在遍历的时候将len * 2，再用 len % i 来确定当前数</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/04/08/Day-46/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
+      <meta itemprop="name" content="Peggie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/leetcodeproblems/2025/04/08/Day-46/" class="post-title-link" itemprop="url">代码随想录训练营打卡 ay-46 | 动态规划背包问题12</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-04-08 23:39:14" itemprop="dateCreated datePublished" datetime="2025-04-08T23:39:14-05:00">2025-04-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-04-09 00:59:52" itemprop="dateModified" datetime="2025-04-09T00:59:52-05:00">2025-04-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>回文串问题</p>
+<ul>
+<li>要加入字符串长度的维度len</li>
+<li>都可以用二维 dp[i][j] 解决</li>
+<li>i 是子串的起点，j 是子串的终点，左下角到右上角遍历。j &#x3D; i + len - 1; j &lt; n</li>
+</ul>
+<p>状态转移都涉及两端字符是否相等<br>s.charAt(i) &#x3D;&#x3D; s.charAt(j) 是两个题的关键判断之一</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/leetcodeproblems/2025/04/08/Day-46/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -273,7 +453,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-04-07 02:31:02" itemprop="dateModified" datetime="2025-04-07T02:31:02-05:00">2025-04-07</time>
+      <time title="Modified: 2025-04-08 00:38:18" itemprop="dateModified" datetime="2025-04-08T00:38:18-05:00">2025-04-08</time>
     </span>
 
   
@@ -286,7 +466,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          
+          <p>编辑距离算法入门，</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/leetcodeproblems/2025/04/06/Day-44/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -819,220 +1007,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/02/24/Day-36/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
-      <meta itemprop="name" content="Peggie">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Daily Leetcode Practice">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Daily Leetcode Practice">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/leetcodeproblems/2025/02/24/Day-36/" class="post-title-link" itemprop="url">代码随想录训练营打卡 Day-36 | 动态规划背包问题04</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2025-02-24 23:05:32" itemprop="dateCreated datePublished" datetime="2025-02-24T23:05:32-06:00">2025-02-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-04-01 00:02:43" itemprop="dateModified" datetime="2025-04-01T00:02:43-05:00">2025-04-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/leetcodeproblems/categories/dp/" itemprop="url" rel="index"><span itemprop="name">dp</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <span id="more"></span>
-
-<ol start="1049">
-<li><p>将问题转化成，如何将石头分成重量尽量相等的两堆，这样可以保证他们之前的差最小</p>
-</li>
-<li><p>dp[i][j]代表在前i个石头中，选取若干个石头，使他们的总量不超过目标值j前提下，能达到的最大总和<br>j取值是0～target，其中target &#x3D; sum &#x2F; 2</p>
-</li>
-<li><p>状态转移公式<br>如果不选第i个石头：dp[i][j] &#x3D; dp[i - 1][j]<br>如果选第i个石头：dp[i][j] &#x3D; Math.max(dp[i][j], dp[i - 1][j - cur] + cur);</p>
-</li>
-<li><p>初始化<br>当 i &#x3D; 0（没有石头）时，对于任何 j &gt; 0，都无法选取出正数和，所以 dp[0][j] &#x3D; 0；同时 dp[0][0] &#x3D; 0。<br>对于任意 i，dp[i][0] &#x3D; 0，因为容量为 0 时只能选取总和为 0 的情况。</p>
-</li>
-<li><p>确定遍历顺序<br>外层循环：<br>从 i &#x3D; 1 到 n（石头的个数），逐个考虑每个石头。<br>内层循环：<br>对于每个 i，从 j &#x3D; 1 到 target（容量）遍历。<br>注意：由于状态转移使用的是 dp[i-1][…]，这样可以确保每个石头只使用一次。</p>
-</li>
-<li><p>Target Sum</p>
-</li>
-<li><p>确定如何转化为dp problem。由于所有数字的符号可以为正负，那么假设在原始数字基础上为转换前P数之和与N数之和为所有数字的sum。当选定的N个数转换为负数后P-N &#x3D; target<br>那么P + N &#x3D; sum &amp;&amp; P - N &#x3D; target<br>那么 2*P &#x3D; sum + target<br>P &#x3D; (sum + target) &#x2F; 2<br>那么问题转换为子集和等于P的数量</p>
-</li>
-<li><p>如果P是奇数 或者 P &lt; 0 或者数组之和小于P时都不用继续</p>
-</li>
-<li><p>二维背包问题： dp[i][j] &#x3D; dp[nums.length + 1][p + 1] 意思是在表示前 i 个数中有多少种方式可以使得和为 j。<br>e.g. dp[0][0] 在和为0时，如果有0这个选择，那么解题数量为1<br>如果不选当前数那么和为j的解决方案数是dp[i - 1][j]<br>如果选当前数那么和为j的解法数量是dp[i - 1][j - nums[i - 1]]</p>
-</li>
-<li><p>Ones and Zeros</p>
-</li>
-<li><p>多重维度的dp，m和n：普通的背包问题只有一个容量，单这个题有两个容量，我们用二维的dp在表示在给定的0和1的限额下，最多能放多少字符串</p>
-</li>
-<li><p>状态转移：只有在 i &gt;&#x3D; zeros 且 j &gt;&#x3D; ones 的情况下，才有可能把它放进去，然后做转移：<br>dp[i][j]&#x3D;max(dp[i][j],dp[i−zeros][j−ones]+1)</p>
-</li>
-<li><p>遍历字符串的同时，针对每个字符记录zeros和ones的数量，再针对cur字符来判断是否能够符合m和n的范围，</p>
-</li>
-<li><p>倒序遍历以避免重复使用同一个字符串<br>如果顺序更新，就会在同一轮反覆利用当前字符串</p>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/02/24/Day-35/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
-      <meta itemprop="name" content="Peggie">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Daily Leetcode Practice">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Daily Leetcode Practice">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/leetcodeproblems/2025/02/24/Day-35/" class="post-title-link" itemprop="url">代码随想录训练营打卡 Day-35 | 动态规划背包问题03</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2025-02-24 00:27:08" itemprop="dateCreated datePublished" datetime="2025-02-24T00:27:08-06:00">2025-02-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-04-01 00:02:42" itemprop="dateModified" datetime="2025-04-01T00:02:42-05:00">2025-04-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/leetcodeproblems/categories/dp/" itemprop="url" rel="index"><span itemprop="name">dp</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/leetcodeproblems/categories/dp/knapsack/" itemprop="url" rel="index"><span itemprop="name">knapsack</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>可以用回溯解决但是会超时，于是用动态规划解题</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/leetcodeproblems/2025/02/24/Day-35/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/leetcodeproblems/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/leetcodeproblems/page/4/">4</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/leetcodeproblems/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/leetcodeproblems/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/leetcodeproblems/page/5/">5</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/leetcodeproblems/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>

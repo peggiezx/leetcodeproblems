@@ -19,14 +19,17 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
 
-    <meta property="og:type" content="article">
+    <meta name="description" content="编辑距离算法入门，">
+<meta property="og:type" content="article">
 <meta property="og:title" content="代码随想录训练营打卡 Day 44 | 动态规划背包问题11">
 <meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/04/06/Day-44/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
+<meta property="og:description" content="编辑距离算法入门，">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-04-07T03:46:34.000Z">
-<meta property="article:modified_time" content="2025-04-07T07:31:02.989Z">
+<meta property="article:modified_time" content="2025-04-08T05:38:18.124Z">
 <meta property="article:author" content="Peggie">
+<meta property="article:tag" content="【Edit Distance]">
 <meta name="twitter:card" content="summary">
 
 
@@ -120,7 +123,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/leetcodeproblems/archives/">
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">42</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -130,7 +133,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-count">40</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -193,7 +196,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-04-07 02:31:02" itemprop="dateModified" datetime="2025-04-07T02:31:02-05:00">2025-04-07</time>
+      <time title="Modified: 2025-04-08 00:38:18" itemprop="dateModified" datetime="2025-04-08T00:38:18-05:00">2025-04-08</time>
     </span>
 
   
@@ -205,7 +208,30 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody"><p>编辑距离算法入门，</p>
+<span id="more"></span>
+<ol start="53">
+<li>Max Subarray<br>At each step, you decide:</li>
+</ol>
+<ul>
+<li>Should I extend the current subarray with nums[i]</li>
+<li>Or should I start fresh from nums[i]?</li>
+</ul>
+<ol start="392">
+<li>is subsequence?</li>
+</ol>
+<p>Solving with <em>Edit Distance</em> Perspective<br>This is a special case of Edit Distance, but with only deletion allowed on t.<br>We want to check if we can transform t into s by deleting some characters.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[i][j] = can s[<span class="number">0.</span>.i-<span class="number">1</span>] be formed from t[<span class="number">0.</span>.j-<span class="number">1</span>] by deleting some characters?</span><br></pre></td></tr></table></figure>
+<ul>
+<li>i → prefix of s</li>
+<li>j → prefix of t</li>
+</ul>
+<p>So dp[i][j] &#x3D;&#x3D; true means:<br>We can transform the first j characters of t into the first i characters of s, using deletions only from t.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (s[i-<span class="number">1</span>] == t[j-<span class="number">1</span>])</span><br><span class="line">    dp[i][j] = dp[i-<span class="number">1</span>][j-<span class="number">1</span>]; <span class="comment">// match and move both</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    dp[i][j] = dp[i][j-<span class="number">1</span>];   <span class="comment">// delete t[j-1], move in t only</span></span><br></pre></td></tr></table></figure>
+
+<p>If current characters match, great — we “consume” both characters</p>
+<p>Otherwise, we “delete” t[j-1] and try again</p>
+
     </div>
 
     
@@ -213,6 +239,9 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/leetcodeproblems/tags/%E3%80%90Edit-Distance/" rel="tag"># 【Edit Distance]</a>
+          </div>
 
         
 
