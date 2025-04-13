@@ -118,7 +118,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/leetcodeproblems/archives/">
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -128,7 +128,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-count">43</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -145,6 +145,175 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/04/13/Day-50-51/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
+      <meta itemprop="name" content="Peggie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/leetcodeproblems/2025/04/13/Day-50-51/" class="post-title-link" itemprop="url">代码随想录训练营打卡 Day-50&&51 | 图论</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-04-13 05:53:28 / Modified: 06:46:56" itemprop="dateCreated datePublished" datetime="2025-04-13T05:53:28-05:00">2025-04-13</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>理论基础<br>dfs深度搜索，回溯<br>bfs广度搜索，queue</p>
+<h1 id="🧠-DFS-模板大全（路径类-区域类）"><a href="#🧠-DFS-模板大全（路径类-区域类）" class="headerlink" title="🧠 DFS 模板大全（路径类 &amp; 区域类）"></a>🧠 DFS 模板大全（路径类 &amp; 区域类）</h1><hr>
+<h2 id="✅-模板-1：DFS-回溯（路径类题目）"><a href="#✅-模板-1：DFS-回溯（路径类题目）" class="headerlink" title="✅ 模板 1：DFS + 回溯（路径类题目）"></a>✅ 模板 1：DFS + 回溯（路径类题目）</h2><blockquote>
+<p>应用于：所有路径 &#x2F; 子集 &#x2F; 排列 &#x2F; 拆分类题目<br>特点：路径 path 需要 add&#x2F;remove，回溯控制</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">dfs</span><span class="params">(参数..., List&lt;Integer&gt; path)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (到达终点条件) &#123;</span><br><span class="line">        res.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(path)); <span class="comment">// deep copy</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (每个可能的选择) &#123;</span><br><span class="line">        path.add(选择);</span><br><span class="line">        dfs(..., path);</span><br><span class="line">        path.remove(path.size() - <span class="number">1</span>); <span class="comment">// 回溯</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="✅-模板-2：DFS-访问标记-面积累计（网格类题目）"><a href="#✅-模板-2：DFS-访问标记-面积累计（网格类题目）" class="headerlink" title="✅ 模板 2：DFS + 访问标记 + 面积累计（网格类题目）"></a>✅ 模板 2：DFS + 访问标记 + 面积累计（网格类题目）</h2><blockquote>
+<p>应用于：岛屿计数 &#x2F; 连通块面积 &#x2F; 闭合区域<br>特点：以 1 为起点，递归淹没 &#x2F; 标记访问的所有相连区域</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">dfs</span><span class="params">(<span class="type">int</span>[][] grid, <span class="type">int</span> i, <span class="type">int</span> j)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">0</span> || i &gt;= grid.length || j &lt; <span class="number">0</span> || j &gt;= grid[<span class="number">0</span>].length) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (grid[i][j] == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    grid[i][j] = <span class="number">0</span>; <span class="comment">// 标记为访问</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">area</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    area += dfs(grid, i + <span class="number">1</span>, j);</span><br><span class="line">    area += dfs(grid, i - <span class="number">1</span>, j);</span><br><span class="line">    area += dfs(grid, i, j + <span class="number">1</span>);</span><br><span class="line">    area += dfs(grid, i, j - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> area;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/leetcodeproblems/2025/04/13/Day-50-51/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/04/11/Day-49/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
+      <meta itemprop="name" content="Peggie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/leetcodeproblems/2025/04/11/Day-49/" class="post-title-link" itemprop="url">代码随想录训练营打卡 Day-49 | 单调栈</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-04-11 16:00:41" itemprop="dateCreated datePublished" datetime="2025-04-11T16:00:41-05:00">2025-04-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-04-13 06:47:00" itemprop="dateModified" datetime="2025-04-13T06:47:00-05:00">2025-04-13</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>判断边界，一般可以用两个数组分别记录左右边界来解决<br>如果用单调栈，要理清是递增还是递减栈，从这个问题开始：是需要找到比自己更【大？】【小？】就停止？找到比自己【大】递减栈，找到比自己【小】递增栈</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/leetcodeproblems/2025/04/11/Day-49/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -182,9 +351,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2025-04-11 01:46:57 / Modified: 03:15:00" itemprop="dateCreated datePublished" datetime="2025-04-11T01:46:57-05:00">2025-04-11</time>
+      <time title="Created: 2025-04-11 01:46:57" itemprop="dateCreated datePublished" datetime="2025-04-11T01:46:57-05:00">2025-04-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-04-13 06:48:24" itemprop="dateModified" datetime="2025-04-13T06:48:24-05:00">2025-04-13</time>
     </span>
 
   
@@ -205,21 +380,14 @@
 <li>Monotonic Decreasing Stack (top is the largest): When a smaller value appears, you pop all the larger ones off the stack and use the smaller one as the new top, making it easy to compute the position difference.</li>
 </ul>
 <p>Store the <strong>index</strong> instead of the values</p>
-<!---more--->
-
-<ol start="739">
-<li>Daily Temperatures</li>
-</ol>
-<p>寻找右边第一个比自己大的</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i --) &#123;</span><br><span class="line">    <span class="keyword">while</span> (!stack.isEmpty() &amp;&amp; nums[stack.peek()] &lt;= nums[i]) &#123;</span><br><span class="line">        stack.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    res[i] = stack.isEmpty() ? <span class="number">0</span> : stack.peek() - i;</span><br><span class="line">    stack.push(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="496">
-<li><p>Next Greater Element I<br>用hashmap来储存nums2和每个数字的next greater element<br>再用单独的遍历找到nums1中对应的数字</p>
-</li>
-<li><p>环形数组<br>直接在遍历的时候将len * 2，再用 len % i 来确定当前数</p>
-</li>
-</ol>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/leetcodeproblems/2025/04/11/Day-48/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -263,7 +431,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/leetcodeproblems/2025/04/08/Day-46/" class="post-title-link" itemprop="url">代码随想录训练营打卡 ay-46 | 动态规划背包问题12</a>
+          <a href="/leetcodeproblems/2025/04/08/Day-46/" class="post-title-link" itemprop="url">代码随想录训练营打卡 Day-46 | 动态规划背包问题12</a>
         </h2>
 
         <div class="post-meta-container">
@@ -281,7 +449,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-04-09 00:59:52" itemprop="dateModified" datetime="2025-04-09T00:59:52-05:00">2025-04-09</time>
+      <time title="Modified: 2025-04-13 06:47:02" itemprop="dateModified" datetime="2025-04-13T06:47:02-05:00">2025-04-13</time>
     </span>
 
   
@@ -820,176 +988,6 @@
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/04/02/Day-38/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
-      <meta itemprop="name" content="Peggie">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Daily Leetcode Practice">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Daily Leetcode Practice">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/leetcodeproblems/2025/04/02/Day-38/" class="post-title-link" itemprop="url">代码随想录训练营打卡 Day-38 | 动态规划背包问题06</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2025-04-02 01:29:56" itemprop="dateCreated datePublished" datetime="2025-04-02T01:29:56-05:00">2025-04-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-04-07 02:31:02" itemprop="dateModified" datetime="2025-04-07T02:31:02-05:00">2025-04-07</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Coin change类题目： 依赖两个维度：array里的硬币值，和target amount，但是只需要用一维的dp[amount]来记录<br>有时要在同一层里遍历所有硬币，或外层硬币、内层金额 → 两层循环。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/leetcodeproblems/2025/04/02/Day-38/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/03/31/Day-37/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
-      <meta itemprop="name" content="Peggie">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Daily Leetcode Practice">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Daily Leetcode Practice">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/leetcodeproblems/2025/03/31/Day-37/" class="post-title-link" itemprop="url">代码随想录训练营打卡 | Day-37 动态规划背包问题05</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2025-03-31 23:50:14" itemprop="dateCreated datePublished" datetime="2025-03-31T23:50:14-05:00">2025-03-31</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-04-06 22:16:21" itemprop="dateModified" datetime="2025-04-06T22:16:21-05:00">2025-04-06</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ol start="518">
-<li>Change Coins<br>可以重复选择同一个硬币，那么如果不选择该硬币<br><code>dp[i][j] = dp[i - 1][j]</code><br>如果选择该硬币<br><code>dp[i][j] += dp[i][j - coins[i - 1]]</code><br>注意这里不是<code>dp[i][j] += dp[i - 1][j - coins[i - 1]]</code>因为我们可以重复取统一硬币，因此在同一层反复更新<br>amount &#x3D; 5，coins&#x3D;【1，2，5】<br>初始化如果amount&#x3D;0，那么无论硬币值多少都可以选择不选因此选法为1<br>j    0  1  2  3  4  5</li>
-</ol>
-<p>coin &#x3D; 0，dp&#x3D;[1, 0, 0, 0, 0, 0]<br>coin &#x3D; 1, dp&#x3D;[1, 1, 1, 1, 1, 1]<br>coin &#x3D; 2, dp&#x3D;[1, 1, 2, 2, 3, 3]<br>coin &#x3D; 5, dp&#x3D;[1, 1, 2, 2, 3, 4]</p>
-<ol start="377">
-<li>Combinationa Sum IV<br>一、外层遍历“硬币”，内层遍历“金额” —— 得到组合数<br>为什么这样就“不考虑顺序”了？<br>因为先固定硬币再遍历金额，意味着：</li>
-</ol>
-<p>当你在处理 coin&#x3D;1 时，你把能用 1 凑到的所有方式先记录下来；</p>
-<p>然后再处理 coin&#x3D;2，相当于只是在现有基础上“添加可能使用 2”这种情况。</p>
-<p>这样某种组合中“1 和 2”的出现顺序并没有被单独枚举，重复的顺序会被合并成同一条路径。</p>
-<p>二、外层遍历“金额”，内层遍历“硬币” —— 得到排列数<br>为什么这样就“考虑顺序”了？<br>因为对于每个目标金额 t，你会“立即”去看所有可能放进 t 的硬币，这就相当于“先决定当前总额，再添加任意顺序的硬币”。</p>
-<p>某个 t 可能通过先放 1 再放 2，也可以先放 2 再放 1。不同顺序会在不同时刻更新 dp，不会合并成同一个组合。</p>
-
       
     </div>
 

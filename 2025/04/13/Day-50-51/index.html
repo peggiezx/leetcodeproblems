@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/leetcodeproblems/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/leetcodeproblems/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/leetcodeproblems/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/leetcodeproblems/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/leetcodeproblems/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
+
+    <meta name="description" content="理论基础dfs深度搜索，回溯bfs广度搜索，queue 🧠 DFS 模板大全（路径类 &amp; 区域类） ✅ 模板 1：DFS + 回溯（路径类题目） 应用于：所有路径 &#x2F; 子集 &#x2F; 排列 &#x2F; 拆分类题目特点：路径 path 需要 add&#x2F;remove，回溯控制  123456789101112void dfs(参数..., List&lt;Intege">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代码随想录训练营打卡 Day-50&amp;&amp;51 | 图论">
+<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/04/13/Day-50-51/index.html">
+<meta property="og:site_name" content="Daily Leetcode Practice">
+<meta property="og:description" content="理论基础dfs深度搜索，回溯bfs广度搜索，queue 🧠 DFS 模板大全（路径类 &amp; 区域类） ✅ 模板 1：DFS + 回溯（路径类题目） 应用于：所有路径 &#x2F; 子集 &#x2F; 排列 &#x2F; 拆分类题目特点：路径 path 需要 add&#x2F;remove，回溯控制  123456789101112void dfs(参数..., List&lt;Intege">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-04-13T10:53:28.000Z">
+<meta property="article:modified_time" content="2025-04-13T11:46:56.105Z">
+<meta property="article:author" content="Peggie">
+<meta property="article:tag" content="dfs">
+<meta property="article:tag" content="bfs">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2025/04/13/Day-50-51/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/04/13/Day-50-51/","path":"2025/04/13/Day-50-51/","title":"代码随想录训练营打卡 Day-50&&51 | 图论"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>代码随想录训练营打卡 Day-50&&51 | 图论 | Daily Leetcode Practice</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/leetcodeproblems/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/leetcodeproblems/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Daily Leetcode Practice</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/leetcodeproblems/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/leetcodeproblems/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/leetcodeproblems/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%A7%A0-DFS-%E6%A8%A1%E6%9D%BF%E5%A4%A7%E5%85%A8%EF%BC%88%E8%B7%AF%E5%BE%84%E7%B1%BB-%E5%8C%BA%E5%9F%9F%E7%B1%BB%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">🧠 DFS 模板大全（路径类 &amp; 区域类）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9C%85-%E6%A8%A1%E6%9D%BF-1%EF%BC%9ADFS-%E5%9B%9E%E6%BA%AF%EF%BC%88%E8%B7%AF%E5%BE%84%E7%B1%BB%E9%A2%98%E7%9B%AE%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">✅ 模板 1：DFS + 回溯（路径类题目）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9C%85-%E6%A8%A1%E6%9D%BF-2%EF%BC%9ADFS-%E8%AE%BF%E9%97%AE%E6%A0%87%E8%AE%B0-%E9%9D%A2%E7%A7%AF%E7%B4%AF%E8%AE%A1%EF%BC%88%E7%BD%91%E6%A0%BC%E7%B1%BB%E9%A2%98%E7%9B%AE%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">✅ 模板 2：DFS + 访问标记 + 面积累计（网格类题目）</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Peggie</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/leetcodeproblems/archives/">
+          <span class="site-state-item-count">44</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/leetcodeproblems/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">43</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/04/13/Day-50-51/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
+      <meta itemprop="name" content="Peggie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="代码随想录训练营打卡 Day-50&&51 | 图论 | Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          代码随想录训练营打卡 Day-50&&51 | 图论
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-04-13 05:53:28 / Modified: 06:46:56" itemprop="dateCreated datePublished" datetime="2025-04-13T05:53:28-05:00">2025-04-13</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>理论基础<br>dfs深度搜索，回溯<br>bfs广度搜索，queue</p>
+<h1 id="🧠-DFS-模板大全（路径类-区域类）"><a href="#🧠-DFS-模板大全（路径类-区域类）" class="headerlink" title="🧠 DFS 模板大全（路径类 &amp; 区域类）"></a>🧠 DFS 模板大全（路径类 &amp; 区域类）</h1><hr>
+<h2 id="✅-模板-1：DFS-回溯（路径类题目）"><a href="#✅-模板-1：DFS-回溯（路径类题目）" class="headerlink" title="✅ 模板 1：DFS + 回溯（路径类题目）"></a>✅ 模板 1：DFS + 回溯（路径类题目）</h2><blockquote>
+<p>应用于：所有路径 &#x2F; 子集 &#x2F; 排列 &#x2F; 拆分类题目<br>特点：路径 path 需要 add&#x2F;remove，回溯控制</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">dfs</span><span class="params">(参数..., List&lt;Integer&gt; path)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (到达终点条件) &#123;</span><br><span class="line">        res.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(path)); <span class="comment">// deep copy</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (每个可能的选择) &#123;</span><br><span class="line">        path.add(选择);</span><br><span class="line">        dfs(..., path);</span><br><span class="line">        path.remove(path.size() - <span class="number">1</span>); <span class="comment">// 回溯</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="✅-模板-2：DFS-访问标记-面积累计（网格类题目）"><a href="#✅-模板-2：DFS-访问标记-面积累计（网格类题目）" class="headerlink" title="✅ 模板 2：DFS + 访问标记 + 面积累计（网格类题目）"></a>✅ 模板 2：DFS + 访问标记 + 面积累计（网格类题目）</h2><blockquote>
+<p>应用于：岛屿计数 &#x2F; 连通块面积 &#x2F; 闭合区域<br>特点：以 1 为起点，递归淹没 &#x2F; 标记访问的所有相连区域</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">dfs</span><span class="params">(<span class="type">int</span>[][] grid, <span class="type">int</span> i, <span class="type">int</span> j)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">0</span> || i &gt;= grid.length || j &lt; <span class="number">0</span> || j &gt;= grid[<span class="number">0</span>].length) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (grid[i][j] == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    grid[i][j] = <span class="number">0</span>; <span class="comment">// 标记为访问</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">area</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    area += dfs(grid, i + <span class="number">1</span>, j);</span><br><span class="line">    area += dfs(grid, i - <span class="number">1</span>, j);</span><br><span class="line">    area += dfs(grid, i, j + <span class="number">1</span>);</span><br><span class="line">    area += dfs(grid, i, j - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> area;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+<ol start="797">
+<li><p>All paths<br>题目的前提是：从0开始到grid.length一定有路径，如果遍历到了尾部，那么就可以记录当前path</p>
+</li>
+<li><p>岛屿数量 dfs &amp;&amp; bfs<br>DFS<br>当grid[i][j]为1时，记录岛屿数量，并开始dfs<br>在dfs中标记当前岛屿被visited<br>如果下标超出边界，则返回<br>如果当前岛屿为0或者是已经被visited，则返回<br>遍历四个方向的岛屿</p>
+</li>
+</ol>
+<p>BFS</p>
+<ol start="695">
+<li>Max Area of Island<br>DFS 的职责是“求出一个岛屿的面积”，主函数的职责是“更新最大岛屿面积”。不要把两者混淆<br>在求出一个岛屿面积时，用一个局部变量area来记录，每个方向的area应该累加，<br>不要把局部变量和global变量混淆<br>DFS 应该：</li>
+</ol>
+<ul>
+<li>以当前格子为 1 起步</li>
+<li>递归地在四个方向上累加面积</li>
+<li>返回这个总面积</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/leetcodeproblems/tags/dfs/" rel="tag"># dfs</a>
+              <a href="/leetcodeproblems/tags/bfs/" rel="tag"># bfs</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/leetcodeproblems/2025/04/11/Day-49/" rel="prev" title="代码随想录训练营打卡 Day-49 | 单调栈">
+                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day-49 | 单调栈
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Peggie</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/leetcodeproblems/js/comments.js"></script><script src="/leetcodeproblems/js/utils.js"></script><script src="/leetcodeproblems/js/motion.js"></script><script src="/leetcodeproblems/js/sidebar.js"></script><script src="/leetcodeproblems/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
