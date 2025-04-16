@@ -21,13 +21,13 @@
 
     <meta name="description" content="打卡第10天！用栈并不局限于用Stack，而是要用Stack的思维，也就是如何操作最后进去的元素，可以用Array，StringBuilder，Deque等可以接触到最尾元素的结构来操作。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录训练营打卡 Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String">
+<meta property="og:title" content="Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String">
 <meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2024/12/06/Day-10/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
 <meta property="og:description" content="打卡第10天！用栈并不局限于用Stack，而是要用Stack的思维，也就是如何操作最后进去的元素，可以用Array，StringBuilder，Deque等可以接触到最尾元素的结构来操作。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-12-06T16:21:40.000Z">
-<meta property="article:modified_time" content="2024-12-06T21:29:08.975Z">
+<meta property="article:modified_time" content="2025-04-16T06:52:12.016Z">
 <meta property="article:author" content="Peggie">
 <meta property="article:tag" content="Stack">
 <meta property="article:tag" content="Queue">
@@ -37,10 +37,10 @@
 <link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2024/12/06/Day-10/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/12/06/Day-10/","path":"2024/12/06/Day-10/","title":"代码随想录训练营打卡 Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/12/06/Day-10/","path":"2024/12/06/Day-10/","title":"Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>代码随想录训练营打卡 Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String | Daily Leetcode Practice</title>
+<title>Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String | Daily Leetcode Practice</title>
   
 
 
@@ -124,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/leetcodeproblems/archives/">
-          <span class="site-state-item-count">44</span>
+          <span class="site-state-item-count">45</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -134,7 +134,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">43</span>
+        <span class="site-state-item-count">44</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -174,12 +174,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="代码随想录训练营打卡 Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String | Daily Leetcode Practice">
+      <meta itemprop="name" content="Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String | Daily Leetcode Practice">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          代码随想录训练营打卡 Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String
+          Day 10 | 232. Implement Queue using Stacks, 225. Implement Stack using Queues, 20. Valid Parentheses, 1047. Remove All Adjacent Duplicates In String
         </h1>
 
         <div class="post-meta-container">
@@ -189,9 +189,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2024-12-06 10:21:40 / Modified: 15:29:08" itemprop="dateCreated datePublished" datetime="2024-12-06T10:21:40-06:00">2024-12-06</time>
+      <time title="Created: 2024-12-06 10:21:40" itemprop="dateCreated datePublished" datetime="2024-12-06T10:21:40-06:00">2024-12-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-04-16 01:52:12" itemprop="dateModified" datetime="2025-04-16T01:52:12-05:00">2025-04-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -278,13 +284,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/12/05/Day-9/" rel="prev" title="代码随想录训练营打卡 Day 9 | 151. Reverse Words in a String, 55.右旋转字符串, 28. strStr()">
-                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 9 | 151. Reverse Words in a String, 55.右旋转字符串, 28. strStr()
+                <a href="/leetcodeproblems/2024/12/05/Day-9/" rel="prev" title="Day 9 | 151. Reverse Words in a String, 55.右旋转字符串, 28. strStr()">
+                  <i class="fa fa-angle-left"></i> Day 9 | 151. Reverse Words in a String, 55.右旋转字符串, 28. strStr()
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/12/08/Day-11/" rel="next" title="代码随想录训练营打卡 Day 11 | 150. Evaluate RPN， 239. Sliding Window Maximum， 347. Top K Frequent Elements">
-                  代码随想录训练营打卡 Day 11 | 150. Evaluate RPN， 239. Sliding Window Maximum， 347. Top K Frequent Elements <i class="fa fa-angle-right"></i>
+                <a href="/leetcodeproblems/2024/12/08/Day-11/" rel="next" title="Day 11 | 150. Evaluate RPN， 239. Sliding Window Maximum， 347. Top K Frequent Elements">
+                  Day 11 | 150. Evaluate RPN， 239. Sliding Window Maximum， 347. Top K Frequent Elements <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

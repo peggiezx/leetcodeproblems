@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/leetcodeproblems/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/leetcodeproblems/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/leetcodeproblems/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/leetcodeproblems/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/leetcodeproblems/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
+
+    <meta name="description" content="✅ 连通块 -&gt; DFS&#x2F;BFS 遍历✅ 边界判断 -&gt; 是否能出界、是否触到边✅ 状态标记 -&gt; 原地修改 or visited 数组✅ 结果合并 -&gt; 多个值传递 + 去重处理✅ 模拟操作 -&gt; 如翻转、涂色、改字符等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day-52 | Island Problems">
+<meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/04/14/Day-52/index.html">
+<meta property="og:site_name" content="Daily Leetcode Practice">
+<meta property="og:description" content="✅ 连通块 -&gt; DFS&#x2F;BFS 遍历✅ 边界判断 -&gt; 是否能出界、是否触到边✅ 状态标记 -&gt; 原地修改 or visited 数组✅ 结果合并 -&gt; 多个值传递 + 去重处理✅ 模拟操作 -&gt; 如翻转、涂色、改字符等">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-04-14T15:10:08.000Z">
+<meta property="article:modified_time" content="2025-04-16T06:52:12.178Z">
+<meta property="article:author" content="Peggie">
+<meta property="article:tag" content="dfs">
+<meta property="article:tag" content="Island">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2025/04/14/Day-52/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/04/14/Day-52/","path":"2025/04/14/Day-52/","title":"Day-52 | Island Problems"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Day-52 | Island Problems | Daily Leetcode Practice</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/leetcodeproblems/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/leetcodeproblems/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Daily Leetcode Practice</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/leetcodeproblems/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/leetcodeproblems/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/leetcodeproblems/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Peggie</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/leetcodeproblems/archives/">
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/leetcodeproblems/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://peggiezx.github.io/leetcodeproblems/2025/04/14/Day-52/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/leetcodeproblems/images/avatar.gif">
+      <meta itemprop="name" content="Peggie">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Day-52 | Island Problems | Daily Leetcode Practice">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Day-52 | Island Problems
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-04-14 10:10:08" itemprop="dateCreated datePublished" datetime="2025-04-14T10:10:08-05:00">2025-04-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-04-16 01:52:12" itemprop="dateModified" datetime="2025-04-16T01:52:12-05:00">2025-04-16</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>✅ 连通块 -&gt; DFS&#x2F;BFS 遍历<br>✅ 边界判断 -&gt; 是否能出界、是否触到边<br>✅ 状态标记 -&gt; 原地修改 or visited 数组<br>✅ 结果合并 -&gt; 多个值传递 + 去重处理<br>✅ 模拟操作 -&gt; 如翻转、涂色、改字符等</p>
+<span id="more"></span>
+
+<ol start="1254">
+<li>Number of Closed Islands<br>用DFS在寻找所有island的同时判断是否是closed</li>
+</ol>
+<ul>
+<li>如果island touch the boundary –&gt; false</li>
+<li>如果island已经visited，或者是1 –&gt; 还有潜力成为closed island –&gt; true</li>
+<li>return四个方向的合集</li>
+</ul>
+<ol start="1020">
+<li>Number of Enclaves</li>
+</ol>
+<ul>
+<li>用一个Pair class来统计<ul>
+<li>isEnclave</li>
+<li>area</li>
+</ul>
+</li>
+<li>如果该cell未被访问并且为1<ul>
+<li>dfs找到该岛屿的边界</li>
+<li>如果触到边界则isEnclave为false</li>
+<li>同时统计岛屿的大小</li>
+</ul>
+</li>
+<li>只计算isEnclave岛屿的面积作为结果返回<blockquote>
+<p>缺点：速度慢，没有必要计算所有的面积</p>
+</blockquote>
+</li>
+</ul>
+<p>优化解法</p>
+<ul>
+<li>找到边界开始所有的岛屿，dfs，将所有边界岛屿变成0</li>
+<li>统计非边界岛屿的数量</li>
+</ul>
+<ol start="130">
+<li>Surrounded Region<br>跟1020很像</li>
+</ol>
+<ul>
+<li>用visited记录比较好理解</li>
+<li>先从边界开始，如果找到O，那么dfs找到所有相连的O，并且标记为visited</li>
+<li>遍历非边界的cell，如果没有visited且为O，那么将此cell变成X<br>优化</li>
+<li>可以用另一个字符来标记从边界开始的O形成的岛屿，就可以省去visited的空间</li>
+</ul>
+<ol start="733">
+<li>Flood Fill</li>
+</ol>
+<ul>
+<li>用DFS从starting pixel开始搜索</li>
+<li>如果index越过边界停止搜索</li>
+<li>如果找到的cell不是starting pixel的value或者这个cell已经被找过了，停止搜索</li>
+</ul>
+<ol start="827">
+<li>Making A Large Island</li>
+</ol>
+<ul>
+<li>Two pass strategy<ul>
+<li>first pass: put all islands and its area in the map, key is a unique # and value is area</li>
+<li>second pass: find all the 0s in the map; check four directions of 0; if there are any island, acculumate the area</li>
+<li>return the max area;<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">largestIsland</span><span class="params">(<span class="type">int</span>[][] grid)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> grid.length;</span><br><span class="line">        Map&lt;Integer, Integer&gt; areaMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="type">int</span> <span class="variable">mark</span> <span class="operator">=</span> <span class="number">2</span>, maxArea = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 1. Label islands with unique mark and compute their areas</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (grid[i][j] == <span class="number">1</span>) &#123;</span><br><span class="line">                    <span class="type">int</span> <span class="variable">area</span> <span class="operator">=</span> dfs(grid, i, j, mark);</span><br><span class="line">                    areaMap.put(mark, area);</span><br><span class="line">                    maxArea = Math.max(maxArea, area);</span><br><span class="line">                    mark++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2. Try changing each 0 to 1 and check resulting area</span></span><br><span class="line">        <span class="type">int</span>[][] dirs = &#123;&#123;<span class="number">1</span>,<span class="number">0</span>&#125;, &#123;<span class="number">0</span>,<span class="number">1</span>&#125;, &#123;-<span class="number">1</span>,<span class="number">0</span>&#125;, &#123;<span class="number">0</span>,-<span class="number">1</span>&#125;&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (grid[i][j] == <span class="number">0</span>) &#123;</span><br><span class="line">                    Set&lt;Integer&gt; neighbors = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line">                    <span class="type">int</span> <span class="variable">newArea</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="type">int</span>[] d : dirs) &#123;</span><br><span class="line">                        <span class="type">int</span> <span class="variable">ni</span> <span class="operator">=</span> i + d[<span class="number">0</span>], nj = j + d[<span class="number">1</span>];</span><br><span class="line">                        <span class="keyword">if</span> (ni &gt;= <span class="number">0</span> &amp;&amp; ni &lt; n &amp;&amp; nj &gt;= <span class="number">0</span> &amp;&amp; nj &lt; n &amp;&amp; grid[ni][nj] &gt; <span class="number">1</span>) &#123;</span><br><span class="line">                            <span class="type">int</span> <span class="variable">neighborMark</span> <span class="operator">=</span> grid[ni][nj];</span><br><span class="line">                            <span class="keyword">if</span> (neighbors.add(neighborMark)) &#123;</span><br><span class="line">                                newArea += areaMap.get(neighborMark);</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    maxArea = Math.max(maxArea, newArea);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> maxArea == <span class="number">0</span> ? n * n : maxArea;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="title function_">dfs</span><span class="params">(<span class="type">int</span>[][] grid, <span class="type">int</span> i, <span class="type">int</span> j, <span class="type">int</span> mark)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; <span class="number">0</span> || i &gt;= grid.length || j &lt; <span class="number">0</span> || j &gt;= grid[<span class="number">0</span>].length || grid[i][j] != <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        grid[i][j] = mark;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span> + dfs(grid, i - <span class="number">1</span>, j, mark)</span><br><span class="line">                 + dfs(grid, i + <span class="number">1</span>, j, mark)</span><br><span class="line">                 + dfs(grid, i, j - <span class="number">1</span>, mark)</span><br><span class="line">                 + dfs(grid, i, j + <span class="number">1</span>, mark);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/leetcodeproblems/tags/dfs/" rel="tag"># dfs</a>
+              <a href="/leetcodeproblems/tags/Island/" rel="tag"># Island</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/leetcodeproblems/2025/04/13/Day-50-51/" rel="prev" title="Day-50&&51 | 图论">
+                  <i class="fa fa-angle-left"></i> Day-50&&51 | 图论
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Peggie</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/leetcodeproblems/js/comments.js"></script><script src="/leetcodeproblems/js/utils.js"></script><script src="/leetcodeproblems/js/motion.js"></script><script src="/leetcodeproblems/js/sidebar.js"></script><script src="/leetcodeproblems/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

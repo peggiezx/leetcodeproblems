@@ -21,13 +21,13 @@
 
     <meta name="description" content="理论基础dfs深度搜索，回溯bfs广度搜索，queue 🧠 DFS 模板大全（路径类 &amp; 区域类） ✅ 模板 1：DFS + 回溯（路径类题目） 应用于：所有路径 &#x2F; 子集 &#x2F; 排列 &#x2F; 拆分类题目特点：路径 path 需要 add&#x2F;remove，回溯控制  123456789101112void dfs(参数..., List&lt;Intege">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录训练营打卡 Day-50&amp;&amp;51 | 图论">
+<meta property="og:title" content="Day-50&amp;&amp;51 | 图论">
 <meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/04/13/Day-50-51/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
 <meta property="og:description" content="理论基础dfs深度搜索，回溯bfs广度搜索，queue 🧠 DFS 模板大全（路径类 &amp; 区域类） ✅ 模板 1：DFS + 回溯（路径类题目） 应用于：所有路径 &#x2F; 子集 &#x2F; 排列 &#x2F; 拆分类题目特点：路径 path 需要 add&#x2F;remove，回溯控制  123456789101112void dfs(参数..., List&lt;Intege">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-04-13T10:53:28.000Z">
-<meta property="article:modified_time" content="2025-04-13T11:46:56.105Z">
+<meta property="article:modified_time" content="2025-04-16T06:52:12.240Z">
 <meta property="article:author" content="Peggie">
 <meta property="article:tag" content="dfs">
 <meta property="article:tag" content="bfs">
@@ -37,10 +37,10 @@
 <link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2025/04/13/Day-50-51/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/04/13/Day-50-51/","path":"2025/04/13/Day-50-51/","title":"代码随想录训练营打卡 Day-50&&51 | 图论"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/04/13/Day-50-51/","path":"2025/04/13/Day-50-51/","title":"Day-50&&51 | 图论"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>代码随想录训练营打卡 Day-50&&51 | 图论 | Daily Leetcode Practice</title>
+<title>Day-50&&51 | 图论 | Daily Leetcode Practice</title>
   
 
 
@@ -125,7 +125,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/leetcodeproblems/archives/">
-          <span class="site-state-item-count">44</span>
+          <span class="site-state-item-count">45</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -135,7 +135,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">43</span>
+        <span class="site-state-item-count">44</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -175,12 +175,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="代码随想录训练营打卡 Day-50&&51 | 图论 | Daily Leetcode Practice">
+      <meta itemprop="name" content="Day-50&&51 | 图论 | Daily Leetcode Practice">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          代码随想录训练营打卡 Day-50&&51 | 图论
+          Day-50&&51 | 图论
         </h1>
 
         <div class="post-meta-container">
@@ -190,9 +190,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2025-04-13 05:53:28 / Modified: 06:46:56" itemprop="dateCreated datePublished" datetime="2025-04-13T05:53:28-05:00">2025-04-13</time>
+      <time title="Created: 2025-04-13 05:53:28" itemprop="dateCreated datePublished" datetime="2025-04-13T05:53:28-05:00">2025-04-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-04-16 01:52:12" itemprop="dateModified" datetime="2025-04-16T01:52:12-05:00">2025-04-16</time>
     </span>
 
   
@@ -248,11 +254,14 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2025/04/11/Day-49/" rel="prev" title="代码随想录训练营打卡 Day-49 | 单调栈">
-                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day-49 | 单调栈
+                <a href="/leetcodeproblems/2025/04/11/Day-49/" rel="prev" title="Day-49 | 单调栈">
+                  <i class="fa fa-angle-left"></i> Day-49 | 单调栈
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/leetcodeproblems/2025/04/14/Day-52/" rel="next" title="Day-52 | Island Problems">
+                  Day-52 | Island Problems <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>

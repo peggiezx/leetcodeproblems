@@ -21,13 +21,13 @@
 
     <meta name="description" content="回溯第一天！把模版理解好很有用，剪枝的分析需要记住!回溯的本质是遍历，只是用递归的方式让遍历可代码化 1234567891011voic backtracking(参数) &#123;if(满足条件) &#123;    保存当前解;    return;&#125;for (选择：当前可能有的所有选择) &#123;    做出选择    backtracking(新的参数);    回溯操作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录训练营打卡 Day 22 ｜ 77.combination, 216, 17">
+<meta property="og:title" content="Day 22 ｜ 77.combination, 216, 17">
 <meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/02/02/Day-22/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
 <meta property="og:description" content="回溯第一天！把模版理解好很有用，剪枝的分析需要记住!回溯的本质是遍历，只是用递归的方式让遍历可代码化 1234567891011voic backtracking(参数) &#123;if(满足条件) &#123;    保存当前解;    return;&#125;for (选择：当前可能有的所有选择) &#123;    做出选择    backtracking(新的参数);    回溯操作">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-02-02T12:12:54.000Z">
-<meta property="article:modified_time" content="2025-02-07T21:35:30.544Z">
+<meta property="article:modified_time" content="2025-04-16T06:52:11.886Z">
 <meta property="article:author" content="Peggie">
 <meta property="article:tag" content="backtracking">
 <meta property="article:tag" content="pruning">
@@ -38,10 +38,10 @@
 <link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2025/02/02/Day-22/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/02/02/Day-22/","path":"2025/02/02/Day-22/","title":"代码随想录训练营打卡 Day 22 ｜ 77.combination, 216, 17"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/02/02/Day-22/","path":"2025/02/02/Day-22/","title":"Day 22 ｜ 77.combination, 216, 17"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>代码随想录训练营打卡 Day 22 ｜ 77.combination, 216, 17 | Daily Leetcode Practice</title>
+<title>Day 22 ｜ 77.combination, 216, 17 | Daily Leetcode Practice</title>
   
 
 
@@ -125,7 +125,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/leetcodeproblems/archives/">
-          <span class="site-state-item-count">44</span>
+          <span class="site-state-item-count">45</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -135,7 +135,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">43</span>
+        <span class="site-state-item-count">44</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -175,12 +175,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="代码随想录训练营打卡 Day 22 ｜ 77.combination, 216, 17 | Daily Leetcode Practice">
+      <meta itemprop="name" content="Day 22 ｜ 77.combination, 216, 17 | Daily Leetcode Practice">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          代码随想录训练营打卡 Day 22 ｜ 77.combination, 216, 17
+          Day 22 ｜ 77.combination, 216, 17
         </h1>
 
         <div class="post-meta-container">
@@ -198,7 +198,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-02-07 15:35:30" itemprop="dateModified" datetime="2025-02-07T15:35:30-06:00">2025-02-07</time>
+      <time title="Modified: 2025-04-16 01:52:11" itemprop="dateModified" datetime="2025-04-16T01:52:11-05:00">2025-04-16</time>
     </span>
 
   
@@ -245,13 +245,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2025/01/31/Day-21/" rel="prev" title="代码随想录训练营打卡 Day 21 ｜ 669，108，538">
-                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 21 ｜ 669，108，538
+                <a href="/leetcodeproblems/2025/01/31/Day-21/" rel="prev" title="Day 21 ｜ 669，108，538">
+                  <i class="fa fa-angle-left"></i> Day 21 ｜ 669，108，538
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2025/02/02/Day-23/" rel="next" title="代码随想录训练营打卡 Day 23 | 39. Combo Sum (unlimited use), 40 combo sum, 131.">
-                  代码随想录训练营打卡 Day 23 | 39. Combo Sum (unlimited use), 40 combo sum, 131. <i class="fa fa-angle-right"></i>
+                <a href="/leetcodeproblems/2025/02/02/Day-23/" rel="next" title="Day 23 | 39. Combo Sum (unlimited use), 40 combo sum, 131.">
+                  Day 23 | 39. Combo Sum (unlimited use), 40 combo sum, 131. <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

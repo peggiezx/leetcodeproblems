@@ -21,13 +21,13 @@
 
     <meta name="description" content="打开第三天！链表的基础复习，首先要明白链表的底层结构，特别是初始一个node时，明确是指向已有node还是创建一个新的node。另外是终止条件，避免NullPointerException。还有注意pointer的移动，是否需要保留现有值，哪个先移动，哪个后移动。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录训练营打卡 Day 3 | 203. Remove Linked List Elements, 207. Reverse the Linked list, 707. Design Linked List">
+<meta property="og:title" content="Day 3 | 203. Remove Linked List Elements, 207. Reverse the Linked list, 707. Design Linked List">
 <meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2024/11/29/Day-3/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
 <meta property="og:description" content="打开第三天！链表的基础复习，首先要明白链表的底层结构，特别是初始一个node时，明确是指向已有node还是创建一个新的node。另外是终止条件，避免NullPointerException。还有注意pointer的移动，是否需要保留现有值，哪个先移动，哪个后移动。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-11-29T06:51:49.000Z">
-<meta property="article:modified_time" content="2024-12-04T08:02:45.576Z">
+<meta property="article:modified_time" content="2025-04-16T06:52:12.112Z">
 <meta property="article:author" content="Peggie">
 <meta property="article:tag" content="linked list">
 <meta property="article:tag" content="node">
@@ -37,10 +37,10 @@
 <link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2024/11/29/Day-3/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/11/29/Day-3/","path":"2024/11/29/Day-3/","title":"代码随想录训练营打卡 Day 3 | 203. Remove Linked List Elements, 207. Reverse the Linked list, 707. Design Linked List"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2024/11/29/Day-3/","path":"2024/11/29/Day-3/","title":"Day 3 | 203. Remove Linked List Elements, 207. Reverse the Linked list, 707. Design Linked List"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>代码随想录训练营打卡 Day 3 | 203. Remove Linked List Elements, 207. Reverse the Linked list, 707. Design Linked List | Daily Leetcode Practice</title>
+<title>Day 3 | 203. Remove Linked List Elements, 207. Reverse the Linked list, 707. Design Linked List | Daily Leetcode Practice</title>
   
 
 
@@ -124,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/leetcodeproblems/archives/">
-          <span class="site-state-item-count">44</span>
+          <span class="site-state-item-count">45</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -134,7 +134,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">43</span>
+        <span class="site-state-item-count">44</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -174,12 +174,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="代码随想录训练营打卡 Day 3 | 203. Remove Linked List Elements, 207. Reverse the Linked list, 707. Design Linked List | Daily Leetcode Practice">
+      <meta itemprop="name" content="Day 3 | 203. Remove Linked List Elements, 207. Reverse the Linked list, 707. Design Linked List | Daily Leetcode Practice">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          代码随想录训练营打卡 Day 3 | 203. Remove Linked List Elements, 207. Reverse the Linked list, 707. Design Linked List
+          Day 3 | 203. Remove Linked List Elements, 207. Reverse the Linked list, 707. Design Linked List
         </h1>
 
         <div class="post-meta-container">
@@ -197,7 +197,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-12-04 02:02:45" itemprop="dateModified" datetime="2024-12-04T02:02:45-06:00">2024-12-04</time>
+      <time title="Modified: 2025-04-16 01:52:12" itemprop="dateModified" datetime="2025-04-16T01:52:12-05:00">2025-04-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -274,13 +274,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/11/27/Day-2/" rel="prev" title="代码随想录训练营打卡 Day 2 | 209. Minimum Size Subarray Sum, 59. Spiral Matrix II, MinCut of n*m matrix">
-                  <i class="fa fa-angle-left"></i> 代码随想录训练营打卡 Day 2 | 209. Minimum Size Subarray Sum, 59. Spiral Matrix II, MinCut of n*m matrix
+                <a href="/leetcodeproblems/2024/11/27/Day-2/" rel="prev" title="Day 2 | 209. Minimum Size Subarray Sum, 59. Spiral Matrix II, MinCut of n*m matrix">
+                  <i class="fa fa-angle-left"></i> Day 2 | 209. Minimum Size Subarray Sum, 59. Spiral Matrix II, MinCut of n*m matrix
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2024/11/30/Day-4/" rel="next" title="代码随想录训练营打卡 Day 4 | 24. Swap Nodes in Pairs, 19. Remove Nth Node From End of List, 160. Intersection of Two Linked Lists, 142. Linked List Cycle II">
-                  代码随想录训练营打卡 Day 4 | 24. Swap Nodes in Pairs, 19. Remove Nth Node From End of List, 160. Intersection of Two Linked Lists, 142. Linked List Cycle II <i class="fa fa-angle-right"></i>
+                <a href="/leetcodeproblems/2024/11/30/Day-4/" rel="next" title="Day 4 | 24. Swap Nodes in Pairs, 19. Remove Nth Node From End of List, 160. Intersection of Two Linked Lists, 142. Linked List Cycle II">
+                  Day 4 | 24. Swap Nodes in Pairs, 19. Remove Nth Node From End of List, 160. Intersection of Two Linked Lists, 142. Linked List Cycle II <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
