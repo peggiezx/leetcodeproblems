@@ -19,15 +19,13 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
 
-    <meta name="description" content="怎样实现Union Find?  1234567891011121314151617181920212223242526class UnionFind &#123;    int[] parent;    public UnionFind(int n) &#123;        parent &#x3D; new int[n];        for (int i &#x3D; 0; i &lt; n; i++)">
-<meta property="og:type" content="article">
+    <meta property="og:type" content="article">
 <meta property="og:title" content="Day 55 | Union Find">
 <meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/04/21/Day-55/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
-<meta property="og:description" content="怎样实现Union Find?  1234567891011121314151617181920212223242526class UnionFind &#123;    int[] parent;    public UnionFind(int n) &#123;        parent &#x3D; new int[n];        for (int i &#x3D; 0; i &lt; n; i++)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-04-21T06:26:09.000Z">
-<meta property="article:modified_time" content="2025-04-21T06:33:19.773Z">
+<meta property="article:modified_time" content="2025-04-21T06:36:08.051Z">
 <meta property="article:author" content="Peggie">
 <meta property="article:tag" content="Union Find">
 <meta name="twitter:card" content="summary">
@@ -190,7 +188,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2025-04-21 01:26:09 / Modified: 01:33:19" itemprop="dateCreated datePublished" datetime="2025-04-21T01:26:09-05:00">2025-04-21</time>
+      <time title="Created: 2025-04-21 01:26:09 / Modified: 01:36:08" itemprop="dateCreated datePublished" datetime="2025-04-21T01:26:09-05:00">2025-04-21</time>
     </span>
 
   
@@ -202,17 +200,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><blockquote>
-<p>怎样实现Union Find?</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">UnionFind</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span>[] parent;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">UnionFind</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        parent = <span class="keyword">new</span> <span class="title class_">int</span>[n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            parent[i] = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">find</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (parent[x] != x) &#123;</span><br><span class="line">            parent[x] = find(parent[x]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> parent[x];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">union</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">rootX</span> <span class="operator">=</span> find(x);</span><br><span class="line">        <span class="type">int</span> <span class="variable">rootY</span> <span class="operator">=</span> find(y);</span><br><span class="line">        <span class="keyword">if</span> (rootX != rootY) &#123;</span><br><span class="line">            parent[rootX] = rootY;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<ol start="547">
-<li>Number of Provinces<br>Step 1: 实现UnionFind，用城市数来初始化parent数组<br>Step 2: 遍历上三角，如果connected则调用uf.union<br>Step 3: 再统计城市数的共同root，调用uf.find，加到set里<br>返回set的size</li>
-</ol>
-
+    <div class="post-body" itemprop="articleBody">
     </div>
 
     
@@ -228,11 +216,14 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2025/04/19/Day-53/" rel="prev" title="Day 53">
-                  <i class="fa fa-angle-left"></i> Day 53
+                <a href="/leetcodeproblems/2025/04/19/Day-53/" rel="prev" title="Day 53 | BFS Problems">
+                  <i class="fa fa-angle-left"></i> Day 53 | BFS Problems
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/leetcodeproblems/2025/04/21/Day-54/" rel="next" title="Day 54 | Union Find">
+                  Day 54 | Union Find <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>

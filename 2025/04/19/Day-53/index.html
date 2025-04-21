@@ -19,24 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
 
-    <meta property="og:type" content="article">
-<meta property="og:title" content="Day 53">
+    <meta name="description" content="BFS模板总结 12345678910111213141516171819202122232425262728293031public int bfs(String start, String target, Map&lt;String, List&lt;String&gt;&gt; graph) &#123;    Queue&lt;String&gt; queue &#x3D; new ArrayDeq">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day 53 | BFS Problems">
 <meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/04/19/Day-53/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
+<meta property="og:description" content="BFS模板总结 12345678910111213141516171819202122232425262728293031public int bfs(String start, String target, Map&lt;String, List&lt;String&gt;&gt; graph) &#123;    Queue&lt;String&gt; queue &#x3D; new ArrayDeq">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-04-19T15:53:07.000Z">
-<meta property="article:modified_time" content="2025-04-19T15:53:07.824Z">
+<meta property="article:published_time" content="2025-04-19T15:52:29.000Z">
+<meta property="article:modified_time" content="2025-04-21T06:35:48.985Z">
 <meta property="article:author" content="Peggie">
+<meta property="article:tag" content="bfs">
 <meta name="twitter:card" content="summary">
 
 
 <link rel="canonical" href="https://peggiezx.github.io/leetcodeproblems/2025/04/19/Day-53/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/04/19/Day-53/","path":"2025/04/19/Day-53/","title":"Day 53"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://peggiezx.github.io/leetcodeproblems/2025/04/19/Day-53/","path":"2025/04/19/Day-53/","title":"Day 53 | BFS Problems"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Day 53 | Daily Leetcode Practice</title>
+<title>Day 53 | BFS Problems | Daily Leetcode Practice</title>
   
 
 
@@ -170,12 +173,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Day 53 | Daily Leetcode Practice">
+      <meta itemprop="name" content="Day 53 | BFS Problems | Daily Leetcode Practice">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Day 53
+          Day 53 | BFS Problems
         </h1>
 
         <div class="post-meta-container">
@@ -186,7 +189,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2025-04-19 10:53:07" itemprop="dateCreated datePublished" datetime="2025-04-19T10:53:07-05:00">2025-04-19</time>
+      <time title="Created: 2025-04-19 10:52:29" itemprop="dateCreated datePublished" datetime="2025-04-19T10:52:29-05:00">2025-04-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-04-21 01:35:48" itemprop="dateModified" datetime="2025-04-21T01:35:48-05:00">2025-04-21</time>
     </span>
 
   
@@ -198,7 +208,47 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody"><p>BFS模板总结</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">bfs</span><span class="params">(String start, String target, Map&lt;String, List&lt;String&gt;&gt; graph)</span> &#123;</span><br><span class="line">    Queue&lt;String&gt; queue = <span class="keyword">new</span> <span class="title class_">ArrayDeque</span>&lt;&gt;();</span><br><span class="line">    Set&lt;String&gt; visited = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line">    <span class="type">int</span> <span class="variable">level</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    queue.add(start);</span><br><span class="line">    visited.add(start);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">size</span> <span class="operator">=</span> queue.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">cur</span> <span class="operator">=</span> queue.poll();</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 检查是否到达目标</span></span><br><span class="line">            <span class="keyword">if</span> (cur.equals(target)) &#123;</span><br><span class="line">                <span class="keyword">return</span> level;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 遍历当前节点的所有相邻节点</span></span><br><span class="line">            <span class="keyword">for</span> (String neighbor : graph.getOrDefault(cur, <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;())) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!visited.contains(neighbor)) &#123;</span><br><span class="line">                    visited.add(neighbor);</span><br><span class="line">                    queue.add(neighbor);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        level++;  <span class="comment">// 扩展到下一层</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 如果找不到路径</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<ol start="127">
+<li><p>Word Ladder</p>
+</li>
+<li><p>构建 PatternMap：<br>遍历 wordList，对每个单词生成所有带通配符（<em>）的 pattern，例如 “hot” 对应的 pattern 有 “<em>ot”, “h</em>t”, “ho</em>“。将每个 pattern 映射到对应的单词列表中，便于后续快速查找可能的变换路径。</p>
+</li>
+<li><p>广度优先搜索（BFS）寻找最短路径：<br>使用 BFS 从 beginWord 开始一层一层地向外扩展，目标是找到 endWord。由于每次只允许改变一个字母，BFS 能确保第一次找到 endWord 时就是最短路径。</p>
+</li>
+<li><p>使用 visited 集合避免重复访问：<br>如果一个单词被重复加入队列，会导致死循环或 TLE（Time Limit Exceeded），因此需要用 visited 集合记录已访问过的单词，避免重复入队。</p>
+</li>
+<li><p>层级遍历逻辑：<br>将 beginWord 加入队列，开始按层遍历：</p>
+</li>
+</ol>
+<ul>
+<li>对于队列中的每个单词，生成它的所有 pattern。</li>
+<li>在 patternMap 中查找对应 pattern 的单词列表。</li>
+<li>对于每个匹配到的单词：<ul>
+<li>如果是 endWord，返回当前层级 + 1。</li>
+<li>如果未访问过，则加入队列，并标记为 visited。</li>
+</ul>
+</li>
+<li>每遍历完一层，层级计数 level++。</li>
+</ul>
+<ol start="5">
+<li><p>若最终未找到 endWord，返回 0 表示无法转换。</p>
+</li>
+<li><p>Keys and Rooms<br>思路：用Set来储存访问过的房间号，如果Set的size和rooms的数量match那就返回true</p>
+</li>
+</ol>
+<p>BFS</p>
+<p>DFS</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">canVisitAllRooms</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; rooms)</span> &#123;</span><br><span class="line">    Set&lt;Integer&gt; visited = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line">    visited.add(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    dfs(<span class="number">0</span>, visited, rooms);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> visited.size() == rooms.size();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">dfs</span><span class="params">(<span class="type">int</span> roomNum, Set&lt;Integer&gt; visited, List&lt;List&lt;Integer&gt;&gt; rooms)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (visited.contains(roomNum)) <span class="keyword">return</span>;</span><br><span class="line">    visited.add(roomNum);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> key : rooms.get(roomNum)) &#123;</span><br><span class="line">        dfs(key, visited, rooms);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="463">
+<li>岛屿的周长<br>直觉思路：遍历每个格子，如果是岛屿，用helper function计算岛屿的邻居数（用int[][] dirs），周长&#x3D;4-邻居数<br>优化思路：不用额外的helper function，在遍历时累加4，在check之前的格子（上和左）如果是岛屿，那么就减去2（因为在第一次遍历时重复统计了重合的边）</li>
+</ol>
+
     </div>
 
     
@@ -206,13 +256,16 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/leetcodeproblems/tags/bfs/" rel="tag"># bfs</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/leetcodeproblems/2025/04/19/Day-54/" rel="prev" title="Day 54">
-                  <i class="fa fa-angle-left"></i> Day 54
+                <a href="/leetcodeproblems/2025/04/14/Day-52/" rel="prev" title="Day-52 | Island Problems">
+                  <i class="fa fa-angle-left"></i> Day-52 | Island Problems
                 </a>
             </div>
             <div class="post-nav-item">
