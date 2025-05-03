@@ -19,13 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"peggiezx.github.io","root":"/leetcodeproblems/","images":"/leetcodeproblems/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/leetcodeproblems/js/config.js"></script>
 
-    <meta property="og:type" content="article">
+    <meta name="description" content="用UnionFind只能检查无向图有环的情况，但是有向图的度无法检测，需要两次扫描">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Day 55 | Union Find">
 <meta property="og:url" content="https://peggiezx.github.io/leetcodeproblems/2025/04/21/Day-55/index.html">
 <meta property="og:site_name" content="Daily Leetcode Practice">
+<meta property="og:description" content="用UnionFind只能检查无向图有环的情况，但是有向图的度无法检测，需要两次扫描">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-04-21T06:26:09.000Z">
-<meta property="article:modified_time" content="2025-04-21T06:36:08.051Z">
+<meta property="article:modified_time" content="2025-05-02T12:40:18.015Z">
 <meta property="article:author" content="Peggie">
 <meta property="article:tag" content="Union Find">
 <meta name="twitter:card" content="summary">
@@ -121,7 +123,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/leetcodeproblems/archives/">
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -186,9 +188,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2025-04-21 01:26:09 / Modified: 01:36:08" itemprop="dateCreated datePublished" datetime="2025-04-21T01:26:09-05:00">2025-04-21</time>
+      <time title="Created: 2025-04-21 01:26:09" itemprop="dateCreated datePublished" datetime="2025-04-21T01:26:09-05:00">2025-04-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-05-02 07:40:18" itemprop="dateModified" datetime="2025-05-02T07:40:18-05:00">2025-05-02</time>
     </span>
 
   
@@ -200,7 +208,73 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody"><p>用UnionFind只能检查无向图有环的情况，但是有向图的度无法检测，需要两次扫描</p>
+<span id="more"></span>
+<ol start="684">
+<li><p>Redundant Connections<br>初始化一个parent[i]并且每个node都是自己的parent<br>如果两个node之间有edge，那么合并两个node，此时两个相连的node共享一个parent（两node其中之一）<br>如果两个node已经共享里parent，说明之前已经有了链接，则该链接时冗余的</p>
+</li>
+<li><p>有向冗余链接</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>图类型</th>
+<th>违例情况</th>
+<th>只靠 Union-Find 能解决吗</th>
+<th>额外手段</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>684</strong></td>
+<td>无向树 + 1 条多余边</td>
+<td><strong>唯一</strong>问题：出现 1 个环</td>
+<td>可以——找到第一次 <code>find(u)==find(v)</code> 的边</td>
+<td>无</td>
+</tr>
+<tr>
+<td><strong>685</strong></td>
+<td><strong>有向</strong>“根树” + 1 条多余边</td>
+<td><strong>两种</strong>可能：<br>① 形成环<br>② 某节点入度&#x3D;2（两个父亲）</td>
+<td>不行——UF 不存入度信息，也分不清删哪条边</td>
+<td>① 单独的 <code>parent[]</code> 数组记录“直系父亲”<br>② 两趟遍历配合 <code>cand1 / cand2</code></td>
+</tr>
+</tbody></table>
+<p>Pass 1：找入度 2</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">parent[v] == <span class="number">0</span> ?            <span class="comment">// 第一次看到 v</span></span><br><span class="line">    parent[v] = u;          <span class="comment">// 记录父亲</span></span><br><span class="line">:   <span class="comment">// 第二次看到 v —— 入度 2！</span></span><br><span class="line">    cand1 = [parent[v], v]  <span class="comment">// 较早的那条</span></span><br><span class="line">    cand2 = [u, v]          <span class="comment">// 较晚的那条</span></span><br><span class="line">    把 cand2 暂时“标记为无效”   <span class="comment">// 最简单做法：把 v 设成 0</span></span><br></pre></td></tr></table></figure>
+<p>Pass 2：Union-Find 检环（跳过 cand2）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> each <span class="type">edge</span> <span class="variable">e</span> <span class="operator">=</span> [u,v]:</span><br><span class="line">    <span class="keyword">if</span> v == <span class="number">0</span>           <span class="comment">// 这就是 cand2，跳过</span></span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">if</span> !uf.union(u,v):  <span class="comment">// 合并失败 == 出现环</span></span><br><span class="line">        <span class="comment">// 两种子场景：</span></span><br><span class="line">        <span class="comment">//  A) cand1 == null -&gt; 纯环，删当前 e</span></span><br><span class="line">        <span class="comment">//  B) cand1 != null -&gt; 环 + 入度2，删 cand1</span></span><br></pre></td></tr></table></figure>
+<p>若整趟跑完 没出现环 → 场景 C）只入度 2，删 cand2（“最后出现”那条）。</p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>入度 2?</th>
+<th>环?</th>
+<th>最终删除</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>A</strong> 纯环</td>
+<td>✗</td>
+<td>✓</td>
+<td>当前导致 <code>union</code> 失败的那条边</td>
+</tr>
+<tr>
+<td><strong>B</strong> 入度 2 + 环</td>
+<td>✓</td>
+<td>✓</td>
+<td><code>cand1</code>（较早那条）</td>
+</tr>
+<tr>
+<td><strong>C</strong> 仅入度 2</td>
+<td>✓</td>
+<td>✗</td>
+<td><code>cand2</code>（较晚那条）</td>
+</tr>
+</tbody></table>
+
     </div>
 
     
